@@ -28,7 +28,12 @@ workflow QCwf {
         cutadapt_fastqc(reads = Cutadapt.out.reads)
     
     }
+
     emit:
     reads = runAdapterClipping ? Cutadapt.out.reads : read_listChannel
+
+    reports = runAdapterClipping ?
+        [read_fastqc.out.html, read_fastqc.out.zip, cutadapt_fastqc.out.html, cutadapt_fastqc.out.zip, Cutadapt.out.log] :
+        [read_fastqc.out.html, read_fastqc.out.zip]
 }
 

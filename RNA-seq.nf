@@ -5,16 +5,19 @@
     //include all processes and scripts
     include { samplewf } from "./subworkflows/sample.nf"
     include {Calculateregionswf} from "./subworkflows/Calculateregions.nf"
+    include { preprocesswf } from "./subworkflows/preprocess.nf"
+    include {SCATTERREGIONS as ScatterRegionsVariant} from "./custom_modules/chunked_scatter/scatterregions/main.nf"
+    include { SingleSampleCallingwf } from "./subworkflows/VariantCalling/SingleSampleCalling.nf"
+    include { MultiBamExpressionQuantificationwf } from "./subworkflows/expressionquantification/MultiBamExpressionQuantification.nf"
+    include {GFFREAD as GffRead} from "./modules/gffread/main.nf"
+    include {CPAT as Cpat} from "./custom_modules/cpat/main.nf"
+    include {GFFCOMPARE as Gff_Compare_lnc} from "./modules/gffcompare/main.nf"
     import org.yaml.snakeyaml.Yaml
     
     
     
 //"input output defining"    
 //"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"    
-    // Base filepath will be defined in here. It will get all input from the base filepath.
-    expressionDir = "./outputfiles/expression_measures/"
-    genotypingDir = "./outputfiles/multisample_variants/"
-
 
     //yaml to parse yaml samplesheet file.
     def yaml = new Yaml()
@@ -23,31 +26,47 @@
     //input files
     //The samples param will be loaded. In the samples param are the fq files and the readgroups.
     samples = yaml.load(new FileInputStream(new File("./inputfiles/${params.sampleConfigFile}"))).samples
-    referenceFasta = Channel.value([[id:"fasta"],file("./inputfiles/${params.referenceFasta}", checkIfExists: true)])
-    referenceFastaFai = Channel.value([[id:"fastafai"],file("./inputfiles/${params.referenceFastaFai}", checkIfExists: true)])
-    referenceFastaDict = Channel.value([[id: "fastadict"],[file("./inputfiles/${params.referenceFastaDict}", checkIfExists: true)]])
+    referenceFasta = [[id:"fasta"],file("./inputfiles/${params.referenceFasta}", checkIfExists: true)]
+    referenceFastaFai = [[id:"fastafai"],file("./inputfiles/${params.referenceFastaFai}", checkIfExists: true)]
+    referenceFastaDict = [[id: "fastadict"],[file("./inputfiles/${params.referenceFastaDict}", checkIfExists: true)]]
 
     //optional common fe input
-    dbsnpVCF = Channel.value(file("./inputfiles/${params.dbsnpVCF}") ? file("./inputfiles/${params.dbsnpVCF}") : null)
+    dbsnpVCF = file("./inputfiles/${params.dbsnpVCF}").exists() ?
+        Channel.value(file("./inputfiles/${params.dbsnpVCF}")) :
+        Channel.value([]).toList()
 
-    dbsnpVCFIndex = Channel.value(file("./inputfiles/${params.dbsnpVCFIndex}") ? file("./inputfiles/${params.dbsnpVCFIndex}") : null)
+    dbsnpVCFIndex = file("./inputfiles/${params.dbsnpVCFIndex}").exists() ?
+        Channel.value(file("./inputfiles/${params.dbsnpVCFIndex}")) : 
+        Channel.value([]).toList()
 
-    refflatFile = Channel.value(file("./inputfiles/${params.refflatFile}") ? file("./inputfiles/${params.refflatFile}") : null)
+    refflatFile = file("./inputfiles/${params.refflatfile}").exists() ? 
+        Channel.value(file("./inputfiles/${params.refflatfile}")) : 
+        null
 
-    referenceGtfFile = Channel.value(file("./inputfiles/${params.referenceGtfFile}") ? file("./inputfiles/${params.referenceGtfFile}") : null)
+    referenceGtfFile = file("./inputfiles/${params.referenceGtfFile}").exists() ?
+        Channel.value([[id: "refgtf"],[file("./inputfiles/${params.referenceGtfFile}")]]) : 
+        Channel.value([[id: "refgtf"],[]])
     
-    cpatLogitModel = Channel.value(file("./inputfiles/${params.cpatLogitModel}") ? file("./inputfiles/${params.cpatLogitModel}") : null)
+    CpatLogitModel = file("./inputfiles/${params.cpatLogitModel}").exists() ? 
+        Channel.value(file("./inputfiles/${params.cpatLogitModel}")) : Channel.value([]).toList()
 
-    cpatHexChannel = Channel.value(file("./inputfiles/${params.cpatHex}") ? file("./inputfiles/${params.cpatHex}") : null)
+    CpatHex = file("./inputfiles/${params.cpatHex}").exists() ?
+        Channel.value(file("./inputfiles/${params.cpatHex}")) : Channel.value([]).toList()
 
-    lncRNAdatabases = Channel.from(file("./inputfiles/*${params.lncRNAdatabases}*.txt") ? file("./inputfiles/*${params.lncRNAdatabases}*.txt") : null) //array
+    //lncRNAdatabases = file("./inputfiles/*${params.lncRNAdatabases}*.txt").exists() ? Channel.value(file("./inputfiles/*${params.lncRNAdatabases}*.txt")) : null //array
 
 
     //advanced option file input
-    variantCallingRegions = Channel.value(file("./inputfiles/${params.variantCallingRegions}") ? file("./inputfiles/${params.variantCallingRegions}") : null)
+    variantCallingRegions = file("./inputfiles/${params.variantCallingRegions}").exists() ?
+        [[id: "variantCallingRegions"],[file("./inputfiles/${params.variantCallingRegions}")]] : null
 
-    XNonParRegions = file("./inputfiles/${params.XNonParRegions}") ? file("./inputfiles/${params.XNonParRegions}") : null
-    YNonParRegions = file("./inputfiles/${params.YNonParRegions}") ? file("./inputfiles/${params.YNonParRegions}") : null
+    //variantcalling
+    XNonParRegions = file("./inputfiles/${params.XNonParRegions}").exists() ?
+        file("./inputfiles/${params.XNonParRegions}") : null
+
+    YNonParRegions = file("./inputfiles/${params.YNonParRegions}").exists() ?
+        file("./inputfiles/${params.YNonParRegions}") : null
+    
 
 
 
@@ -71,10 +90,10 @@ samples.each {sample -> sample.libraries.each {
             // Store both read1 and read2 in lists
             single_end = read2 != "" ? false : true
             if (read2 != "") {
-            read_list << [[id: "${sample.id}_${library.id}", single_end: false],[file(read1, checkIfExists: true), file(read2, checkIfExists: true)]]
+            read_list << [[id: "${sample.id}_${library.id}", single_end: false, sample: "${sample.id}"],[file(read1, checkIfExists: true), file(read2, checkIfExists: true)]]
             }
             else {
-                read_list << [[id: "${sample.id}_${library.id}", single_end: true],[file(read1, checkIfExists: true)]]
+                read_list << [[id: "${sample.id}_${library.id}", single_end: true,  sample: "${sample.id}"],[file(read1, checkIfExists: true)]]
             }
 
 
@@ -87,13 +106,38 @@ samples.each {sample -> sample.libraries.each {
 
 //"----------------------------------------------------------------------------------------------------------------------------------"
 workflow {
+    //runs the sampleworkflow.
     samplewf(read_list, referenceFasta, referenceFastaFai, referenceFastaDict, refflatFile)
-    
-    if (params.variantCalling) { 
-        Calculateregionswf(samplewf.out.bam, XNonParRegions, YNonParRegions)
-     }
+
+    //checks if variantcalling is applied and runs the following subworkflows if it is applied
+    if(params.variantCalling) {
+        //calculating regions
+        Calculateregionswf(XNonParRegions, YNonParRegions, referenceFasta, referenceFastaFai, referenceFastaDict, variantCallingRegions)
+
+        //calculating regions for preprocessing and running preprocess
+        preprocessregions = variantCallingRegions != null ? variantCallingRegions : referenceFastaFai
+        ScatterRegionsVariant(preprocessregions)
+        preprocesswf(samplewf.out.bam, dbsnpVCF, dbsnpVCFIndex, referenceFasta, referenceFastaFai,
+        referenceFastaDict, ScatterRegionsVariant.out.scatters)
+
+        //running single sample variantcalling
+        SingleSampleCallingwf(bam = preprocesswf.out.bam, bai = preprocesswf.out.bai, referenceFasta,
+            referenceFastaFai, referenceFastaDict, dbsnpVCF, dbsnpVCFIndex, XNonParRegions, YNonParRegions,
+            autosomalregions = Calculateregionswf.out.scatters)
+
+    }
     
 
-        
+    //expression quantification
+    MultiBamExpressionQuantificationwf(bam = samplewf.out.bam, referenceGtfFile, referenceFasta, referenceFastaFai)
+    
+    if (params.lncRNAdetection) {
+        GffRead(MultiBamExpressionQuantificationwf.out.gtf.map {it[1]})
+        Cpat(GffRead.out.gtf, CpatHex, CpatLogitModel, referenceFasta, referenceFastaFai)
+        Gff_Compare_lnc(MultiBamExpressionQuantificationwf.out.gtf, referenceFasta << referenceFastaFai[1], referenceGtfFile)
+
+
+    }
+    
 }
 
