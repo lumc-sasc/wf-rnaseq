@@ -1,0 +1,1 @@
+/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/work/03/2616ab71e80c6e9da3d6959337282b/rna7_stringtie.gene.abundance.txt

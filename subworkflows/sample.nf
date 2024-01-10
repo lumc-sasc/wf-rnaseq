@@ -90,14 +90,49 @@ workflow samplewf{
         markduplicates_report = params.umiDeduplication ?
             [Picard_Markduplicates.out.metrics, Picard_Markduplicates_dedup.out.metrics] :
             Picard_Markduplicates.out.metrics
+
+        //Changing the reports identifiction so it can be joined with the others
+        QCwf.out.reports.map { instance ->
+            identification = "report"
+            reports = instance[1,-1].flatten()
+            return [identification, reports]}.groupTuple()
+        .map{return [[id:it[0]], it[1].flatten()]}.set{QC_reports}
+
         
-        dedup_report = params.umiDeduplication ? Dedup.out.log : null
+        BamMetricswf.out.reports.map { instance ->
+            identification = "report"
+            reports = instance[1,-1].flatten()
+            return [identification, reports]}.groupTuple()
+        .map{return [[id:it[0]], it[1].flatten()]}.set{BamMetrics_reports}
+
+        alignment_reports.map { instance ->
+            identification = "report"
+            reports = instance[1,-1].flatten()
+            return [identification, reports]}.groupTuple()
+        .map{return [[id:it[0]], it[1].flatten()]}.set{alignment_reports}
 
 
+        markduplicates_report.map { instance ->
+            identification = "report"
+            reports = instance[1]
+            return [identification, reports]}.groupTuple()
+        .map{return [[id:it[0]], it[1].flatten()]}.set{markduplicates_report}
+        
+        if (params.umiDeduplication) {
+            Dedup.out.log.map { instance ->
+                identification = "report"
+                reports = instance[1]
+                return [identification, reports]}.groupTuple()
+            .map{return [[id:it[0]], it[1].flatten()]}.set{Dedup_reports}
+        }
     
+
+        reports = QC_reports.join(BamMetrics_reports).join(alignment_reports).join(markduplicates_report)
+        reports = params.umiDeduplication ? reports.join(Dedup.out.log) : reports
+
     emit:
-    bam = params.umiDeduplication ? duplicates_dedup_output: duplicates_output
-    reports = [QCwf.out.reports, BamMetricswf.out.reports, alignment_reports, markduplicates_report, dedup_report]
+        bam = params.umiDeduplication ? duplicates_dedup_output: duplicates_output
+        reports = reports
 
 }
 

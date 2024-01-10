@@ -600,3 +600,321 @@
 2023-12-01 11:13:24	-	serene_meitner	-	f2d33d1edde6e0bed54c7af82435b758	9189145d-1ecf-46a7-8358-811bf875e8ce	nextflow run RNA-seq.nf
 2023-12-01 11:14:25	-	soggy_planck	-	f2d33d1edde6e0bed54c7af82435b758	b1e8ca8b-6f93-4eb6-8ff2-f46f559511c4	nextflow run RNA-seq.nf
 2023-12-01 11:15:08	7m 47s	irreverent_cori	ERR	f2d33d1edde6e0bed54c7af82435b758	485707f0-739e-4272-8c0f-4ccb2f1ca286	nextflow run RNA-seq.nf
+2023-12-04 10:25:48	-	stupefied_liskov	-	f2d33d1edde6e0bed54c7af82435b758	2aba62df-56e4-425e-9714-9534c1de3257	nextflow run RNA-seq.nf
+2023-12-04 10:43:13	10.4s	kickass_banach	ERR	f2d33d1edde6e0bed54c7af82435b758	81008770-69eb-4ce1-943c-c86f1eaa0bc9	nextflow run RNA-seq.nf
+2023-12-04 10:43:40	20.2s	lonely_bartik	ERR	f2d33d1edde6e0bed54c7af82435b758	afaec047-ca19-40f0-a31c-2d9f41f32031	nextflow run RNA-seq.nf
+2023-12-04 10:48:17	7h 17m 26s	soggy_boyd	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf
+2023-12-05 11:54:08	7m 21s	stupefied_stonebraker	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-06 09:59:27	40.3s	cheeky_nobel	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-06 10:00:44	3m 46s	happy_carson	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-06 10:09:59	51m 35s	big_monod	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-06 11:04:51	42.8s	lonely_lattes	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-06 11:06:36	8h 37m 44s	deadly_raman	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-07 09:28:52	54.3s	ecstatic_swanson	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-07 09:29:51	1m 38s	cheesy_ride	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-07 09:32:34	5h 23m 11s	exotic_heisenberg	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-07 14:56:01	18h 28m 5s	desperate_leakey	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-08 09:24:28	2m 33s	grave_bhabha	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-08 09:27:05	2m 53s	mighty_archimedes	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-08 09:34:55	47m 35s	exotic_neumann	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-08 10:22:45	3m 21s	dreamy_wright	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-08 10:26:12	1m 44s	mighty_curry	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-08 10:28:00	46.8s	loving_coulomb	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-08 10:29:39	32.8s	soggy_leakey	ERR	f2d33d1edde6e0bed54c7af82435b758	d12e3742-d75a-4c86-8f42-5a4a8cc35e34	nextflow run RNA-seq.nf -resume
+2023-12-08 10:32:32	23m 32s	wise_ramanujan	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf
+2023-12-08 10:56:09	1m 29s	shrivelled_kalam	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-08 10:57:52	1h 46m 59s	extravagant_wozniak	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-08 12:48:31	37m 56s	mighty_angela	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-08 13:26:32	1h 6m 25s	trusting_kilby	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-08 14:43:25	1m 16s	fabulous_engelbart	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-08 14:47:31	5s	nice_curie	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-08 14:47:47	6.3s	infallible_wiles	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-08 14:49:03	6.7s	elated_watson	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-08 14:52:10	6.5s	disturbed_picasso	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-08 14:53:35	7.3s	tender_mercator	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-08 14:55:02	6.9s	lethal_noyce	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-08 14:55:52	2d 19h 45m 28s	spontaneous_liskov	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-11 10:41:33	3m 25s	desperate_poisson	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-11 10:47:53	2h 33m 35s	focused_mercator	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-11 13:34:11	10m 49s	silly_lamarck	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-11 13:45:05	6.7s	mad_visvesvaraya	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-11 13:45:20	6.7s	cheeky_volhard	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-11 13:46:01	7.7s	pedantic_banach	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-11 13:46:37	7.3s	scruffy_poitras	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-11 13:50:08	7d 9h 13m 37s	gigantic_murdock	OK	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-19 14:13:22	1m 41s	exotic_gauss	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-19 14:15:34	3m 21s	stupefied_mcclintock	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-19 14:19:45	12m 42s	reverent_mclean	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-19 14:32:32	17h 34m 33s	compassionate_noether	OK	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-20 10:30:56	10.5s	mighty_heyrovsky	OK	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-20 10:40:20	10.5s	sick_lattes	OK	a5bae17a0ed7addef30e7c066ece323a	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-20 10:49:34	10.7s	suspicious_cuvier	OK	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-20 10:50:27	10.9s	small_celsius	OK	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-20 10:50:54	10.5s	sick_stonebraker	OK	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-20 10:51:21	10.2s	berserk_kilby	OK	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-20 10:52:15	10.5s	tender_kay	OK	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-20 11:05:40	-	stupefied_gauss	-	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-20 11:06:32	-	reverent_meucci	-	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-20 11:07:17	-	hungry_roentgen	-	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-20 11:07:46	10.6s	romantic_kirch	OK	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-22 15:39:21	-	nasty_mcclintock	-	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-22 15:51:44	10.1s	intergalactic_mahavira	OK	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-22 15:58:45	-	spontaneous_allen	-	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-22 15:59:32	6.4s	cheesy_bhaskara	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-22 16:00:06	7.3s	golden_celsius	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-22 16:00:44	7.1s	clever_payne	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-22 16:01:06	7.5s	marvelous_ekeblad	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-22 16:05:15	7.3s	big_bartik	ERR	f2d33d1edde6e0bed54c7af82435b758	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-22 16:08:24	55.3s	evil_nightingale	OK	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 09:20:29	1m 11s	exotic_hopper	OK	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 09:21:48	35s	peaceful_wilson	OK	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 09:28:57	-	hungry_rubens	-	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 09:30:16	12.3s	dreamy_ardinghelli	ERR	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 09:32:59	11.3s	intergalactic_magritte	ERR	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 09:33:44	41s	soggy_wright	ERR	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 09:36:02	13.3s	deadly_northcutt	ERR	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 09:47:07	10.6s	insane_ardinghelli	ERR	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 09:52:34	45.7s	deadly_neumann	ERR	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 09:54:13	7.7s	agitated_faggin	ERR	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 09:55:19	45.9s	ecstatic_leibniz	ERR	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 10:27:36	-	goofy_bell	-	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 10:29:09	4m 25s	focused_marconi	OK	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 10:37:31	1m 20s	wise_avogadro	OK	cc3dabf29badd4bfaeb961601fbaee60	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 11:12:07	-	insane_davinci	-	5978b7e373db8b1a2b52991cfa237a88	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 11:12:43	-	small_carlsson	-	085e13ac41a20f4f09eb090b4f9df15f	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 11:13:25	6.1s	reverent_agnesi	ERR	ee1d2913a9821c3e384e2c59be3ca8df	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 11:14:08	-	naughty_cray	-	aeeb92809b38ac40ad62b8d96de62f20	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 11:14:27	6s	confident_lalande	ERR	3914d0a2f57915078e71b414ef10f994	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 11:15:33	5.7s	suspicious_goldstine	ERR	c090ca022d98cac7a4a68207f79f8e71	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 11:15:54	5.2s	lonely_ramanujan	ERR	fb3930143e5281a3266f22a2de485dae	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 11:21:34	-	extravagant_stonebraker	-	d6b98efdd60fbc542045a5e77934deb3	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 11:22:17	-	exotic_shockley	-	d6b98efdd60fbc542045a5e77934deb3	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 11:23:23	6.2s	sick_payne	ERR	d6b98efdd60fbc542045a5e77934deb3	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 11:23:58	20.1s	hopeful_marconi	ERR	0c0804e1ca972a02ff7ecaf316e9538a	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 11:35:12	-	romantic_kilby	-	0c0804e1ca972a02ff7ecaf316e9538a	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 11:37:34	8.6s	clever_bhaskara	ERR	0c0804e1ca972a02ff7ecaf316e9538a	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-27 11:41:10	2h 14m 11s	shrivelled_turing	OK	781ea5b0865bff449a2a37a86f3a9f5b	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-28 10:11:35	2m 36s	happy_mclean	OK	1347b586e8899258dba8b9b7872cf932	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-28 10:15:08	1m 26s	hungry_colden	OK	1347b586e8899258dba8b9b7872cf932	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-28 10:17:09	1m 34s	dreamy_mandelbrot	ERR	5a62e2f70620ac6a9ac4b76b264fa9dc	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-28 10:19:27	1m 1s	ecstatic_goodall	ERR	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-28 10:20:54	-	drunk_becquerel	-	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-28 10:21:13	9.3s	shrivelled_archimedes	ERR	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-28 10:21:51	10.5s	pensive_wilson	OK	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-28 10:23:02	36.1s	chaotic_galileo	ERR	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-28 10:23:43	10.1s	golden_hopper	OK	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-28 10:24:57	6.5s	focused_shannon	ERR	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-28 10:25:20	7.9s	admiring_hypatia	ERR	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-28 10:30:14	1m 30s	backstabbing_mirzakhani	ERR	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-28 10:32:22	10.5s	distraught_leibniz	ERR	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2023-12-28 10:36:23	2h 4m 20s	kickass_goldwasser	OK	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:03:59	2m 27s	sick_mayer	OK	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:09:08	11.8s	friendly_rubens	ERR	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:09:36	10.3s	jovial_yalow	OK	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:09:56	19.5s	suspicious_ritchie	ERR	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:10:44	11.2s	naughty_jennings	ERR	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:12:36	10.6s	furious_ekeblad	OK	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:13:15	9.9s	mighty_babbage	ERR	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:13:42	8.5s	trusting_spence	ERR	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:14:11	10.3s	romantic_yalow	OK	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:18:45	9.1s	silly_easley	ERR	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:19:51	12m 45s	gloomy_brattain	OK	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:33:19	10s	fabulous_lichterman	OK	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:33:42	10.2s	shrivelled_snyder	OK	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:34:27	2m 15s	pedantic_liskov	OK	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:44:48	-	wise_lamarck	-	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:45:35	10.7s	astonishing_knuth	OK	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:47:36	-	compassionate_pike	-	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 10:48:02	22m 58s	small_bhabha	ERR	b44ad0b8fc0de9ccc4fc8c07ff2d98d1	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 11:11:57	24.5s	extravagant_boltzmann	ERR	b5dc74426098d942e24054ec2465209c	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 11:12:51	9m 14s	festering_neumann	ERR	e0ae1ce6d8525a6b04ded02b50b49de8	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 11:23:07	-	sick_hopper	-	a255f6b08571020dee6e81177dc24c21	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 11:23:24	9m 26s	infallible_curry	ERR	44a85ea90fff49a08aeb72270456c989	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 11:33:31	-	nauseous_edison	-	ce529f0efe6370097715527b8f0f5807	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 11:33:59	1m 56s	gigantic_euler	ERR	db0db90d359f61d9c1da99e4a0f3b846	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-02 11:36:25	26m 26s	focused_ampere	OK	0fe5f8848832dd131f9e4cd6d0692872	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-08 11:38:11	11s	dreamy_sammet	ERR	0fe5f8848832dd131f9e4cd6d0692872	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-08 11:38:39	4m 1s	soggy_nightingale	OK	0fe5f8848832dd131f9e4cd6d0692872	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-08 14:09:54	3m 39s	kickass_gutenberg	ERR	0fe5f8848832dd131f9e4cd6d0692872	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-08 14:23:04	-	lonely_majorana	-	0fe5f8848832dd131f9e4cd6d0692872	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-08 14:25:56	40.5s	pensive_feynman	OK	0fe5f8848832dd131f9e4cd6d0692872	ba7f741e-e130-4526-af8a-96162bcc1f43	nextflow run RNA-seq.nf -resume
+2024-01-08 14:35:21	5.2s	backstabbing_coulomb	OK	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -preview -with-dag
+2024-01-08 14:41:27	12.8s	silly_church	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-08 14:43:37	3h 22m 21s	mighty_varahamihira	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 00:22:08	46m 17s	distraught_bassi	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 01:08:31	52m 25s	sleepy_pike	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 09:23:53	53m 21s	nasty_chandrasekhar	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:22:48	34s	lonely_dalembert	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:23:27	7.1s	elated_keller	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:26:24	9.4s	dreamy_lovelace	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:26:38	7.5s	voluminous_euler	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:27:57	9.5s	wise_ride	ERR	c6d020224da572c21e7bbabf2cfc4b7f	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:29:24	7.4s	ecstatic_church	ERR	c6d020224da572c21e7bbabf2cfc4b7f	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:33:40	7.8s	small_torricelli	ERR	c6d020224da572c21e7bbabf2cfc4b7f	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:34:42	7.2s	hungry_sax	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:35:10	10.2s	backstabbing_easley	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:35:25	6.9s	prickly_khorana	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:35:51	7s	astonishing_keller	ERR	c6d020224da572c21e7bbabf2cfc4b7f	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:39:02	7.2s	nostalgic_borg	ERR	c6d020224da572c21e7bbabf2cfc4b7f	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:39:56	6.9s	tender_elion	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:40:32	7.1s	awesome_meucci	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:41:19	7.9s	reverent_montalcini	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:41:49	9.4s	irreverent_brenner	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:42:03	7.1s	reverent_meitner	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:43:07	10.7s	clever_lovelace	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:43:22	9.7s	adoring_yalow	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:43:37	7.2s	astonishing_gates	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:44:56	7.7s	ecstatic_poincare	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:48:32	7.8s	nasty_descartes	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:50:27	7.4s	admiring_wilson	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:51:11	7.9s	suspicious_joliot	ERR	0cbe2956372754dc5bf123ba21462480	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:52:06	9.6s	curious_solvay	ERR	29ee18b62ac419ada6607141e79d5486	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:52:20	8.6s	distraught_nightingale	ERR	29ee18b62ac419ada6607141e79d5486	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:52:33	13.6s	lonely_mcclintock	ERR	29ee18b62ac419ada6607141e79d5486	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:52:54	7.3s	cheeky_volta	ERR	29ee18b62ac419ada6607141e79d5486	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:53:30	9s	determined_swartz	ERR	1441a579b3493d0e2960e3ac1c108b50	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:53:43	7.6s	ridiculous_caravaggio	ERR	1441a579b3493d0e2960e3ac1c108b50	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:54:11	6.9s	curious_wright	ERR	058b11875aebe2f308df4f8d78a6faf1	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:54:30	7.1s	drunk_solvay	ERR	777e1f040287e2f1eb56d6b99d1739bd	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:57:40	7.4s	sleepy_bartik	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:59:02	10.4s	evil_fermat	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:59:18	7.2s	voluminous_montalcini	ERR	0fe5f8848832dd131f9e4cd6d0692872	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 10:59:50	7.9s	amazing_swanson	ERR	d3d2dedcebdaa556454f536b14c6b861	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:00:29	7.8s	suspicious_mestorf	ERR	d3d2dedcebdaa556454f536b14c6b861	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:02:07	9.3s	grave_poincare	ERR	d3d2dedcebdaa556454f536b14c6b861	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:02:24	7.3s	elegant_jepsen	ERR	d3d2dedcebdaa556454f536b14c6b861	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:03:33	9.7s	mad_moriondo	ERR	b5792964703f4f8aee7af8aabe0c5d05	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:03:47	9.3s	pensive_visvesvaraya	ERR	b5792964703f4f8aee7af8aabe0c5d05	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:04:01	7.8s	tiny_torvalds	ERR	b5792964703f4f8aee7af8aabe0c5d05	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:05:07	9.3s	naughty_goldberg	ERR	6250752da470dce00a30e62c28864009	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:05:21	7.4s	clever_faggin	ERR	6250752da470dce00a30e62c28864009	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:05:43	7.3s	sick_meitner	ERR	de58d45ef84f65c88b0492f730dca9ae	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:06:42	14.1s	distracted_kilby	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:08:52	8s	cranky_austin	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:09:11	10.4s	golden_cuvier	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:11:36	8.2s	pedantic_gautier	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:12:11	7.4s	tender_yalow	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:12:48	6.1s	kickass_lamarck	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:12:59	8.1s	deadly_bassi	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:13:44	10.9s	irreverent_williams	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:27:14	13s	evil_kilby	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:27:53	13.3s	awesome_galileo	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:29:47	13.4s	romantic_woese	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:31:00	13s	confident_hopper	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:32:24	14s	awesome_ride	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:40:01	9.7s	condescending_avogadro	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:40:22	8.4s	clever_bhabha	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:41:48	9.7s	romantic_khorana	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:42:28	11s	admiring_poincare	OK	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:45:10	11.4s	elated_boyd	OK	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:46:42	11.2s	tiny_mandelbrot	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:47:43	8s	clever_darwin	ERR	53adc495cb3f64223a4c84f6397396df	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:48:41	8.8s	magical_curran	ERR	b220a07f9aeabc234bff7761c83f5f25	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:49:22	8s	loving_marconi	ERR	590b387766f2640d9ec5c65e044948c0	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:50:02	7.8s	amazing_wozniak	ERR	983000b77dd40bc35348133274096381	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:50:28	10.8s	tiny_wozniak	ERR	24c5d9dc312d0df47ddc4c302954b5d2	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:50:43	10.1s	focused_cajal	ERR	24c5d9dc312d0df47ddc4c302954b5d2	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:50:57	8.4s	deadly_bohr	ERR	24c5d9dc312d0df47ddc4c302954b5d2	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:52:03	8.4s	cranky_easley	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:53:12	9.5s	distracted_rosalind	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:53:28	8.3s	focused_celsius	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:53:54	7.7s	soggy_faraday	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:54:13	10.4s	extravagant_marconi	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:54:28	8.2s	focused_tuckerman	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:55:05	7.7s	cheeky_wing	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:55:23	8.5s	small_ride	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:55:36	7.9s	grave_cori	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:55:59	8.2s	desperate_ptolemy	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:56:46	29.2s	dreamy_edison	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:57:20	8s	maniac_faggin	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:58:00	7.5s	fervent_pesquet	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:59:34	10.8s	soggy_thompson	OK	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 11:59:52	10.1s	condescending_mayer	OK	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:00:13	12.4s	ridiculous_panini	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:00:30	10.7s	magical_cuvier	OK	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:01:54	10.4s	sharp_khorana	OK	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:02:24	11s	nice_thompson	OK	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:02:58	9.6s	exotic_mayer	ERR	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:03:12	10.6s	gloomy_jennings	OK	9ae7ab9ff4c3dc26c4e88f896bae35e6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:04:12	9.3s	curious_shockley	ERR	bc69bb026ceecc2d3fedd3907e988176	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:04:26	10.5s	festering_murdock	OK	bc69bb026ceecc2d3fedd3907e988176	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:07:08	10.5s	exotic_williams	OK	bc69bb026ceecc2d3fedd3907e988176	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:07:55	9.2s	sleepy_kirch	ERR	05941c4791b690af3d45cf6c82d3e9c6	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:08:41	11.4s	gigantic_snyder	OK	200713348dba4e59d1ea01670e3adfe2	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:09:14	8.8s	admiring_pike	ERR	6388389354f396daf7079f275ce8470f	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:10:04	11.2s	boring_pare	ERR	6388389354f396daf7079f275ce8470f	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:10:21	8.7s	romantic_angela	ERR	6388389354f396daf7079f275ce8470f	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:13:06	-	gigantic_cray	-	6ea9ffada0e37ba97feb5ca86ff8d82c	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:13:21	-	chaotic_jennings	-	dc8f75d8d3b355ef92440f62e02e92b4	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:14:16	-	backstabbing_northcutt	-	0c36d80d86b06b78af76d55ea6dbb6f9	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:15:03	12.5s	extravagant_hypatia	ERR	5aed39c9b5329173ad3f808e57dcbbc0	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:15:54	9s	evil_kare	ERR	5aed39c9b5329173ad3f808e57dcbbc0	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:16:26	8.8s	adoring_planck	ERR	7ac6cef89894c77f742f8e60d3da283e	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:17:02	11.9s	amazing_shirley	ERR	948ae8358f90a79b7552e893e09b8068	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:17:19	11.3s	chaotic_turing	OK	948ae8358f90a79b7552e893e09b8068	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:17:52	10.4s	backstabbing_boltzmann	ERR	948ae8358f90a79b7552e893e09b8068	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:18:09	11.3s	cheeky_picasso	ERR	948ae8358f90a79b7552e893e09b8068	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:18:25	9.1s	hungry_gutenberg	ERR	948ae8358f90a79b7552e893e09b8068	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:19:56	8.1s	admiring_mayer	ERR	674374b0a96ff0ad041248b362a68180	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:21:19	10.4s	extravagant_brown	ERR	3432ea2ed55138a55ceea6717d4189a0	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:21:34	8s	hungry_celsius	ERR	3432ea2ed55138a55ceea6717d4189a0	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:26:32	10s	sleepy_golick	ERR	8fa65280363685863ab105f20dd5c614	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:26:46	13.3s	infallible_bhaskara	ERR	8fa65280363685863ab105f20dd5c614	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:27:05	8.2s	sick_murdock	ERR	8fa65280363685863ab105f20dd5c614	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:27:53	8.5s	sick_noyce	ERR	8fa65280363685863ab105f20dd5c614	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:28:42	8.2s	focused_davinci	ERR	9defebb7299b5929da65e34ea01ad6b7	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:29:34	9.6s	spontaneous_brown	ERR	13828230d6b2487166c347a4bc454ae9	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:30:00	7.8s	astonishing_bhabha	ERR	ce75614819b5f7e720556e58d5f9db5d	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:30:48	-	fervent_lichterman	-	b09983f9b6a59dafbaa6dbfbcf2cb443	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:31:28	8.5s	admiring_babbage	ERR	6e164ce80c7542ad28b732498e3f478b	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 12:37:23	1m 11s	awesome_keller	OK	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:19:04	9.2s	determined_kilby	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:19:19	10.1s	jovial_brahmagupta	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:19:53	10.5s	dreamy_wescoff	OK	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:20:31	10.8s	confident_pike	OK	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:21:35	-	confident_leibniz	-	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:22:14	10.9s	fervent_jennings	OK	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:23:09	11.1s	prickly_stone	OK	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:23:42	10.1s	evil_bose	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:23:57	10.1s	cheeky_hawking	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:24:12	10.3s	sick_baekeland	OK	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:25:34	10.6s	irreverent_boyd	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:25:50	10.5s	magical_becquerel	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:26:05	10.8s	nauseous_venter	OK	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:26:38	10.3s	jovial_angela	OK	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-09 13:27:19	40.7s	clever_mclean	OK	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 09:48:40	9.8s	modest_avogadro	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 09:56:05	8.8s	nauseous_williams	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 09:56:25	8.9s	confident_kilby	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 09:57:28	8.1s	agitated_almeida	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 09:57:40	9.5s	naughty_hilbert	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 09:58:09	10.3s	ridiculous_linnaeus	OK	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 09:58:34	40.7s	stupefied_kimura	OK	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:18:20	9s	tiny_austin	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:18:34	10s	serene_carlsson	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:18:50	9.6s	desperate_montalcini	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:19:31	6.9s	happy_bell	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:19:49	8.8s	irreverent_tuckerman	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:21:55	9.4s	awesome_ptolemy	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:22:32	40.5s	crazy_fourier	OK	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:25:06	9s	nice_boltzmann	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:26:48	8.9s	extravagant_mendel	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:27:52	8.2s	golden_dubinsky	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:28:52	9.4s	deadly_liskov	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:30:00	10s	condescending_gilbert	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:32:40	9.9s	tiny_hawking	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:34:27	8.6s	elegant_mcclintock	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:36:17	8.1s	nostalgic_caravaggio	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:37:11	-	compassionate_brahmagupta	-	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:41:19	9.4s	suspicious_williams	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:46:42	9.7s	berserk_bohr	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:47:27	9.3s	festering_lagrange	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:48:10	8.6s	mighty_hamilton	ERR	d66184140f2971713d17b1042925a08e	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:49:14	9s	thirsty_golick	ERR	f90f07e165032cc7d5a9287094f0f47e	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:49:28	8s	voluminous_church	ERR	f90f07e165032cc7d5a9287094f0f47e	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:49:41	10.4s	silly_poitras	ERR	f90f07e165032cc7d5a9287094f0f47e	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:50:39	9.1s	cranky_noether	ERR	f90f07e165032cc7d5a9287094f0f47e	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:53:36	9.3s	admiring_bartik	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:53:49	9.1s	shrivelled_ritchie	ERR	1f8ee6b81e4a211df044069e76c4ef48	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:54:13	20.1s	infallible_swanson	ERR	f90f07e165032cc7d5a9287094f0f47e	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume
+2024-01-10 10:55:15	45.5s	furious_banach	OK	f90f07e165032cc7d5a9287094f0f47e	226558f3-85ba-45d3-bce9-711a1f4a0ffd	nextflow run RNA-seq.nf -resume

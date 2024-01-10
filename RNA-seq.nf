@@ -12,6 +12,7 @@
     include {GFFREAD as GffRead} from "./modules/gffread/main.nf"
     include {CPAT as Cpat} from "./custom_modules/cpat/main.nf"
     include {GFFCOMPARE as Gff_Compare_lnc} from "./modules/gffcompare/main.nf"
+    include {MULTIQC as MultiQc} from './modules/multiqc/main.nf'
     import org.yaml.snakeyaml.Yaml
     
     
@@ -44,8 +45,8 @@
         null
 
     referenceGtfFile = file("./inputfiles/${params.referenceGtfFile}").exists() ?
-        Channel.value([[id: "refgtf"],[file("./inputfiles/${params.referenceGtfFile}")]]) : 
-        Channel.value([[id: "refgtf"],[]])
+        [[id: "refgtf"],[file("./inputfiles/${params.referenceGtfFile}")]] : 
+        [[id: "refgtf"],[]]
     
     CpatLogitModel = file("./inputfiles/${params.cpatLogitModel}").exists() ? 
         Channel.value(file("./inputfiles/${params.cpatLogitModel}")) : Channel.value([]).toList()
@@ -138,6 +139,11 @@ workflow {
 
 
     }
+    MultiBamExpressionQuantificationwf.out.report.view()
+    reports = samplewf.out.reports.join(MultiBamExpressionQuantificationwf.out.report)
+    reports.map { return [it[1], it[2]].flatten()}.set{reports}
+    MultiQc(reports,[],[],[])
+
     
 }
 

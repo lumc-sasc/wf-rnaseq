@@ -5,7 +5,7 @@ process COLLECT_COLUMN {
     val(column)
 
     output:
-    path("*.csv")
+    path("*.csv"), emit: csv
 
     container "quay.io/biocontainers/collect-columns:1.0.0--py_0"
 

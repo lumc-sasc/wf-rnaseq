@@ -1,0 +1,1 @@
+/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/work/04/90cd6e6cb07e0f30282bdd92542114/rna3.MarkDuplicates.metrics.txt

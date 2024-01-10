@@ -1,0 +1,800 @@
+Jan-10 10:49:12.461 [main] DEBUG nextflow.cli.Launcher - $> nextflow run RNA-seq.nf -resume
+Jan-10 10:49:12.831 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Jan-10 10:49:12.854 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/vperinbanathan/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Jan-10 10:49:12.923 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jan-10 10:49:12.924 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jan-10 10:49:12.928 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jan-10 10:49:12.940 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jan-10 10:49:12.962 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/nextflow.config
+Jan-10 10:49:12.963 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/nextflow.config
+Jan-10 10:49:13.009 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jan-10 10:49:14.763 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Jan-10 10:49:14.785 [main] INFO  nextflow.cli.CmdRun - Launching `RNA-seq.nf` [thirsty_golick] DSL2 - revision: f90f07e165
+Jan-10 10:49:14.785 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jan-10 10:49:14.786 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jan-10 10:49:14.796 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/vperinbanathan/.nextflow/secrets/store.json
+Jan-10 10:49:14.800 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@51a16adf] - activable => nextflow.secret.LocalSecretsProvider@51a16adf
+Jan-10 10:49:14.863 [main] DEBUG nextflow.Session - Session UUID: 226558f3-85ba-45d3-bce9-711a1f4a0ffd
+Jan-10 10:49:14.863 [main] DEBUG nextflow.Session - Run name: thirsty_golick
+Jan-10 10:49:14.865 [main] DEBUG nextflow.Session - Executor pool size: 8
+Jan-10 10:49:14.873 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jan-10 10:49:14.878 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jan-10 10:49:14.902 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC (17:07 CEST)
+  System: Linux 4.18.0-513.9.1.el8_9.x86_64
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.1+13-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 3210053@res-hpc-lo04.researchlumc.nl [145.88.76.219]
+  CPUs: 8 - Mem: 31.4 GB (3.9 GB) - Swap: 6 GB (3.5 GB)
+Jan-10 10:49:14.982 [main] DEBUG nextflow.Session - Work-dir: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/work [nfs]
+Jan-10 10:49:14.982 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/bin
+Jan-10 10:49:14.993 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jan-10 10:49:15.005 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jan-10 10:49:15.037 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jan-10 10:49:15.049 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Jan-10 10:49:15.204 [main] DEBUG nextflow.Session - Session start
+Jan-10 10:49:15.665 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jan-10 10:49:17.421 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `splicesites` -- Initialise it to a default value eg. `params.splicesites = some_value`
+Jan-10 10:49:17.463 [main] DEBUG nextflow.Nextflow - No such file or directory: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/null -- Skipping visit
+Jan-10 10:49:19.636 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FASTQC` matches process samplewf:QCwf:read_fastqc
+Jan-10 10:49:19.643 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Jan-10 10:49:19.644 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Jan-10 10:49:19.654 [main] DEBUG nextflow.executor.Executor - [warm up] executor > slurm
+Jan-10 10:49:19.661 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
+Jan-10 10:49:19.663 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: slurm)
+Jan-10 10:49:19.666 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jan-10 10:49:19.747 [main] DEBUG nextflow.Nextflow - No such file or directory: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/null -- Skipping visit
+Jan-10 10:49:19.748 [main] DEBUG nextflow.Nextflow - No such file or directory: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/null -- Skipping visit
+Jan-10 10:49:19.752 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:STAR_GENOMEGENERATE` matches process samplewf:Star_Genomegenerate
+Jan-10 10:49:19.754 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Jan-10 10:49:19.754 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Jan-10 10:49:19.769 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:STAR_ALIGN` matches process samplewf:Star_Align
+Jan-10 10:49:19.775 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Jan-10 10:49:19.776 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Jan-10 10:49:19.786 [main] DEBUG nextflow.Nextflow - No such file or directory: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/null -- Skipping visit
+Jan-10 10:49:19.804 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:PICARD_MARKDUPLICATES` matches process samplewf:Picard_Markduplicates
+Jan-10 10:49:19.807 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Jan-10 10:49:19.807 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Jan-10 10:49:19.818 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:SAMTOOLS_FLAGSTAT` matches process samplewf:BamMetricswf:Samtools_Flagstat
+Jan-10 10:49:19.819 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Jan-10 10:49:19.820 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Jan-10 10:49:19.827 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:PICARD_COLLECTMULTIPLEMETRICS` matches process samplewf:BamMetricswf:Picard_Collectmultiplemetrics
+Jan-10 10:49:19.828 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Jan-10 10:49:19.828 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Jan-10 10:49:19.834 [main] DEBUG nextflow.Nextflow - No such file or directory: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/null -- Skipping visit
+Jan-10 10:49:19.856 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:STRINGTIE_STRINGTIE` matches process MultiBamExpressionQuantificationwf:Stringtie
+Jan-10 10:49:19.857 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Jan-10 10:49:19.857 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Jan-10 10:49:19.869 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:GFFCOMPARE` matches process MultiBamExpressionQuantificationwf:Gff_Compare
+Jan-10 10:49:19.870 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Jan-10 10:49:19.871 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Jan-10 10:49:19.883 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:STRINGTIE_STRINGTIE` matches process MultiBamExpressionQuantificationwf:Stringtie_quan
+Jan-10 10:49:19.885 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Jan-10 10:49:19.885 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Jan-10 10:49:19.891 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:HTSEQ_COUNT` matches process MultiBamExpressionQuantificationwf:Htseq_Count
+Jan-10 10:49:19.892 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Jan-10 10:49:19.892 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Jan-10 10:49:19.896 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:COLLECT_COLUMN` matches process MultiBamExpressionQuantificationwf:Collect_Column_8
+Jan-10 10:49:19.897 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Jan-10 10:49:19.897 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Jan-10 10:49:19.901 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:COLLECT_COLUMN` matches process MultiBamExpressionQuantificationwf:Collect_Column_7
+Jan-10 10:49:19.902 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Jan-10 10:49:19.902 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Jan-10 10:49:19.911 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:COLLECT_COLUMN` matches process MultiBamExpressionQuantificationwf:Collect_Column_count
+Jan-10 10:49:19.912 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Jan-10 10:49:19.912 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Jan-10 10:49:19.927 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MULTIQC` matches process MultiQc
+Jan-10 10:49:19.929 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Jan-10 10:49:19.929 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Jan-10 10:49:19.932 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: Gatk4_HaplotypecallerX, Gatk4_HaplotypecallerY, MultiBamExpressionQuantificationwf:Stringtie, GATK4_GATHERBQSRREPORTS, MultiQc, BCFTOOLS_STATS, samplewf:QCwf:read_fastqc, GFFCOMPARE, ScatterRegions, samplewf:BamMetricswf:Picard_Collectmultiplemetrics, SCATTERREGIONS, Gatk4_Haplotypecaller, Bedtools_IntersectY, Bedtools_IntersectX, Star_Genomegenerate, Picard_Mergevcfs, Picard_Markduplicates, GFFREAD, PICARD_MARKDUPLICATES, ScatterRegionsVariant, Stringtie, MultiBamExpressionQuantificationwf:Collect_Column_8, MultiBamExpressionQuantificationwf:Collect_Column_7, Gff_Compare_lnc, PICARD_MERGEVCFS, GatherBamFiles, GATK4_COMBINEGVCFS, SplitNCigarReads, Cpat, Samtools_Sort, samplewf:Picard_Markduplicates, Picard_Markduplicates_dedup, GATK4_SPLITNCIGARREADS, Gff_Compare, MultiBamExpressionQuantificationwf:Collect_Column_count, Htseq_Count, GATK4_HAPLOTYPECALLER, MultiBamExpressionQuantificationwf:Gff_Compare, GatherBqsrreports, Picard_Collectrnaseqmetrics, Bedtools_Complement, MultiBamExpressionQuantificationwf:Htseq_Count, PICARD_GATHERBAMFILES, ConvertTextToCsv, Samtools_Index, STAR_ALIGN, SAMTOOLS_INDEX, FASTQC, Bcftools_Stats, BEDTOOLS_INTERSECT, Hisat2_Align, PICARD_COLLECTMULTIPLEMETRICS, Bedtools_Intersect, samplewf:Star_Genomegenerate, MULTIQC, Collect_Column_8, CUTADAPT, Collect_Column_7, GATK4_BASERECALIBRATOR, GATK4_APPLYBQSR, Gatk4_Combinegvcfs, SAMTOOLS_SORT, Samtools_Flagstat, GffRead, Dedup, Star_Align, MultiBamExpressionQuantificationwf:Stringtie_quan, Picard_Collectmultiplemetrics, Stringtie_quan, CONVERTTEXTTOCSV, PICARD_COLLECTRNASEQMETRICS, HISAT2_ALIGN, COLLECT_COLUMN, Cutadapt, BaseRecalibrator, SAMTOOLS_FLAGSTAT, BEDTOOLS_COMPLEMENT, UMITOOLS_DEDUP, BEDTOOLS_MERGE, STRINGTIE_STRINGTIE, Samtools_Index_Bqsr, Collect_Column_count, ApplyBqsr, samplewf:Star_Align, Bedtools_Merge, HTSEQ_COUNT, read_fastqc, STAR_GENOMEGENERATE, samplewf:BamMetricswf:Samtools_Flagstat, cutadapt_fastqc, CPAT
+Jan-10 10:49:19.944 [main] DEBUG nextflow.Session - Igniting dataflow network (26)
+Jan-10 10:49:19.945 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > samplewf:QCwf:read_fastqc
+Jan-10 10:49:19.946 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > samplewf:Star_Genomegenerate
+Jan-10 10:49:19.946 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > samplewf:Star_Align
+Jan-10 10:49:19.946 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > samplewf:Picard_Markduplicates
+Jan-10 10:49:19.948 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > samplewf:BamMetricswf:Samtools_Flagstat
+Jan-10 10:49:19.950 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics
+Jan-10 10:49:19.952 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MultiBamExpressionQuantificationwf:Stringtie
+Jan-10 10:49:19.952 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MultiBamExpressionQuantificationwf:Gff_Compare
+Jan-10 10:49:19.952 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MultiBamExpressionQuantificationwf:Stringtie_quan
+Jan-10 10:49:19.953 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MultiBamExpressionQuantificationwf:Htseq_Count
+Jan-10 10:49:19.953 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MultiBamExpressionQuantificationwf:Collect_Column_8
+Jan-10 10:49:19.953 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MultiBamExpressionQuantificationwf:Collect_Column_7
+Jan-10 10:49:19.953 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MultiBamExpressionQuantificationwf:Collect_Column_count
+Jan-10 10:49:19.953 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MultiQc
+Jan-10 10:49:19.954 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_daa78efe7536b7f8: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/expressionquantification/MultiBamExpressionQuantification.nf
+  Script_ee2cc26d51a64259: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./custom_modules/chunked_scatter/scatterregions/main.nf
+  Script_d2eef31ac0921499: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../subworkflows/../modules/picard/collectrnaseqmetrics/main.nf
+  Script_810c50b2736f1a5b: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../subworkflows/../modules/fastqc/main.nf
+  Script_eb9d0450a65129bd: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./modules/multiqc/main.nf
+  Script_baccf33ba6f1543e: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../modules/gatk4/gatherbqsrreports/main.nf
+  Script_962c2ce5d43568d5: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/expressionquantification/../../modules/stringtie/stringtie/main.nf
+  Script_89803290f6c625b2: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/VariantCalling/../../modules/gatk4/haplotypecaller/main.nf
+  Script_58e794dbd977701f: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../modules/samtools/index/main.nf
+  Script_038b2fde7c8e9568: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/preprocess.nf
+  Script_68cd4dbc1365adf7: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../custom_modules/picard/gatherbamfiles/main.nf
+  Script_2fa4b6601d9aa276: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../subworkflows/../modules/samtools/flagstat/main.nf
+  Script_38cb8225f4292560: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../subworkflows/QC.nf
+  Script_328efc009835d3da: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/expressionquantification/../../custom_modules/collect_column/main.nf
+  Script_67731bb3df92545d: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./custom_modules/cpat/main.nf
+  Script_5c67f4d9c12109ff: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../modules/umitools/dedup/main.nf
+  Script_9f3e90e271f1fda3: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/expressionquantification/../../custom_modules/convert_text_to_csv/main.nf
+  Script_82015550d88a31ae: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/VariantCalling/../../custom_modules/picard/Mergevcfs/main.nf
+  Script_d274449395d880f7: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/expressionquantification/../../modules/htseq/count/main.nf
+  Script_a5a011974804f7a8: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./modules/gffcompare/main.nf
+  Script_970be08223625150: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/RNA-seq.nf
+  Script_b68db60d8b39242c: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../modules/gatk4/splitncigarreads/main.nf
+  Script_0ce196381f5062ae: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../subworkflows/BamMetrics.nf
+  Script_e8ee1a24d8bb0724: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/VariantCalling/SingleSampleCalling.nf
+  Script_36d4290842df373a: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../modules/samtools/sort/main.nf
+  Script_661d623767fae8ce: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../modules/bedtools/complement/main.nf
+  Script_db9b80b68a7a0015: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../modules/gatk4/baserecalibrator/main.nf
+  Script_ef24fdbbb895f394: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/VariantCalling/../../modules/gatk4/combinegvcfs/main.nf
+  Script_0ac28ce4bd8e2b42: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../modules/gatk4/applybqsr/main.nf
+  Script_39f3202cb40c09d3: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./modules/gffread/main.nf
+  Script_a8f04bc3124c1b49: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../modules/picard/markduplicates/main.nf
+  Script_4d3815e1c99efe97: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/Calculateregions.nf
+  Script_da03e4793ab0d0dc: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../modules/bedtools/intersect/main.nf
+  Script_607cf507a11cadde: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../modules/star/genomegenerate/main.nf
+  Script_a7da2876e2e1f826: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/sample.nf
+  Script_7b7bad1cdf4f918a: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../subworkflows/../modules/cutadapt/main.nf
+  Script_9f940683b556382b: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../modules/star/align/main.nf
+  Script_1f54896c1e0d2b7f: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../modules/bedtools/merge/main.nf
+  Script_67d1d47d0a37d361: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/VariantCalling/../../modules/bcftools/stats/main.nf
+  Script_f4965cc02fa1ab03: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../subworkflows/../modules/picard/collectmultiplemetrics/main.nf
+  Script_0ece4f9f87f44994: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/./subworkflows/../modules/hisat2/align/main.nf
+Jan-10 10:49:19.954 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jan-10 10:49:19.954 [main] DEBUG nextflow.Session - Session await
+Jan-10 10:49:19.993 [Actor Thread 5] WARN  nextflow.processor.TaskProcessor - Input tuple does not match input set cardinality declared by process `samplewf:Star_Genomegenerate` -- offending value: [[id:fasta], /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/testfiles_big_data/GRCh38_latest_genomic.fna, /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/testfiles_big_data/GRCh38_latest_genomic.fna.fai]
+Jan-10 10:49:20.065 [Actor Thread 12] DEBUG nextflow.container.SingularityCache - Singularity found local store for image=https://depot.galaxyproject.org/singularity/mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2:1df389393721fc66f3fd8778ad938ac711951107-0; path=/exports/sascstudent/vperinbanathan/miniconda3/singularity/depot.galaxyproject.org-singularity-mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2-1df389393721fc66f3fd8778ad938ac711951107-0.img
+Jan-10 10:49:20.065 [Actor Thread 13] DEBUG nextflow.container.SingularityCache - Singularity found local store for image=https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0; path=/exports/sascstudent/vperinbanathan/miniconda3/singularity/depot.galaxyproject.org-singularity-fastqc-0.12.1--hdfd78af_0.img
+Jan-10 10:49:20.212 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [6a/522799] Cached process > samplewf:Star_Genomegenerate (GRCh38_latest_genomic.fna)
+Jan-10 10:49:20.301 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [e6/bfce25] Cached process > samplewf:QCwf:read_fastqc (rna2_S2)
+Jan-10 10:49:20.302 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [a5/b50606] Cached process > samplewf:QCwf:read_fastqc (rna3_S2)
+Jan-10 10:49:20.303 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [75/b5b49f] Cached process > samplewf:QCwf:read_fastqc (rna2_S1)
+Jan-10 10:49:20.307 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [5f/c661dc] Cached process > samplewf:QCwf:read_fastqc (rna1_S3)
+Jan-10 10:49:20.311 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [c4/5a9025] Cached process > samplewf:QCwf:read_fastqc (rna3_S1)
+Jan-10 10:49:20.304 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [97/1f3e46] Cached process > samplewf:QCwf:read_fastqc (rna2_S3)
+Jan-10 10:49:20.315 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [d8/2b2abd] Cached process > samplewf:QCwf:read_fastqc (rna1_S2)
+Jan-10 10:49:20.304 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [c8/957e73] Cached process > samplewf:QCwf:read_fastqc (rna1_S1)
+Jan-10 10:49:20.369 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [bb/bbaba0] Cached process > samplewf:QCwf:read_fastqc (rna4_S2)
+Jan-10 10:49:20.374 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [1d/09949c] Cached process > samplewf:QCwf:read_fastqc (rna4_S3)
+Jan-10 10:49:20.382 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [cf/7477cf] Cached process > samplewf:QCwf:read_fastqc (rna3_S3)
+Jan-10 10:49:20.390 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [06/8be920] Cached process > samplewf:Star_Align (rna2_S2)
+Jan-10 10:49:20.391 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [b8/a53b3c] Cached process > samplewf:QCwf:read_fastqc (rna4_S1)
+Jan-10 10:49:20.415 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [be/b0398a] Cached process > samplewf:QCwf:read_fastqc (rna5_S2)
+Jan-10 10:49:20.422 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [db/e7f3d0] Cached process > samplewf:QCwf:read_fastqc (rna5_S3)
+Jan-10 10:49:20.424 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [3b/4d67f6] Cached process > samplewf:Star_Align (rna1_S2)
+Jan-10 10:49:20.426 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [03/0ebc94] Cached process > samplewf:Star_Align (rna2_S3)
+Jan-10 10:49:20.439 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [5b/d61255] Cached process > samplewf:QCwf:read_fastqc (rna5_S1)
+Jan-10 10:49:20.455 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [b5/c1df58] Cached process > samplewf:QCwf:read_fastqc (rna6_S3)
+Jan-10 10:49:20.464 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [10/8a2fa2] Cached process > samplewf:QCwf:read_fastqc (rna6_S2)
+Jan-10 10:49:20.467 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [6a/16d204] Cached process > samplewf:QCwf:read_fastqc (rna7_S2)
+Jan-10 10:49:20.470 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [d6/3c11e9] Cached process > samplewf:QCwf:read_fastqc (rna6_S1)
+Jan-10 10:49:20.472 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [75/810cfc] Cached process > samplewf:QCwf:read_fastqc (rna7_S1)
+Jan-10 10:49:20.497 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [9e/fd357c] Cached process > samplewf:QCwf:read_fastqc (rna7_S3)
+Jan-10 10:49:20.501 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [b9/a5f50b] Cached process > samplewf:QCwf:read_fastqc (rna8_S1)
+Jan-10 10:49:20.501 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [28/8eb959] Cached process > samplewf:Star_Align (rna2_S1)
+Jan-10 10:49:20.503 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [cc/83637b] Cached process > samplewf:Star_Align (rna1_S1)
+Jan-10 10:49:20.508 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [1e/7afb52] Cached process > samplewf:QCwf:read_fastqc (rna8_S2)
+Jan-10 10:49:20.511 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [1e/c752e9] Cached process > samplewf:QCwf:read_fastqc (rna9_S1)
+Jan-10 10:49:20.514 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [37/080c0e] Cached process > samplewf:Star_Align (rna3_S1)
+Jan-10 10:49:20.532 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [3f/2466cb] Cached process > samplewf:QCwf:read_fastqc (rna9_S2)
+Jan-10 10:49:20.535 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [6c/ebf739] Cached process > samplewf:QCwf:read_fastqc (rna9_S3)
+Jan-10 10:49:20.540 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [1a/9ff8a1] Cached process > samplewf:QCwf:read_fastqc (rna10_S1)
+Jan-10 10:49:20.546 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [cf/094aea] Cached process > samplewf:QCwf:read_fastqc (rna8_S3)
+Jan-10 10:49:20.550 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.550 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.550 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.550 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.550 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.550 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.550 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.553 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.553 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.553 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.554 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.554 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.554 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.554 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.557 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.557 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.561 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.561 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.561 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.561 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.561 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.566 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [3d/165412] Cached process > samplewf:QCwf:read_fastqc (rna10_S2)
+Jan-10 10:49:20.566 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [4a/dc3365] Cached process > samplewf:QCwf:read_fastqc (rna11_S1)
+Jan-10 10:49:20.569 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [72/4d8e3b] Cached process > samplewf:QCwf:read_fastqc (rna11_S2)
+Jan-10 10:49:20.571 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.571 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.571 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.571 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.572 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.572 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.572 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.572 [Actor Thread 19] INFO  nextflow.processor.TaskProcessor - [12/06523f] Cached process > samplewf:Star_Align (rna3_S2)
+Jan-10 10:49:20.573 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.575 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.576 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.576 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.576 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.576 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.576 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.578 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.578 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.578 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.578 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.578 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.578 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.578 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.579 [Actor Thread 19] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.580 [Actor Thread 19] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.580 [Actor Thread 19] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.580 [Actor Thread 19] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.580 [Actor Thread 19] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.580 [Actor Thread 19] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.580 [Actor Thread 19] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.582 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [32/86dbdf] Cached process > samplewf:QCwf:read_fastqc (rna10_S3)
+Jan-10 10:49:20.584 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [93/295862] Cached process > samplewf:Star_Align (rna1_S3)
+Jan-10 10:49:20.585 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.585 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.585 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.585 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.585 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.586 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.586 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.590 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [dc/33f356] Cached process > samplewf:QCwf:read_fastqc (rna12_S1)
+Jan-10 10:49:20.592 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [74/2e8a48] Cached process > samplewf:QCwf:read_fastqc (rna11_S4)
+Jan-10 10:49:20.600 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [8f/ca3e90] Cached process > samplewf:QCwf:read_fastqc (rna12_S2)
+Jan-10 10:49:20.632 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [b2/82fc6a] Cached process > samplewf:QCwf:read_fastqc (rna12_S3)
+Jan-10 10:49:20.636 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [00/1a6e9e] Cached process > samplewf:Star_Align (rna4_S1)
+Jan-10 10:49:20.638 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.638 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.638 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.638 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.638 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.638 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.638 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.645 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [24/68c6cd] Cached process > samplewf:Star_Align (rna3_S3)
+Jan-10 10:49:20.646 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.648 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.648 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.648 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.648 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.648 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.648 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.656 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [9a/68235c] Cached process > samplewf:QCwf:read_fastqc (rna14_S1)
+Jan-10 10:49:20.661 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [9a/6deb19] Cached process > samplewf:QCwf:read_fastqc (rna13_S3)
+Jan-10 10:49:20.666 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [42/741613] Cached process > samplewf:QCwf:read_fastqc (rna13_S2)
+Jan-10 10:49:20.669 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [d8/bbb633] Cached process > samplewf:QCwf:read_fastqc (rna14_S2)
+Jan-10 10:49:20.669 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [ce/c3ddcd] Cached process > samplewf:QCwf:read_fastqc (rna11_S3)
+Jan-10 10:49:20.669 [Actor Thread 19] INFO  nextflow.processor.TaskProcessor - [d6/6de90f] Cached process > samplewf:Star_Align (rna5_S1)
+Jan-10 10:49:20.671 [Actor Thread 19] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.671 [Actor Thread 19] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.671 [Actor Thread 19] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.671 [Actor Thread 19] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.671 [Actor Thread 19] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.671 [Actor Thread 19] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.671 [Actor Thread 19] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.675 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [10/5edb3c] Cached process > samplewf:Star_Align (rna4_S3)
+Jan-10 10:49:20.676 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.677 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [1d/4e2791] Cached process > samplewf:QCwf:read_fastqc (rna14_S4)
+Jan-10 10:49:20.677 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.678 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.678 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.678 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.678 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.678 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.681 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [a6/dde515] Cached process > samplewf:Star_Align (rna5_S3)
+Jan-10 10:49:20.682 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.682 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.682 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.682 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.682 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.682 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.682 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.683 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [a8/6af2ed] Cached process > samplewf:QCwf:read_fastqc (rna14_S3)
+Jan-10 10:49:20.685 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [f6/6ff974] Cached process > samplewf:Star_Align (rna4_S2)
+Jan-10 10:49:20.687 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.689 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [bc/06a6b4] Cached process > samplewf:Star_Align (rna5_S2)
+Jan-10 10:49:20.705 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.705 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.705 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.705 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.705 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.705 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.707 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.708 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.709 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.709 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [ab/c8f27e] Cached process > samplewf:QCwf:read_fastqc (rna15_S1)
+Jan-10 10:49:20.710 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.710 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.710 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.710 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.713 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [99/515ca1] Cached process > samplewf:QCwf:read_fastqc (rna15_S4)
+Jan-10 10:49:20.710 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [ee/a1837f] Cached process > samplewf:Star_Align (rna6_S1)
+Jan-10 10:49:20.715 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.715 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.716 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.716 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.716 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.716 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.716 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.717 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [6e/39bd16] Cached process > samplewf:Star_Align (rna6_S2)
+Jan-10 10:49:20.718 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [0e/f98bd6] Cached process > samplewf:QCwf:read_fastqc (rna15_S3)
+Jan-10 10:49:20.719 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.719 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [6c/4814cb] Cached process > samplewf:QCwf:read_fastqc (rna16_S3)
+Jan-10 10:49:20.719 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.720 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.721 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.721 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.721 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.721 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.722 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [dd/e67610] Cached process > samplewf:QCwf:read_fastqc (rna13_S1)
+Jan-10 10:49:20.726 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [8b/3f1cea] Cached process > samplewf:QCwf:read_fastqc (rna16_S1)
+Jan-10 10:49:20.750 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [51/6d8e13] Cached process > samplewf:QCwf:read_fastqc (rna15_S2)
+Jan-10 10:49:20.753 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [24/ec94a8] Cached process > samplewf:Star_Align (rna6_S3)
+Jan-10 10:49:20.755 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.755 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.755 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.755 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.755 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.755 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.755 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.757 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [06/f6bec6] Cached process > samplewf:Star_Align (rna7_S2)
+Jan-10 10:49:20.759 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.759 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.759 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.760 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.760 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.760 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.760 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.765 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [18/2e1d9b] Cached process > samplewf:QCwf:read_fastqc (rna16_S2)
+Jan-10 10:49:20.784 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [08/9ed9e1] Cached process > samplewf:Star_Align (rna7_S1)
+Jan-10 10:49:20.786 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.786 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.787 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.787 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.787 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.787 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.787 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.792 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [eb/c210ff] Cached process > samplewf:Star_Align (rna7_S3)
+Jan-10 10:49:20.793 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.794 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.794 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.794 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.795 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.795 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.795 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.797 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [93/944146] Cached process > samplewf:Star_Align (rna8_S2)
+Jan-10 10:49:20.798 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.798 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.798 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.798 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.798 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.798 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.798 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.803 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [79/b97f21] Cached process > samplewf:Star_Align (rna8_S3)
+Jan-10 10:49:20.804 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.807 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.807 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.807 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.807 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.807 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.807 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.810 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [1a/0dcc2e] Cached process > samplewf:Star_Align (rna9_S1)
+Jan-10 10:49:20.811 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.811 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.812 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.812 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.812 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.812 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.812 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.819 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [88/0b5406] Cached process > samplewf:Star_Align (rna9_S2)
+Jan-10 10:49:20.820 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.820 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.820 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.821 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.821 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.821 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.821 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.825 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [0d/564a53] Cached process > samplewf:Star_Align (rna9_S3)
+Jan-10 10:49:20.826 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.827 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.827 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.827 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.827 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.827 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.827 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.830 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [14/136acd] Cached process > samplewf:Star_Align (rna8_S1)
+Jan-10 10:49:20.831 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.832 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.832 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.832 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.832 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.832 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.832 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.842 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [3d/dd7b7a] Cached process > samplewf:Star_Align (rna10_S1)
+Jan-10 10:49:20.843 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.844 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.844 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.844 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.844 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.844 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.844 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.856 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [2f/d50f47] Cached process > samplewf:Star_Align (rna10_S2)
+Jan-10 10:49:20.857 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.858 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.858 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.858 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.858 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.858 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.858 [Actor Thread 17] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.861 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [54/cb3d93] Cached process > samplewf:Star_Align (rna10_S3)
+Jan-10 10:49:20.863 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.864 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.864 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.864 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.864 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.864 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.864 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.868 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [41/bcb53c] Cached process > samplewf:Star_Align (rna11_S1)
+Jan-10 10:49:20.869 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.869 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.869 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.869 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.869 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.869 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.870 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.878 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [c9/2e8a27] Cached process > samplewf:Star_Align (rna11_S2)
+Jan-10 10:49:20.879 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.880 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.880 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.880 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.880 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.880 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.880 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.881 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [e7/5395d2] Cached process > samplewf:Star_Align (rna11_S3)
+Jan-10 10:49:20.882 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.883 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.883 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.883 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.883 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.883 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.883 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.890 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [8c/e38145] Cached process > samplewf:Star_Align (rna11_S4)
+Jan-10 10:49:20.892 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.892 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.892 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.892 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.892 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.892 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.892 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.894 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [39/9e5724] Cached process > samplewf:Star_Align (rna12_S1)
+Jan-10 10:49:20.896 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.896 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.896 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.896 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.896 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.896 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.896 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.911 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [f7/7ca6a3] Cached process > samplewf:Star_Align (rna12_S2)
+Jan-10 10:49:20.912 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.912 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.912 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.912 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.912 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.912 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.912 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.924 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [d6/78e43c] Cached process > samplewf:Star_Align (rna12_S3)
+Jan-10 10:49:20.925 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [19/aa829e] Cached process > samplewf:Star_Align (rna13_S3)
+Jan-10 10:49:20.925 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.926 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.926 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.926 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.926 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.926 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.926 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.927 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.928 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.928 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.928 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.928 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.928 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.928 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.927 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [b7/58ffee] Cached process > samplewf:Star_Align (rna13_S1)
+Jan-10 10:49:20.929 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [30/5562b0] Cached process > samplewf:Star_Align (rna13_S2)
+Jan-10 10:49:20.930 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.930 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.930 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.930 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.930 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.930 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.930 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.931 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.932 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.932 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.932 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.932 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.932 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.932 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.950 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [11/46b25e] Cached process > samplewf:Star_Align (rna14_S1)
+Jan-10 10:49:20.951 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.951 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.951 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.952 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.952 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.952 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.952 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.952 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [a0/0df8c3] Cached process > samplewf:Star_Align (rna14_S2)
+Jan-10 10:49:20.953 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.953 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [24/9cae88] Cached process > samplewf:Star_Align (rna14_S3)
+Jan-10 10:49:20.954 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.967 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.967 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.967 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.967 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.967 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.968 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.968 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.968 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.969 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.969 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.969 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.969 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.971 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [4e/30bcc2] Cached process > samplewf:Star_Align (rna14_S4)
+Jan-10 10:49:20.972 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.974 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.974 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.974 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.974 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.974 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.974 [Actor Thread 13] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.981 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [e1/0ce038] Cached process > samplewf:Star_Align (rna15_S1)
+Jan-10 10:49:20.982 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.982 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.982 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.982 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.982 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.982 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.982 [Actor Thread 15] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.992 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [f1/b6700b] Cached process > samplewf:Star_Align (rna15_S3)
+Jan-10 10:49:20.993 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.993 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.993 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.993 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.993 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.993 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.993 [Actor Thread 18] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.994 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [97/1bfd57] Cached process > samplewf:Star_Align (rna15_S2)
+Jan-10 10:49:20.994 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [44/99e1e8] Cached process > samplewf:Star_Align (rna15_S4)
+Jan-10 10:49:20.996 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.996 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.996 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.996 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.996 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.996 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.996 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:20.997 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:20.997 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:20.997 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:20.997 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:20.997 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:20.997 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:20.997 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:21.006 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [c6/dfe827] Cached process > samplewf:Star_Align (rna16_S1)
+Jan-10 10:49:21.007 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:21.008 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:21.008 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:21.008 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:21.008 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:21.008 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:21.008 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:21.015 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [0a/4ed174] Cached process > samplewf:Star_Align (rna16_S3)
+Jan-10 10:49:21.016 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:21.016 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:21.016 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:21.016 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:21.016 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:21.016 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:21.016 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:21.016 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [58/ce141e] Cached process > samplewf:Star_Align (rna16_S2)
+Jan-10 10:49:21.017 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Jan-10 10:49:21.018 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<7:1>
+Jan-10 10:49:21.018 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<8:1>
+Jan-10 10:49:21.018 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<11:1>
+Jan-10 10:49:21.018 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<12:1>
+Jan-10 10:49:21.018 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<13:1>
+Jan-10 10:49:21.018 [Actor Thread 21] DEBUG nextflow.processor.TaskProcessor - Process samplewf:Star_Align > Skipping output binding because one or more optional files are missing: fileoutparam<14:1>
+Jan-10 10:49:21.024 [Actor Thread 9] WARN  nextflow.processor.TaskProcessor - Input tuple does not match input set cardinality declared by process `samplewf:Picard_Markduplicates` -- offending value: [[id:fasta], /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/testfiles_big_data/GRCh38_latest_genomic.fna, /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/testfiles_big_data/GRCh38_latest_genomic.fna.fai]
+Jan-10 10:49:21.030 [Actor Thread 12] DEBUG nextflow.container.SingularityCache - Singularity found local store for image=https://depot.galaxyproject.org/singularity/picard:3.1.0--hdfd78af_0; path=/exports/sascstudent/vperinbanathan/miniconda3/singularity/depot.galaxyproject.org-singularity-picard-3.1.0--hdfd78af_0.img
+Jan-10 10:49:21.060 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [97/274ed9] Cached process > samplewf:Picard_Markduplicates (rna5)
+Jan-10 10:49:21.062 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [21/b5f93a] Cached process > samplewf:Picard_Markduplicates (rna7)
+Jan-10 10:49:21.063 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [04/90cd6e] Cached process > samplewf:Picard_Markduplicates (rna3)
+Jan-10 10:49:21.064 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [99/49d1d9] Cached process > samplewf:Picard_Markduplicates (rna1)
+Jan-10 10:49:21.066 [Actor Thread 14] WARN  nextflow.processor.TaskProcessor - Input tuple does not match input set cardinality declared by process `MultiBamExpressionQuantificationwf:Stringtie` -- offending value: [[id:rna5], /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/work/97/274ed947c3f331d42ebd61fff71e01/rna5.bam, /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/work/97/274ed947c3f331d42ebd61fff71e01/rna5.bai]
+Jan-10 10:49:21.069 [Actor Thread 8] DEBUG nextflow.container.SingularityCache - Singularity found local store for image=https://depot.galaxyproject.org/singularity/samtools:1.17--h00cdaf9_0; path=/exports/sascstudent/vperinbanathan/miniconda3/singularity/depot.galaxyproject.org-singularity-samtools-1.17--h00cdaf9_0.img
+Jan-10 10:49:21.069 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [f0/d4cdb2] Cached process > samplewf:Picard_Markduplicates (rna4)
+Jan-10 10:49:21.072 [Actor Thread 8] DEBUG nextflow.container.SingularityCache - Singularity found local store for image=https://depot.galaxyproject.org/singularity/stringtie:2.2.1--hecb563c_2; path=/exports/sascstudent/vperinbanathan/miniconda3/singularity/depot.galaxyproject.org-singularity-stringtie-2.2.1--hecb563c_2.img
+Jan-10 10:49:21.075 [Actor Thread 24] WARN  nextflow.processor.TaskProcessor - Input tuple does not match input set cardinality declared by process `samplewf:BamMetricswf:Picard_Collectmultiplemetrics` -- offending value: [[id:fasta], /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/testfiles_big_data/GRCh38_latest_genomic.fna, /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/testfiles_big_data/GRCh38_latest_genomic.fna.fai]
+Jan-10 10:49:21.091 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [e1/9401b5] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna5)
+Jan-10 10:49:21.092 [Actor Thread 19] INFO  nextflow.processor.TaskProcessor - [5b/fa98a4] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna3)
+Jan-10 10:49:21.105 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [5d/90149a] Cached process > samplewf:Picard_Markduplicates (rna2)
+Jan-10 10:49:21.108 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [f6/bee87b] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna1)
+Jan-10 10:49:21.109 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [5d/863cdc] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna7)
+Jan-10 10:49:21.110 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [89/7fe922] Cached process > samplewf:Picard_Markduplicates (rna10)
+Jan-10 10:49:21.118 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [fa/ff7d66] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna5)
+Jan-10 10:49:21.118 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [2d/9cb71c] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna5)
+Jan-10 10:49:21.121 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [f5/f102fb] Cached process > samplewf:Picard_Markduplicates (rna8)
+Jan-10 10:49:21.121 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [b7/eeedf4] Cached process > samplewf:Picard_Markduplicates (rna11)
+Jan-10 10:49:21.121 [Actor Thread 14] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.122 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [16/e170d7] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna4)
+Jan-10 10:49:21.124 [Actor Thread 14] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.125 [Actor Thread 28] INFO  nextflow.processor.TaskProcessor - [05/a03fc6] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna1)
+Jan-10 10:49:21.128 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [47/31a2e2] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna3)
+Jan-10 10:49:21.133 [Actor Thread 28] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.133 [Actor Thread 28] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.133 [Actor Thread 1] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.133 [Actor Thread 1] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.134 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [00/20731c] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna7)
+Jan-10 10:49:21.136 [Actor Thread 6] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.136 [Actor Thread 6] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.147 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [39/0447f0] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna2)
+Jan-10 10:49:21.147 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [5a/6978e1] Cached process > samplewf:Picard_Markduplicates (rna13)
+Jan-10 10:49:21.150 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [03/4ed805] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna4)
+Jan-10 10:49:21.150 [Actor Thread 10] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.150 [Actor Thread 10] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.152 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [4d/548b6b] Cached process > samplewf:Picard_Markduplicates (rna12)
+Jan-10 10:49:21.152 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [d5/62da3e] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna2)
+Jan-10 10:49:21.153 [Actor Thread 23] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.153 [Actor Thread 23] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.158 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [b9/e69cf6] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna7)
+Jan-10 10:49:21.172 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [6b/5f8115] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna8)
+Jan-10 10:49:21.174 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [82/947651] Cached process > samplewf:Picard_Markduplicates (rna15)
+Jan-10 10:49:21.174 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [db/f19c45] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna11)
+Jan-10 10:49:21.175 [Actor Thread 20] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.175 [Actor Thread 20] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.176 [Actor Thread 33] INFO  nextflow.processor.TaskProcessor - [ea/2893e7] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna8)
+Jan-10 10:49:21.176 [Actor Thread 33] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.176 [Actor Thread 33] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.178 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [24/9ccda9] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna10)
+Jan-10 10:49:21.179 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [7e/e5aeeb] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna11)
+Jan-10 10:49:21.180 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [34/49babc] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna12)
+Jan-10 10:49:21.182 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [f9/89ee0e] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna10)
+Jan-10 10:49:21.186 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [b5/996044] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna13)
+Jan-10 10:49:21.187 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [4c/ea2c5c] Cached process > samplewf:Picard_Markduplicates (rna16)
+Jan-10 10:49:21.187 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [b6/7c3430] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna12)
+Jan-10 10:49:21.187 [Actor Thread 37] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.187 [Actor Thread 37] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.188 [Actor Thread 29] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.188 [Actor Thread 29] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.191 [Actor Thread 19] INFO  nextflow.processor.TaskProcessor - [3a/8cf5df] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna2)
+Jan-10 10:49:21.191 [Actor Thread 35] INFO  nextflow.processor.TaskProcessor - [2b/4b3e60] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna15)
+Jan-10 10:49:21.192 [Actor Thread 35] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.192 [Actor Thread 35] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.193 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [f7/b5b2fb] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna1)
+Jan-10 10:49:21.195 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [90/f4cea7] Cached process > samplewf:Picard_Markduplicates (rna9)
+Jan-10 10:49:21.196 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [bd/631e96] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna3)
+Jan-10 10:49:21.198 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [c0/608eb2] Cached process > samplewf:Picard_Markduplicates (rna14)
+Jan-10 10:49:21.202 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [b9/bbe66a] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna4)
+Jan-10 10:49:21.229 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [0f/108db2] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna16)
+Jan-10 10:49:21.229 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [87/0acfcc] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna10)
+Jan-10 10:49:21.229 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [9f/fb2943] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna11)
+Jan-10 10:49:21.229 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.237 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [b9/2bcf18] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna16)
+Jan-10 10:49:21.235 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [f4/f10b60] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna15)
+Jan-10 10:49:21.237 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.239 [Actor Thread 7] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.240 [Actor Thread 7] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.240 [Actor Thread 30] INFO  nextflow.processor.TaskProcessor - [1a/dccf06] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna13)
+Jan-10 10:49:21.242 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [3d/312ee8] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna9)
+Jan-10 10:49:21.243 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [e5/abf5ea] Cached process > samplewf:BamMetricswf:Samtools_Flagstat (rna14)
+Jan-10 10:49:21.243 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [b8/beb125] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna8)
+Jan-10 10:49:21.245 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [88/1cc49b] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna14)
+Jan-10 10:49:21.245 [Actor Thread 6] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.245 [Actor Thread 6] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.256 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [dd/5a4cea] Cached process > MultiBamExpressionQuantificationwf:Stringtie (rna9)
+Jan-10 10:49:21.257 [Actor Thread 37] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<2:1>
+Jan-10 10:49:21.258 [Actor Thread 37] DEBUG nextflow.processor.TaskProcessor - Process MultiBamExpressionQuantificationwf:Stringtie > Skipping output binding because one or more optional files are missing: fileoutparam<3:1>
+Jan-10 10:49:21.307 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process samplewf:Picard_Markduplicates (report) > jobId: 17308798; workDir: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/work/be/f93f6b806875ff499f40e5ec69a70c
+Jan-10 10:49:21.308 [Task submitter] INFO  nextflow.Session - [be/f93f6b] Submitted process > samplewf:Picard_Markduplicates (report)
+Jan-10 10:49:21.371 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process samplewf:Picard_Markduplicates (rna6) > jobId: 17308799; workDir: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/work/3c/9f8ae16194f9ff3a05a28f4509ef3b
+Jan-10 10:49:21.371 [Task submitter] INFO  nextflow.Session - [3c/9f8ae1] Submitted process > samplewf:Picard_Markduplicates (rna6)
+Jan-10 10:49:21.449 [Actor Thread 19] INFO  nextflow.processor.TaskProcessor - [21/7ce8fd] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna13)
+Jan-10 10:49:21.453 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [64/17ed01] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna12)
+Jan-10 10:49:21.457 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [a5/9cdd09] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna15)
+Jan-10 10:49:21.460 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [fd/7437dd] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna16)
+Jan-10 10:49:21.462 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [12/802406] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna9)
+Jan-10 10:49:21.469 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [d2/b850cb] Cached process > samplewf:BamMetricswf:Picard_Collectmultiplemetrics (rna14)
+Jan-10 10:49:22.765 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
+Jan-10 10:49:22.782 [SIGINT handler] DEBUG nextflow.Session - The following nodes are still active:
+[process] samplewf:BamMetricswf:Samtools_Flagstat
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] samplewf:BamMetricswf:Picard_Collectmultiplemetrics
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: -
+  port 2: (value) bound ; channel: -
+  port 3: (cntrl) -     ; channel: $
+
+[process] MultiBamExpressionQuantificationwf:Stringtie
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: annotation_gtf
+  port 2: (cntrl) -     ; channel: $
+
+[process] MultiBamExpressionQuantificationwf:Gff_Compare
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: -
+  port 2: (value) bound ; channel: -
+  port 3: (cntrl) -     ; channel: $
+
+[process] MultiBamExpressionQuantificationwf:Stringtie_quan
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: annotation_gtf
+  port 2: (cntrl) -     ; channel: $
+
+[process] MultiBamExpressionQuantificationwf:Htseq_Count
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: -
+  port 2: (cntrl) -     ; channel: $
+
+[process] MultiBamExpressionQuantificationwf:Collect_Column_8
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: -
+  port 2: (value) bound ; channel: column
+  port 3: (cntrl) -     ; channel: $
+
+[process] MultiBamExpressionQuantificationwf:Collect_Column_7
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: -
+  port 2: (value) bound ; channel: column
+  port 3: (cntrl) -     ; channel: $
+
+[process] MultiBamExpressionQuantificationwf:Collect_Column_count
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: -
+  port 2: (value) bound ; channel: column
+  port 3: (cntrl) -     ; channel: $
+
+[process] MultiQc
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: multiqc_files
+  port 1: (value) bound ; channel: multiqc_config
+  port 2: (value) bound ; channel: extra_multiqc_config
+  port 3: (value) bound ; channel: multiqc_logo
+  port 4: (cntrl) -     ; channel: $
+
+Jan-10 10:49:22.784 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: slurm) - terminating tasks monitor poll loop
+Jan-10 10:49:22.784 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jan-10 10:49:22.785 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jan-10 10:49:22.791 [Actor Thread 12] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=MultiBamExpressionQuantificationwf:Gff_Compare; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+Jan-10 10:49:22.791 [Actor Thread 22] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=MultiBamExpressionQuantificationwf:Htseq_Count; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+Jan-10 10:49:22.791 [Actor Thread 37] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=MultiBamExpressionQuantificationwf:Collect_Column_7; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+Jan-10 10:49:22.791 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=MultiBamExpressionQuantificationwf:Stringtie_quan; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+Jan-10 10:49:22.800 [Actor Thread 30] DEBUG nextflow.container.SingularityCache - Singularity found local store for image=https://depot.galaxyproject.org/singularity/gffcompare:0.12.6--h9f5acd7_0; path=/exports/sascstudent/vperinbanathan/miniconda3/singularity/depot.galaxyproject.org-singularity-gffcompare-0.12.6--h9f5acd7_0.img
+Jan-10 10:49:22.800 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (2)
+Jan-10 10:49:22.823 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=163; pendingCount=1; submittedCount=2; runningCount=-2; retriesCount=0; abortedCount=2; succeedDuration=0ms; failedDuration=0ms; cachedDuration=1d 10h 15m 59s;loadCpus=-4; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Jan-10 10:49:23.015 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jan-10 10:49:23.083 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

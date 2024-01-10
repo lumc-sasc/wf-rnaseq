@@ -1,0 +1,240 @@
+<!--
+  ~ Copyright 2013-2023, Seqera Labs
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+<pre class="mermaid" style="text-align: center;">
+flowchart TB
+    subgraph " "
+    v0["Channel.fromList"]
+    v3[" "]
+    v6[" "]
+    v9[" "]
+    v12[" "]
+    v15[" "]
+    v18["Channel.fromList"]
+    v22[" "]
+    v25["star_ignore_sjdbgtf"]
+    v26["seq_platform"]
+    v27["seq_center"]
+    v45[" "]
+    v46[" "]
+    v52[" "]
+    v53[" "]
+    v69["annotation_gtf"]
+    v77[" "]
+    v78[" "]
+    v95["column"]
+    v98["column"]
+    v101["column"]
+    v111["multiqc_config"]
+    v112["extra_multiqc_config"]
+    v113["multiqc_logo"]
+    end
+    subgraph " "
+    v2["hisat2_indexChannel"]
+    v5["Dragstr_model"]
+    v8["dbsnpVCF"]
+    v11["dbsnpVCFIndex"]
+    v14["CpatLogitModel"]
+    v17["CpatHex"]
+    v20[" "]
+    v24[" "]
+    v29[" "]
+    v30[" "]
+    v31[" "]
+    v32[" "]
+    v33[" "]
+    v34[" "]
+    v35[" "]
+    v36[" "]
+    v37[" "]
+    v38[" "]
+    v39[" "]
+    v40[" "]
+    v41[" "]
+    v42[" "]
+    v48[" "]
+    v51[" "]
+    v55[" "]
+    v56[" "]
+    v71[" "]
+    v72[" "]
+    v73[" "]
+    v74[" "]
+    v80[" "]
+    v81[" "]
+    v82[" "]
+    v83[" "]
+    v84[" "]
+    v85[" "]
+    v86[" "]
+    v89[" "]
+    v90[" "]
+    v91[" "]
+    v92[" "]
+    v94[" "]
+    v97[" "]
+    v100[" "]
+    v115[" "]
+    v116[" "]
+    v117[" "]
+    v118[" "]
+    end
+    subgraph samplewf
+    subgraph QCwf
+    v19([read_fastqc])
+    end
+    v23([Star_Genomegenerate])
+    v28([Star_Align])
+    v47([Picard_Markduplicates])
+    subgraph BamMetricswf
+    v50([Samtools_Flagstat])
+    v54([Picard_Collectmultiplemetrics])
+    end
+    v43(( ))
+    v49(( ))
+    end
+    subgraph MultiBamExpressionQuantificationwf
+    v70([Stringtie])
+    v79([Gff_Compare])
+    v88([Stringtie_quan])
+    v93([Htseq_Count])
+    v96([Collect_Column_8])
+    v99([Collect_Column_7])
+    v102([Collect_Column_count])
+    v75(( ))
+    v87(( ))
+    end
+    v114([MultiQc])
+    v1(( ))
+    v4(( ))
+    v7(( ))
+    v10(( ))
+    v13(( ))
+    v16(( ))
+    v21(( ))
+    v0 --> v1
+    v1 --> v2
+    v3 --> v4
+    v4 --> v5
+    v6 --> v7
+    v7 --> v8
+    v9 --> v10
+    v10 --> v11
+    v12 --> v13
+    v13 --> v14
+    v15 --> v16
+    v16 --> v17
+    v18 --> v19
+    v18 --> v28
+    v19 --> v20
+    v19 --> v21
+    v22 --> v23
+    v23 --> v28
+    v23 --> v24
+    v25 --> v28
+    v26 --> v28
+    v27 --> v28
+    v28 --> v42
+    v28 --> v41
+    v28 --> v40
+    v28 --> v39
+    v28 --> v38
+    v28 --> v37
+    v28 --> v36
+    v28 --> v35
+    v28 --> v34
+    v28 --> v33
+    v28 --> v32
+    v28 --> v31
+    v28 --> v30
+    v28 --> v29
+    v28 --> v21
+    v28 --> v43
+    v45 --> v47
+    v46 --> v47
+    v43 --> v47
+    v47 --> v48
+    v47 --> v21
+    v47 --> v49
+    v49 --> v50
+    v50 --> v51
+    v50 --> v21
+    v52 --> v54
+    v53 --> v54
+    v49 --> v54
+    v54 --> v56
+    v54 --> v55
+    v54 --> v21
+    v69 --> v70
+    v49 --> v70
+    v70 --> v74
+    v70 --> v73
+    v70 --> v72
+    v70 --> v71
+    v70 --> v75
+    v77 --> v79
+    v78 --> v79
+    v75 --> v79
+    v79 --> v86
+    v79 --> v85
+    v79 --> v84
+    v79 --> v83
+    v79 --> v82
+    v79 --> v81
+    v79 --> v80
+    v79 --> v93
+    v79 --> v96
+    v79 --> v99
+    v79 --> v102
+    v79 --> v87
+    v49 --> v88
+    v87 --> v88
+    v88 --> v92
+    v88 --> v96
+    v88 --> v91
+    v88 --> v90
+    v88 --> v89
+    v88 --> v99
+    v49 --> v93
+    v93 --> v102
+    v93 --> v94
+    v93 --> v21
+    v95 --> v96
+    v96 --> v97
+    v98 --> v99
+    v99 --> v100
+    v101 --> v102
+    v102 --> v21
+    v111 --> v114
+    v112 --> v114
+    v113 --> v114
+    v21 --> v114
+    v114 --> v118
+    v114 --> v117
+    v114 --> v116
+    v114 --> v115
+
+</pre>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+</body>
+</html>
