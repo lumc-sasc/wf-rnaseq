@@ -1,1 +1,0 @@
-/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/work/35/5cb1dadf82897c185cc47949def8ce/rna10.txt
