@@ -35,3 +35,20 @@ run the following command in the terminal to install the pipeline.
 ```bash
 git clone https://github.com/lumc-sasc/wf-rnaseq.git
 ```
+
+## Usage
+
+### Input and configurations
+The standard map for input is the inputfiles directory. In the parameters config file a different path can be given.
+However, do keep in mind that if the inputfiles is in another subbranch, you will need to give the path from your directory to the destined directory, rather than from root directory.
+The parameters config file gives all possible options within the pipeline and can be changed accordingly.
+Changes can cause error if the inputfiles don't align with said changes.
+Within the subworkflow config files with the tasks, you can change resources and queue.
+Aswell additional commands to be used can be added in the process config within the subworkflow config files.
+
+
+### Execution
+```bash
+nextflow run RNA-seq.nf
+```
+
