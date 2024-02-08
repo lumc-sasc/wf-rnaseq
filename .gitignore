@@ -1,0 +1,6 @@
+.nextflow/
+inputfiles/
+outputfiles/
+work/
+.nextflow_*
+.idea/
