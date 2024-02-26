@@ -27,6 +27,8 @@ process COLLECT_COLUMN {
     collect-columns \\
     ${prefix}.csv \\
     $abundance \\
-    ${column != 000 ? "-c $column" : ""}
+    ${column != 000 ? "-c $column" : ""} \\
+    $args
+
     """
 }

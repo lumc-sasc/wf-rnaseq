@@ -9,9 +9,11 @@ process SCATTERREGIONS {
 
     
     script:
+    def args = task.ext.args ?: ''
+    def prefix = task.ext.prefix ?: "${meta.id}"
     """
     scatter-regions \\
-    $input_file
-
+    $input_filec \\
+    $args
     """
 }

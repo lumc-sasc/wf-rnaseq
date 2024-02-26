@@ -1,0 +1,46 @@
+nextflow_workflow {
+    
+    name "RNASEQ"
+    script "main.nf"
+    workflow "RNA_seq"
+
+    stage {
+        symlink "inputfiles"
+        symlink "../Genomes"
+    }
+
+    test("Should run without failures") {
+
+        when {
+         params {
+            genome = 'Nextflow_test_human'
+            sampleConfigFile = "inputfiles/testfiles_nextflow/samplesheet.yml"
+            strandedness = "RF"
+            runStringtieQuantification = false
+            adapterForward = []
+            adapterReverse = []
+            umiDeduplication = true
+            metaDir = "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone"
+
+        }
+
+    }
+    then {
+        
+        assert snapshot (
+            path("/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/outputfiles_nextflow_test/quality_check/rna1/rna1_S1/rna1_S1_1_fastqc.html"),
+            path("/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/outputfiles_nextflow_test/quality_check/rna1/rna1_S1/rna1_S1_2_fastqc.html")
+        ).match()
+
+        with(workflow) {
+            assert success
+            assert trace.tasks().size() == 24
+
+        }
+    }
+    }
+
+
+
+
+}
