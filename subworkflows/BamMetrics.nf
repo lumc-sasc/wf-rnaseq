@@ -16,13 +16,14 @@ workflow BamMetricswf {
     Samtools_Flagstat(bam_bai)
     Picard_Collectmultiplemetrics(bam_bai,referenceFasta,referenceFastaFai)
     if (refflatFile != null) {
-        Picard_Collectrnaseqmetrics(bam_bai, refflatFile, referenceFasta[1], params.rrna_intervals)
+        Picard_Collectrnaseqmetrics(bam_bai, refflatFile[1], referenceFasta[1], params.rrna_intervals)
         
     }
     reports = refflatFile != null ? Samtools_Flagstat.out.flagstat.join(Picard_Collectmultiplemetrics.out.metrics).
     join(Picard_Collectrnaseqmetrics.out.metrics) :
         Samtools_Flagstat.out.flagstat.join(Picard_Collectmultiplemetrics.out.metrics)
 
+    
     emit:
     reports = reports
 

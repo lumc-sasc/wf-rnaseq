@@ -1,11 +1,14 @@
-include {GATK4_SPLITNCIGARREADS as SplitNCigarReads} from "../modules/gatk4/splitncigarreads/main.nf"
+include {GATK4_SPLITNCIGARREADS as SplitNCigarReads} from "../custom_modules/gatk4/SplitNCigarReads/main.nf"
 include {SAMTOOLS_INDEX as Samtools_Index} from "../modules/samtools/index/main.nf"
 include {GATK4_BASERECALIBRATOR as BaseRecalibrator} from "../modules/gatk4/baserecalibrator/main.nf"
 include {GATK4_GATHERBQSRREPORTS as GatherBqsrreports} from "../modules/gatk4/gatherbqsrreports/main.nf"
 include {GATK4_APPLYBQSR as ApplyBqsr} from "../modules/gatk4/applybqsr/main.nf"
 include {SAMTOOLS_INDEX as Samtools_Index_Bqsr} from "../modules/samtools/index/main.nf"
 include {PICARD_GATHERBAMFILES as GatherBamFiles} from "../custom_modules/picard/gatherbamfiles/main.nf"
-workflow preprocesswf {
+
+//Start of workflow
+workflow Preprocesswf {
+    //Take input
     take:
     bam
     dbsnpVCF
@@ -15,18 +18,36 @@ workflow preprocesswf {
     referenceFastaDict
     scatters
 
+    //Main part
     main:
-    if (params.splitSplicedReads) {
-        SplitNCigarReads(bam.combine(scatters), referenceFasta[1], referenceFastaFai[1], referenceFastaDict[1])
-        Samtools_Index(SplitNCigarReads.out.bam)
+    //Checks if the reads are spliced.
+    bam.combine(scatters).combine(scatters.size()).map { instance ->
+        if (instance[-1] > 1) {
+        item = [instance[0],instance[1], instance[2], instance.subList(3, instance.size() -1)]
+        }
+        else {
+            item = [[id: "empty"], [], [], []]
+        }
+        return item
+    }.set{SplitNCigarReads_input}
+
+    SplitNCigarReads(SplitNCigarReads_input, referenceFasta[1], referenceFastaFai[1], referenceFastaDict[1])
+    Samtools_Index(SplitNCigarReads.out.bam)
         
         
-    }
+    
     //Input for bam processes created. Can be from SplitNcigar or the bam that is imported from the main workfklow.
-    BamInput = params.splitSplicedReads ? SplitNCigarReads.out.bam.join(Samtools_Index.out.bai).combine(scatters) : bam.combine(scatters)
+    SplitNCigarReads.out.bam.join(Samtools_Index.out.bai).combine(scatters).join(bam).map{ instance ->
+        if (instance[-2] > 1) {
+        item = [instance[0],instance[1], instance[2], instance.subList(3, instance.size() -1)]
+        }
+        else {
+            item = [[]]
+        }
+    }.set{BaseRecalibrator_input}
 
     //Base recalibration
-    BaseRecalibrator(BamInput, referenceFasta[1], referenceFastaFai[1],
+    BaseRecalibrator(BaseRecalibrator_input, referenceFasta[1], referenceFastaFai[1],
     referenceFastaDict[1], dbsnpVCF, dbsnpVCFIndex)
 
     //Gathering of Bqsr if there are 2 or more scatters.

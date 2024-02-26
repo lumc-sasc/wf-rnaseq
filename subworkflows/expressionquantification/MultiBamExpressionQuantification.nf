@@ -19,7 +19,7 @@ workflow MultiBamExpressionQuantificationwf {
 
     //Main part of workflow.
     main:
-    detectNovelTranscripts = file("../../inputfiles/${params.referenceGtfFile}").exists() ? false : true
+    detectNovelTranscripts = file("inputfiles/${params.referenceGtfFile}").exists() ? false : true
     
     //checks if dtectnoveltranscripts is true
     if (detectNovelTranscripts || params.lncRNAdetection) {

@@ -1,65 +1,64 @@
-include { QCwf } from "../subworkflows/QC.nf"
-include {BamMetricswf } from "../subworkflows/BamMetrics.nf"
-include { STAR_GENOMEGENERATE as Star_Genomegenerate} from "../modules/star/genomegenerate/main.nf"
-include { STAR_ALIGN as Star_Align} from "../modules/star/align/main.nf"
-include {HISAT2_ALIGN as Hisat2_Align} from "../modules/hisat2/align/main.nf"
-include {SAMTOOLS_SORT as Samtools_Sort} from "../modules/samtools/sort/main.nf" 
-include {PICARD_MARKDUPLICATES as Picard_Markduplicates} from "../modules/picard/markduplicates/main.nf"
-include {UMITOOLS_DEDUP as Dedup} from "../modules/umitools/dedup/main.nf"
-include {PICARD_MARKDUPLICATES as Picard_Markduplicates_dedup} from "../modules/picard/markduplicates/main.nf"
+//Subworkflows and processes/modules are loaded in.
+include { QCwf }                                                from "../subworkflows/QC.nf"
+include {BamMetricswf }                                         from "../subworkflows/BamMetrics.nf"
+include { STAR_GENOMEGENERATE as Star_Genomegenerate}           from "../modules/star/genomegenerate/main.nf"
+include { STAR_ALIGN as Star_Align}                             from "../modules/star/align/main.nf"
+include {HISAT2_ALIGN as Hisat2_Align}                          from "../modules/hisat2/align/main.nf"
+include {SAMTOOLS_SORT as Samtools_Sort}                        from "../modules/samtools/sort/main.nf" 
+include {PICARD_MARKDUPLICATES as Picard_Markduplicates}        from "../modules/picard/markduplicates/main.nf"
+include {UMITOOLS_DEDUP as Dedup}                               from "../modules/umitools/dedup/main.nf"
+include {PICARD_MARKDUPLICATES as Picard_Markduplicates_dedup}  from "../modules/picard/markduplicates/main.nf"
 
 
 //defines splicesites
-splicesites = file("./inputfiles/${params.splicesites}").exists() ?
-            file("./inputfiles/${params.splicesites}") : 
-            Channel.value([[id: "refgtf"],[]])
+splicesites = file("$baseDir/${params.splicesites}").exists() ? ${params.splicesites} : [[id: "refgtf"],[]]
 
 //defines the star index
-star_index = file("./inputfiles/${params.starIndex}/SAindex").exists() ?
-            [file("./inputfiles/${params.starIndex}/SAindex")] :
-            null
+star_index = file("$baseDir/${params.starIndex}/SAindex").exists() ? ["${params.starIndex}/SAindex"] : null
 
 //defines the hisat 2 index and seperates all index files from each other and creating seperate instances.
-hisat2_index = Channel.fromList([file("./inputfiles/${params.hisat2}/*.ht2")])
-hisat2_index.map {instance ->
+hisat2_index = Channel.fromList([file("$baseDir/inputfiles/${params.hisat2}/*.ht2")]).map {instance ->
             return [[id: "hisat"], instance]}.set {hisat2_indexChannel}
 
-workflow samplewf{
-    //input from the the other workflow
+
+//Start of workflow
+workflow Samplewf{
+    //Input of workflow are given.
     take:
-    read_list
-    referenceFasta
-    referenceFastaFai
-    referenceFastaDict
-    refflatFile
-    
+        read_list
+        referenceFasta
+        referenceFastaFai
+        referenceFastaDict
+        refflatFile
+
+    //Main part of workflow.
     main:
+        //QC subworkflow is being run.
         QCwf(read_list)
-        //if Star file is present
+
+
+        //It checks if star Index is present. If so, it will add all files of star_index and then Star_Index will run.
         if (star_index != null) {
-            star_index << file("./inputfiles/${params.starIndex}/SA")
-            star_index << file("./inputfiles/${params.starIndex}/genomeParameters.txt")
-            star_index << file("./inputfiles/${params.starIndex}/Genome")
-            star_index << file("./inputfiles/${params.starIndex}/chrStart.txt")
-            star_index << file("./inputfiles/${params.starIndex}/chrNameLength.txt")
-            star_index << file("./inputfiles/${params.starIndex}/chrName.txt")
-            star_index << file("./inputfiles/${params.starIndex}/chrLenght.txt")
-
-
+            star_index << file("./inputfiles/${params.starIndex}/*")
             Star_Align(QCwf.out.reads, star_index , params.star_ignore_sjdbgtf, params.seq_platform, params.seq_center)
         }
-        //if hisat2 file is present
+
+
+        //If hisat2 file is present, it will run Hisat2_Align and then sorts the output using Samtools Sort
         if (file("./inputfiles/${params.hisat2}/*.ht2").size() > 0) {
             Hisat2_Align(QCwf.out.reads,hisat2_indexChannel, splicesites)
             Samtools_Sort(Hisat2_Align.out.bam)
         }
 
-        //if neither star file and hisat2 file are present.
+
+        /*If neither star file and hisat2 file are present, it will generate a star_index using the reference
+        genome and then run Star Align using it.*/
         if (star_index == null && file("./inputfiles/${params.hisat2}/*.ht2").size() == 0) {
             Star_Genomegenerate(referenceFasta)
             Star_Align(QCwf.out.reads,Star_Genomegenerate.out.index,params.star_ignore_sjdbgtf,params.seq_platform,params.seq_center)
-
         }
+
+        
         //combine all readgroups into samples.
         Align_output = params.starIndex != null ? Star_Align.out.bam : (file("./inputfiles/${params.hisat2}/*.ht2").size() > 0 ? Samtools_Sort.out.bam : Star_Align.out.bam)
         Align_output.map {instance ->
@@ -67,7 +66,7 @@ workflow samplewf{
             reads = instance[1]
             return [[id:identification], reads]}.groupTuple().set{Markduplicates_input}
 
-        //markduplicates
+        //Run markduplicates and combine the output bam and bai in a single channel.
         Picard_Markduplicates(Markduplicates_input, referenceFasta, referenceFastaFai)
         duplicates_output = Picard_Markduplicates.out.bam.join(Picard_Markduplicates.out.bai)
 
@@ -77,7 +76,7 @@ workflow samplewf{
             Picard_Markduplicates_dedup(Dedup.out.bam, referenceFasta, referenceFastaFai)
             duplicates_dedup_output = Picard_Markduplicates_dedup.out.bam.join(Picard_Markduplicates_dedup.out.bai)
         }
-        //BamMetrics
+        //BamMetrics subworkflow is being run.
         BamMetricswf(params.umiDeduplication ? duplicates_dedup_output : duplicates_output, referenceFasta, referenceFastaFai, referenceFastaDict, refflatFile)
 
         //alignment reports
@@ -88,48 +87,49 @@ workflow samplewf{
 
         //markduplicates reports
         markduplicates_report = params.umiDeduplication ?
-            [Picard_Markduplicates.out.metrics, Picard_Markduplicates_dedup.out.metrics] :
+            Picard_Markduplicates.out.metrics.join(Picard_Markduplicates_dedup.out.metrics) :
             Picard_Markduplicates.out.metrics
 
         //Changing the reports identifiction so it can be joined with the others
+
+        //QC reports
         QCwf.out.reports.map { instance ->
             identification = "report"
-            reports = instance[1,-1].flatten()
-            return [identification, reports]}.groupTuple()
-        .map{return [[id:it[0]], it[1].flatten()]}.set{QC_reports}
+            reports = instance.subList(1, instance.size())
+            return [[id:identification], reports]}.groupTuple().set{QC_reports}
 
-        
+        //Bammetrics reports
         BamMetricswf.out.reports.map { instance ->
-            identification = "report"
-            reports = instance[1,-1].flatten()
-            return [identification, reports]}.groupTuple()
-        .map{return [[id:it[0]], it[1].flatten()]}.set{BamMetrics_reports}
+            reports = instance.subList(1, instance.size())
+            return [[id:"report"], reports]}.groupTuple().set{BamMetrics_reports}
 
+        //Alignment reports
         alignment_reports.map { instance ->
-            identification = "report"
-            reports = instance[1,-1].flatten()
-            return [identification, reports]}.groupTuple()
-        .map{return [[id:it[0]], it[1].flatten()]}.set{alignment_reports}
+            reports = instance.subList(1,instance.size())
+            return [[id:"report"], reports]}.groupTuple().set{alignment_report}
 
-
+       
+        //Markduplicates reports
         markduplicates_report.map { instance ->
-            identification = "report"
-            reports = instance[1]
-            return [identification, reports]}.groupTuple()
-        .map{return [[id:it[0]], it[1].flatten()]}.set{markduplicates_report}
+            reports = instance.subList(1,instance.size())
+            return [[id:"report"], reports]}.groupTuple().set{markduplicates_report}
         
+        //UmiDeduplication reports
         if (params.umiDeduplication) {
             Dedup.out.log.map { instance ->
-                identification = "report"
-                reports = instance[1]
-                return [identification, reports]}.groupTuple()
-            .map{return [[id:it[0]], it[1].flatten()]}.set{Dedup_reports}
+                reports = instance.subList(1,instance.size)
+                return [[id:"report"], reports]}.groupTuple().set{Dedup_reports}
         }
+        //End of changing the identification.
     
+        //Report Channels are being merged. It will also check if umideduplication is true and add it if it is true.
+        reports = QC_reports.join(BamMetrics_reports).join(alignment_report).join(markduplicates_report)
+        reports = params.umiDeduplication ? reports.join(Dedup_reports) : reports
 
-        reports = QC_reports.join(BamMetrics_reports).join(alignment_reports).join(markduplicates_report)
-        reports = params.umiDeduplication ? reports.join(Dedup.out.log) : reports
-
+        //Removes all the unnecesary []
+        reports.map{return [it[0], it.subList(1, it.size()).flatten()]}.set{reports}
+        
+    //Emit the output.
     emit:
         bam = params.umiDeduplication ? duplicates_dedup_output: duplicates_output
         reports = reports
