@@ -1,3 +1,0 @@
-ERROR ~ Cannot get property 'GRCh38' on null object
-
- -- Check script '/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/.././workflows/RNA-seq.nf' at line: 23 or see '/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/.nf-test/tests/9cf47a40de62437a786e07f7942afc94/meta/nextflow.log' file for more details
