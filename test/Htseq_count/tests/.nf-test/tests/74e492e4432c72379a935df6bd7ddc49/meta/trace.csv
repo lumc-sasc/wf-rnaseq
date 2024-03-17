@@ -1,0 +1,2 @@
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+1	20/f2372a	4026074	HTSEQ_COUNT_COMPARISON	COMPLETED	0	2024-03-11 12:07:42.402	2s	1.8s	92.8%	120.6 MB	138.8 MB	9.6 MB	225 B
