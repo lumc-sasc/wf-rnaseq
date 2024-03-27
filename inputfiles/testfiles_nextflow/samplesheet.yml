@@ -1,0 +1,20 @@
+samples:
+  - id: rna1
+    libraries:
+      - id: "S1"
+        readgroups:
+          - id: "L1"
+            reads:
+              R1: "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/testfiles_nextflow/test_1.fastq.gz"
+              R2: "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/testfiles_nextflow/test_2.fastq.gz"
+
+  - id: rna2
+    libraries:
+      - id: "S1"
+        readgroups:
+          - id: "L1"
+            reads:
+              R1: "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/testfiles_nextflow/test2_1.fastq.gz"
+              R2: "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/inputfiles/testfiles_nextflow/test2_2.fastq.gz"
+
+ 
