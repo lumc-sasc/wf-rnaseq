@@ -15,8 +15,8 @@ process COLLECT_COLUMN {
     task.ext.when == null || task.ext.when
 
     script:
-    def headers = "${header}" == true ? '-H' : ''
-    def sumOnDuplicateIds = "${sumOnDuplicateId}" == true ? '-S' : ''
+    def headers = "${header}" ? '-H' : ''
+    def sumOnDuplicateIds = "${sumOnDuplicateId}" ? '-S' : ''
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     def avail_mem = 3072
