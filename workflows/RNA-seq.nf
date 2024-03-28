@@ -1,5 +1,5 @@
 //All subworkflows and processes/modules are loaded in.
-include {FILE_CHECK as File_Check}                  from "../functions/file_read/global/main.nf"
+include {FILE_CHECK as File_Check}                  from "../custom_modules/file_read/global/main.nf"
 include { Samplewf }                                from "../subworkflows/sample.nf"
 include {Calculateregionswf}                        from "../subworkflows/Calculateregions.nf"
 include { Preprocesswf }                            from "../subworkflows/preprocess.nf"
@@ -24,12 +24,12 @@ workflow RNA_seq {
         referenceFastaFai                   = [[id: "Genome"], file(params.genomes[ params.genome ][ 'fastaFai' ], checkIfExists: true)]
         referenceFastaDict                  = [[id: "Genome"], file(params.genomes[ params.genome ][ 'fastaDict' ], checkIfExists: true)]
         refflatFile                         = [[id: "Genome"], file(params.genomes[ params.genome ][ 'refflat' ])]
-        referenceGtfFile                    = [[id: "Genome"], file(params.genomes[ params.genome ][ 'referenceGTF' ])]
+        referenceGtfFile                    = file(params.genomes[ params.genome ][ 'referenceGTF' ]).exists() ? [[id: "Genome"], file(params.genomes[ params.genome ][ 'referenceGTF' ])] : [[id: "Genome"], []]
 
         //defines regions
-        variantCallingRegions               = file("$baseDir/$params.variantCallingRegions").exists() ? [[id: "Region"], params.variantCalling] : []
-        xNonParRegions                      = file("$baseDir/$params.xNonParRegions").exists()        ? [[id: "Region"], params.xNonParRegions] : []
-        yNonParRegions                      = file("$baseDir/$params.yNonParRegions").exists()        ? [[id: "Region"], params.yNonParRegions] : []
+        variantCallingRegions               = file("$baseDir/$params.variantCallingRegions").exists() ? [[id: "Region"], file(params.variantCallingRegions)] : []
+        xNonParRegions                      = file("$baseDir/$params.xNonParRegions").exists()        ? [[id: "Region"], file(params.xNonParRegions)] : []
+        yNonParRegions                      = file("$baseDir/$params.yNonParRegions").exists()        ? [[id: "Region"], file(params.yNonParRegions)] : []
 
         //defines VCF
         dbsnpVCF                            = file("$baseDir/$params.dbsnpVCF").exists()              ? [[id: "Vcf"], params.dbsnpVCF]          : []
@@ -40,10 +40,9 @@ workflow RNA_seq {
         cpatHex                             = file("$baseDir/$params.cpatHex").exists()               ? [[id: "cpat"], params.cpatHex]          : []
 
         //END DEFINITION INPUT FILES --------------------------------------------------------------------------------------------------
-        
 
         //runs the sampleworkflow.
-        Samplewf(sample_read_list, referenceFasta, referenceFastaFai, referenceFastaDict, refflatFile)
+        Samplewf(sample_read_list, referenceFasta, referenceFastaFai, referenceFastaDict, referenceGtfFile , refflatFile)
 
 
         //START OF VARIANTCALLING -----------------------------------------------------------------------------------------------------

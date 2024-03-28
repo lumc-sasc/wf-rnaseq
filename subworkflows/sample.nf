@@ -5,9 +5,9 @@ include { STAR_GENOMEGENERATE as Star_Genomegenerate}           from "../modules
 include { STAR_ALIGN as Star_Align}                             from "../modules/star/align/main.nf"
 include {HISAT2_ALIGN as Hisat2_Align}                          from "../modules/hisat2/align/main.nf"
 include {SAMTOOLS_SORT as Samtools_Sort}                        from "../modules/samtools/sort/main.nf" 
-include {PICARD_MARKDUPLICATES as Picard_Markduplicates}        from "../modules/picard/markduplicates/main.nf"
+include {PICARD_MARKDUPLICATES as Picard_Markduplicates}        from "../custom_modules/picard/markduplicates/main.nf"
 include {UMITOOLS_DEDUP as Dedup}                               from "../modules/umitools/dedup/main.nf"
-include {PICARD_MARKDUPLICATES as Picard_Markduplicates_dedup}  from "../modules/picard/markduplicates/main.nf"
+include {PICARD_MARKDUPLICATES as Picard_Markduplicates_dedup}  from "../custom_modules/picard/markduplicates/main.nf"
 
 
 //defines splicesites
@@ -29,6 +29,7 @@ workflow Samplewf{
         referenceFasta
         referenceFastaFai
         referenceFastaDict
+        referenceGtfFile 
         refflatFile
 
     //Main part of workflow.
@@ -54,8 +55,8 @@ workflow Samplewf{
         /*If neither star file and hisat2 file are present, it will generate a star_index using the reference
         genome and then run Star Align using it.*/
         if (star_index == null && file("./inputfiles/${params.hisat2}/*.ht2").size() == 0) {
-            Star_Genomegenerate(referenceFasta)
-            Star_Align(QCwf.out.reads,Star_Genomegenerate.out.index,params.star_ignore_sjdbgtf,params.seq_platform,params.seq_center)
+            Star_Genomegenerate(referenceFasta[0,1], referenceGtfFile)
+            Star_Align(QCwf.out.reads,Star_Genomegenerate.out.index, referenceGtfFile, params.star_ignore_sjdbgtf,params.seq_platform,params.seq_center)
         }
 
         
@@ -63,17 +64,18 @@ workflow Samplewf{
         Align_output = params.starIndex != null ? Star_Align.out.bam : (file("./inputfiles/${params.hisat2}/*.ht2").size() > 0 ? Samtools_Sort.out.bam : Star_Align.out.bam)
         Align_output.map {instance ->
             identification = instance[0].sample
+            single = instance[0].single_end
             reads = instance[1]
-            return [[id:identification], reads]}.groupTuple().set{Markduplicates_input}
+            return [[id:identification, single_end: single], reads]}.groupTuple().set{Markduplicates_input}
 
         //Run markduplicates and combine the output bam and bai in a single channel.
-        Picard_Markduplicates(Markduplicates_input, referenceFasta, referenceFastaFai)
+        Picard_Markduplicates(Markduplicates_input, fasta = [[id:'genome'],[]], fastaFai = [[id:'genome'],[]])
         duplicates_output = Picard_Markduplicates.out.bam.join(Picard_Markduplicates.out.bai)
 
         //checks if deduplication is true and is run if true.
         if (params.umiDeduplication) {
             Dedup(duplicates_output, params.get_output_stats)
-            Picard_Markduplicates_dedup(Dedup.out.bam, referenceFasta, referenceFastaFai)
+            Picard_Markduplicates_dedup(Dedup.out.bam, fasta = [[id:'genome'],[]], fastafai = [[id:'genome'],[]])
             duplicates_dedup_output = Picard_Markduplicates_dedup.out.bam.join(Picard_Markduplicates_dedup.out.bai)
         }
         //BamMetrics subworkflow is being run.

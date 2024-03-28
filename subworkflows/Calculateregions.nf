@@ -10,16 +10,16 @@ include {SCATTERREGIONS as ScatterRegions} from "../custom_modules/chunked_scatt
 
 workflow Calculateregionswf {
     take:
-    XNonParRegions
-    YNonParRegions
+    xNonParRegions
+    yNonParRegions
     referenceFasta
     referenceFastaFai
     referenceFastaDict
     variantCallingRegions
 
     main:
-    if (XNonParRegions != null && YNonParRegions != null) {
-        Bedtools_Merge([[id: "merge"], [XNonParRegions, YNonParRegions]])
+    if (xNonParRegions.size() > 0 && yNonParRegions.size() > 0) {
+        Bedtools_Merge([[id: "merge"], [xNonParRegions[1], yNonParRegions[1]]])
         Bedtools_Complement(inputbed = Bedtools_Merge.out.bed, faidx = referenceFastaFai[1])
 
         if (variantCallingRegions != null) { 
@@ -27,18 +27,19 @@ workflow Calculateregionswf {
             variantCallingRegions_Channel = Channel.value([[id: "merge"],variantCallingRegions[1]])
 
             //converting path to channel where in the process variantcallingregions is added.
-            XNonParRegionsChannel = Channel.value([[id:'X'], XNonParRegions] << variantCallingRegions[1])
-            YNonParRegionsChannel = Channel.value([[id:'Y'], YNonParRegions] << variantCallingRegions[1])
+            XNonParRegionsChannel = Channel.value([[id:'X'], xNonParRegions[1]] << variantCallingRegions[1])
+            YNonParRegionsChannel = Channel.value([[id:'Y'], yNonParRegions[1]] << variantCallingRegions[1])
 
 
             //intersect
             Bedtools_Intersect(regions = Bedtools_Complement.out.bed.join(variantCallingRegions_Channel), referenceFastaFai)
+            XNonParRegionsChannel.view()
             Bedtools_IntersectX(regions = XNonParRegionsChannel, referenceFastaFai)
             Bedtools_IntersectY(regions = YNonParRegionsChannel, referenceFastaFai)
         }
     }
         //decided which regions will be used for scatter regions
-        CalculatedAutosomalRegions = XNonParRegions != null && YNonParRegions != null ?
+        CalculatedAutosomalRegions = xNonParRegions.size() > 0 && yNonParRegions.size() > 0 ?
             variantCallingRegions != null ?
                 Bedtools_Intersect.out.intersect :
             Bedtools_Complement.out.bed : 
@@ -49,7 +50,7 @@ workflow Calculateregionswf {
 
     emit:
     scatters = ScatterRegions.out.scatters
-    XNonParRegions = variantCallingRegions != null ? Bedtools_IntersectX.out.intersect : XNonParRegions
-    YNonParRegions = variantCallingRegions != null ? Bedtools_IntersectY.out.intersect : YNonParRegions
+    xNonParRegions = variantCallingRegions != null ? Bedtools_IntersectX.out.intersect : xNonParRegions
+    yNonParRegions = variantCallingRegions != null ? Bedtools_IntersectY.out.intersect : yNonParRegions
 
 }

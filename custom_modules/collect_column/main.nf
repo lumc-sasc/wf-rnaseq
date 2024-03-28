@@ -3,6 +3,8 @@ process COLLECT_COLUMN {
     tuple val(meta), path(abundance)
     tuple val(meta2), path(referenceGtf)
     val(column)
+    val(header)
+    val(sumOnDuplicateId)
 
     output:
     path("*.csv"), emit: csv
@@ -13,7 +15,8 @@ process COLLECT_COLUMN {
     task.ext.when == null || task.ext.when
 
     script:
-    
+    def headers = "${headers}" == true ? '-H' : ''
+    def sumOnDuplicateIds = "${sumOnDuplicateId}" == true ? '-S' : ''
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     def avail_mem = 3072
@@ -28,6 +31,9 @@ process COLLECT_COLUMN {
     ${prefix}.csv \\
     $abundance \\
     ${column != 000 ? "-c $column" : ""} \\
+    ${headers} \\
+    ${sumOnDuplicateIds}
+
     $args
 
     """

@@ -14,7 +14,7 @@ workflow BamMetricswf {
 
     main:
     Samtools_Flagstat(bam_bai)
-    Picard_Collectmultiplemetrics(bam_bai,referenceFasta,referenceFastaFai)
+    Picard_Collectmultiplemetrics(bam_bai,referenceFasta[0,1],referenceFastaFai)
     if (refflatFile != null) {
         Picard_Collectrnaseqmetrics(bam_bai, refflatFile[1], referenceFasta[1], params.rrna_intervals)
         

@@ -31,24 +31,25 @@ workflow Preprocesswf {
         return item
     }.set{SplitNCigarReads_input}
 
-    SplitNCigarReads(SplitNCigarReads_input, referenceFasta[1], referenceFastaFai[1], referenceFastaDict[1])
-    Samtools_Index(SplitNCigarReads.out.bam)
-        
-        
-    
-    //Input for bam processes created. Can be from SplitNcigar or the bam that is imported from the main workfklow.
-    SplitNCigarReads.out.bam.join(Samtools_Index.out.bai).combine(scatters).join(bam).map{ instance ->
-        if (instance[-2] > 1) {
-        item = [instance[0],instance[1], instance[2], instance.subList(3, instance.size() -1)]
-        }
-        else {
-            item = [[]]
-        }
-    }.set{BaseRecalibrator_input}
 
-    //Base recalibration
-    BaseRecalibrator(BaseRecalibrator_input, referenceFasta[1], referenceFastaFai[1],
-    referenceFastaDict[1], dbsnpVCF, dbsnpVCFIndex)
+    if (params.splitSplicedReads) {
+        SplitNCigarReads(SplitNCigarReads_input, referenceFasta[1], referenceFastaFai[1], referenceFastaDict[1])
+        Samtools_Index(SplitNCigarReads.out.bam)
+        
+        //Input for bam processes created. Can be from SplitNcigar or the bam that is imported from the main workfklow.
+        SplitNCigarReads.out.bam.join(Samtools_Index.out.bai).combine(scatters).join(bam).map{ instance ->
+            if (instance[-2] > 1) {
+            item = [instance[0],instance[1], instance[2], instance.subList(3, instance.size() -1)]
+            }
+            else {
+                item = [[]]
+            }
+        }.set{BaseRecalibrator_input}
+
+        //Base recalibration
+        BaseRecalibrator(BaseRecalibrator_input, referenceFasta[1], referenceFastaFai[1],
+        referenceFastaDict[1], dbsnpVCF, dbsnpVCFIndex)
+    }
 
     //Gathering of Bqsr if there are 2 or more scatters.
     if (params.scatter_size > 1) {

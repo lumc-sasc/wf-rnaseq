@@ -1,0 +1,88 @@
+Mar-18 14:15:44.338 [main] DEBUG nextflow.cli.Launcher - $> nextflow -quiet -log /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/Htseq_count/.nf-test/tests/773460054a03060bd6146df400d1fc5f/meta/nextflow.log run /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/Htseq_count/.nf-test/tests/773460054a03060bd6146df400d1fc5f/meta/mock.nf -params-file /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/Htseq_count/.nf-test/tests/773460054a03060bd6146df400d1fc5f/meta/params.json -ansi-log false -with-trace /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/Htseq_count/.nf-test/tests/773460054a03060bd6146df400d1fc5f/meta/trace.csv -w /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/Htseq_count/.nf-test/tests/773460054a03060bd6146df400d1fc5f/work
+Mar-18 14:15:44.426 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
+Mar-18 14:15:44.451 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/vperinbanathan/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
+Mar-18 14:15:44.474 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Mar-18 14:15:44.476 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Mar-18 14:15:44.481 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Mar-18 14:15:44.496 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Mar-18 14:15:44.613 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Mar-18 14:15:44.639 [main] INFO  nextflow.cli.CmdRun - Launching `/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/Htseq_count/.nf-test/tests/773460054a03060bd6146df400d1fc5f/meta/mock.nf` [silly_jepsen] DSL2 - revision: 75058de30f
+Mar-18 14:15:44.640 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Mar-18 14:15:44.640 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Mar-18 14:15:44.652 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/vperinbanathan/.nextflow/secrets/store.json
+Mar-18 14:15:44.660 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@26d820eb] - activable => nextflow.secret.LocalSecretsProvider@26d820eb
+Mar-18 14:15:44.801 [main] DEBUG nextflow.Session - Session UUID: 3f06b88b-00b5-4b98-bec3-b6b04585bc04
+Mar-18 14:15:44.801 [main] DEBUG nextflow.Session - Run name: silly_jepsen
+Mar-18 14:15:44.803 [main] DEBUG nextflow.Session - Executor pool size: 8
+Mar-18 14:15:44.833 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Mar-18 14:15:44.848 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-18 14:15:44.897 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.1 build 5891
+  Created: 12-01-2024 22:01 UTC (23:01 CEST)
+  System: Linux 4.18.0-513.9.1.el8_9.x86_64
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.1+13-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 3679442@res-hpc-lo04.researchlumc.nl [145.88.76.219]
+  CPUs: 8 - Mem: 31.4 GB (623.6 MB) - Swap: 6 GB (20 KB)
+Mar-18 14:15:44.969 [main] DEBUG nextflow.Session - Work-dir: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/Htseq_count/.nf-test/tests/773460054a03060bd6146df400d1fc5f/work [nfs]
+Mar-18 14:15:44.970 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/Htseq_count/.nf-test/tests/773460054a03060bd6146df400d1fc5f/meta/bin
+Mar-18 14:15:44.983 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Mar-18 14:15:44.996 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-18 14:15:45.034 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Mar-18 14:15:45.047 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Mar-18 14:15:45.210 [main] DEBUG nextflow.Session - Session start
+Mar-18 14:15:45.221 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/Htseq_count/.nf-test/tests/773460054a03060bd6146df400d1fc5f/meta/trace.csv
+Mar-18 14:15:46.218 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-18 14:15:46.688 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-18 14:15:46.688 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-18 14:15:46.695 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-18 14:15:46.701 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=31.4 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Mar-18 14:15:46.704 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Mar-18 14:15:46.877 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: COLLECT_COLUMN
+Mar-18 14:15:46.878 [main] DEBUG nextflow.Session - Igniting dataflow network (2)
+Mar-18 14:15:46.878 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > COLLECT_COLUMN
+Mar-18 14:15:46.888 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_de4db9da18b0d1a1: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/Htseq_count/../../custom_modules/collect_column/main.nf
+  Script_5d9b5bbc0cff84aa: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/Htseq_count/.nf-test/tests/773460054a03060bd6146df400d1fc5f/meta/mock.nf
+Mar-18 14:15:46.889 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Mar-18 14:15:46.889 [main] DEBUG nextflow.Session - Session await
+Mar-18 14:15:47.028 [Actor Thread 6] INFO  nextflow.Nextflow - [Collect column] Available memory not known - defaulting to 3GB. Specify process memory requirements to change this.
+Mar-18 14:15:47.184 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-18 14:15:47.188 [Task submitter] INFO  nextflow.Session - [ad/bd5bd7] Submitted process > COLLECT_COLUMN (1)
+Mar-18 14:15:47.659 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: COLLECT_COLUMN (1); status: COMPLETED; exit: 127; error: -; workDir: /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/Htseq_count/.nf-test/tests/773460054a03060bd6146df400d1fc5f/work/ad/bd5bd7bbf4d4c4db78390e6b5463ae]
+Mar-18 14:15:47.664 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=COLLECT_COLUMN (1); work-dir=/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/Htseq_count/.nf-test/tests/773460054a03060bd6146df400d1fc5f/work/ad/bd5bd7bbf4d4c4db78390e6b5463ae
+  error [nextflow.exception.ProcessFailedException]: Process `COLLECT_COLUMN (1)` terminated with an error exit status (127)
+Mar-18 14:15:47.680 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'COLLECT_COLUMN (1)'
+
+Caused by:
+  Process `COLLECT_COLUMN (1)` terminated with an error exit status (127)
+
+Command executed:
+
+  collect-columns \
+  test.csv \
+  s105858-001-010.txt s105858-001-020.txt s105858-001-001.txt s105858-001-021.txt s105858-001-022.txt s105858-001-002.txt s105858-001-006.txt s105858-001-025.txt s105858-001-018.txt s105858-001-029.txt s105858-001-017.txt s105858-001-026.txt s105858-001-005.txt s105858-001-019.txt s105858-001-011.txt s105858-001-003.txt s105858-001-030.txt s105858-001-027.txt s105858-001-013.txt s105858-001-012.txt s105858-001-028.txt s105858-001-004.txt s105858-001-009.txt s105858-001-014.txt \
+   \
+
+Command exit status:
+  127
+
+Command output:
+  (empty)
+
+Command error:
+  .command.sh: line 3: collect-columns: command not found
+
+Work dir:
+  /exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/Htseq_count/.nf-test/tests/773460054a03060bd6146df400d1fc5f/work/ad/bd5bd7bbf4d4c4db78390e6b5463ae
+
+Tip: you can try to figure out what's wrong by changing to the process work dir and showing the script file named `.command.sh`
+Mar-18 14:15:47.690 [main] DEBUG nextflow.Session - Session await > all processes finished
+Mar-18 14:15:47.694 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `COLLECT_COLUMN (1)` terminated with an error exit status (127)
+Mar-18 14:15:47.754 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Mar-18 14:15:47.756 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-18 14:15:47.772 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=360ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+Mar-18 14:15:47.772 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Mar-18 14:15:47.831 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Mar-18 14:15:47.858 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

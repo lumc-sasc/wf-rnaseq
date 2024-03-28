@@ -19,7 +19,7 @@ workflow MultiBamExpressionQuantificationwf {
 
     //Main part of workflow.
     main:
-    detectNovelTranscripts = file("inputfiles/${params.referenceGtfFile}").exists() ? false : true
+    detectNovelTranscripts = file(params.genomes[ params.genome ][ 'referenceGTF' ]).exists() ? false : true
     
     //checks if dtectnoveltranscripts is true
     if (detectNovelTranscripts || params.lncRNAdetection) {
@@ -52,6 +52,11 @@ workflow MultiBamExpressionQuantificationwf {
     //If stringtie quantification is enabled, it will run stringtie quan.
     if (params.runStringtieQuantification){
         Stringtie_quan(bam, gtf)
+
+        Stringtie_quan.out.abundance.map {instance ->
+                identification = "report"
+                reports = instance[1]
+                return [[id:identification],reports]}.groupTuple().set{collumn_input}
     }
 
     //Htseq count
@@ -59,8 +64,8 @@ workflow MultiBamExpressionQuantificationwf {
 
     //If stringtie quantification is enabled, it will run the collect collumn on collumn 8 and 7 from stringtie quan output.
     if (params.runStringtieQuantification){
-        Collect_Column_8(Stringtie_quan.out.abundance, gtf_with_meta, valueColumn = 8)
-        Collect_Column_7(Stringtie_quan.out.abundance, gtf_with_meta, valueColumn = 7)
+        Collect_Column_8(collumn_input, gtf_with_meta, valueColumn = 8, true, true)
+        Collect_Column_7(collumn_input, gtf_with_meta, valueColumn = 7, true, true)
     }
     /*Changing the output of Htseq count to report format. All samples will be merged together into a single list
     so it can be used for can be used for Collect column*/
@@ -71,7 +76,7 @@ workflow MultiBamExpressionQuantificationwf {
         .map{return [[id:it[0]], it[1].flatten()]}.set{Htseq_count_report}
 
     //Collect column count is being run using the reports from Htseq count.        
-    Collect_Column_count(Htseq_count_report, gtf_with_meta, valueColumn = 000)
+    Collect_Column_count(Htseq_count_report, gtf_with_meta, valueColumn = 000, false, false)
 
     //Change output of Colllect column so it can be joined with Htseq count.
     Collect_Column_count.out.csv.map { instance ->

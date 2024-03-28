@@ -1,1 +1,2 @@
 task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+1	ad/bd5bd7	3680030	COLLECT_COLUMN (1)	FAILED	127	2024-03-18 14:15:47.187	469ms	360ms	-	-	-	-	-

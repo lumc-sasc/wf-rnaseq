@@ -35,8 +35,8 @@ workflow SingleSampleCallingwf {
     referenceFastaDict
     dbsnpVCF
     dbsnpVCFIndex
-    XNonParRegions
-    YNonParRegions
+    xNonParRegions
+    yNonParRegions
     autosomalregions
 
     main:
@@ -45,41 +45,41 @@ workflow SingleSampleCallingwf {
     referenceFasta[1], referenceFastaFai[1], referenceFastaDict[1], dbsnpVCF, dbsnpVCFIndex)
 
     //Haplotypecaller if Xnonparregions and YnonparsRegions are given
-    if (XNonParRegions != null && YNonParRegions != null) {
+    if (xNonParRegions != null && yNonParRegions != null) {
         //XnonParRegions converted to Channel
-        XNonParRegionsChannel = Channel.value(XNonParRegions)
+        XNonParRegionsChannel = Channel.value(xNonParRegions)
         Gatk4_HaplotypecallerX(bam.join(bai).combine(XNonParRegionsChannel).combine(Dragstr_model),
         referenceFasta[1], referenceFastaFai[1], referenceFastaDict[1], dbsnpVCF, dbsnpVCFIndex)
 
         //Haplotypecaller if gender is male or unknown.
         if (params.gender == "male" || params.gender == "unknown" ) {
             //YnonParRegions converted to Channel
-            YNonParRegionsChannel = Channel.value(YNonParRegions)
+            YNonParRegionsChannel = Channel.value(yNonParRegions)
             Gatk4_HaplotypecallerY(bam.join(bai).combine(YNonParRegionsChannel).combine(Dragstr_model),
             referenceFasta[1], referenceFastaFai[1], referenceFastaDict[1], dbsnpVCF, dbsnpVCFIndex)
         }
     }
 
     //define VCF and index
-    VCFs = XNonParRegions != null && YNonParRegions != null ? 
+    VCFs = xNonParRegions != null && yNonParRegions != null ? 
         params.gender == "male" || params.gender == "unknown" ?
 
             //if there are regions on X and Y and if gender is male or unknown
-            Gatk4_Haplotypecaller.out.vcf.groupTuple(Gatk4_HaplotypecallerX.out.vcf).groupTuple(Gatk4_HaplotypecallerY.out.vcf).join(
-            (Gatk4_Haplotypecaller.out.tbi.groupTuple(Gatk4_HaplotypecallerX.out.tbi).groupTuple(Gatk4_HaplotypecallerY.out.tbi))) :
+            Gatk4_Haplotypecaller.out.vcf.join(Gatk4_HaplotypecallerX.out.vcf).join(Gatk4_HaplotypecallerY.out.vcf).join(
+            (Gatk4_Haplotypecaller.out.tbi.join(Gatk4_HaplotypecallerX.out.tbi).join(Gatk4_HaplotypecallerY.out.tbi))) :
 
             //if there are regions on X and Y but gender is not male or unknown
-            Gatk4_Haplotypecaller.out.vcf.groupTuple(Gatk4_HaplotypecallerX.out.vcf).join(
-                (Gatk4_Haplotypecaller.out.tbi.groupTuple(Gatk4_HaplotypecallerX.out.tbi))) :
+            Gatk4_Haplotypecaller.out.vcf.join(Gatk4_HaplotypecallerX.out.vcf).join(
+                (Gatk4_Haplotypecaller.out.tbi.join(Gatk4_HaplotypecallerX.out.tbi))) :
 
         //if there are no regions on X and Y.
         Gatk4_Haplotypecaller.out.vcf.join(Gatk4_Haplotypecaller.out.tbi)
     
 
-    if (XNonParRegions != null && YNonParRegions != null && params.mergeVcf && params.scatter_size > 1 && params.gvcf) {
+    if (xNonParRegions != null && yNonParRegions != null && params.mergeVcf && params.scatter_size > 1 && params.gvcf) {
         Gatk4_Combinegvcfs(VCFs, referenceFasta, referenceFastaFai, referenceFastaDict)
     }
-    else if (XNonParRegions != null && YNonParRegions != null && params.mergeVcf && params.scatter_size > 1 && !params.gvcf) {
+    else if (xNonParRegions != null && yNonParRegions != null && params.mergeVcf && params.scatter_size > 1 && !params.gvcf) {
         Picard_Mergevcfs(VCFs)
     }
     

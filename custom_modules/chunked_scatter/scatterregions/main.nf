@@ -13,7 +13,7 @@ process SCATTERREGIONS {
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
     scatter-regions \\
-    $input_filec \\
+    $input_file \\
     $args
     """
 }

@@ -34,6 +34,7 @@ workflow QCwf {
     reports = runAdapterClipping ?
         read_fastqc.out.html.join(read_fastqc.out.zip).join(cutadapt_fastqc.out.html).join(cutadapt_fastqc.out.zip).join(Cutadapt.out.log) :
         read_fastqc.out.html.join(read_fastqc.out.zip)
+        
 
     //emits the output. 
     emit:
