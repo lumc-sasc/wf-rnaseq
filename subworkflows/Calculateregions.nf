@@ -22,7 +22,7 @@ workflow Calculateregionswf {
         Bedtools_Merge([[id: "merge"], [xNonParRegions[1], yNonParRegions[1]]])
         Bedtools_Complement(inputbed = Bedtools_Merge.out.bed, faidx = referenceFastaFai[1])
 
-        if (variantCallingRegions != null) { 
+        if (variantCallingRegions.size() > 0) { 
             //convering regions to channels so they can be joined on the variantcallingregions
             variantCallingRegions_Channel = Channel.value([[id: "merge"],variantCallingRegions[1]])
 
@@ -40,17 +40,17 @@ workflow Calculateregionswf {
     }
         //decided which regions will be used for scatter regions
         CalculatedAutosomalRegions = xNonParRegions.size() > 0 && yNonParRegions.size() > 0 ?
-            variantCallingRegions != null ?
+            variantCallingRegions.size() > 0 ?
                 Bedtools_Intersect.out.intersect :
             Bedtools_Complement.out.bed : 
-        variantCallingRegions != null ? variantCallingRegions : referenceFastaFai
+        variantCallingRegions.size() > 0 ? variantCallingRegions : referenceFastaFai
 
         ScatterRegions(CalculatedAutosomalRegions)
 
 
     emit:
     scatters = ScatterRegions.out.scatters
-    xNonParRegions = variantCallingRegions != null ? Bedtools_IntersectX.out.intersect : xNonParRegions
-    yNonParRegions = variantCallingRegions != null ? Bedtools_IntersectY.out.intersect : yNonParRegions
+    xNonParRegions = variantCallingRegions.size() > 0 ? Bedtools_IntersectX.out.intersect : xNonParRegions
+    yNonParRegions = variantCallingRegions.size() > 0 ? Bedtools_IntersectY.out.intersect : yNonParRegions
 
 }

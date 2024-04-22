@@ -1,5 +1,5 @@
 
-//Processes/Modules are loaded in.
+//Processes are loaded in.
 include { FASTQC as read_fastqc } from "../modules/fastqc/main.nf"
 include { FASTQC as cutadapt_fastqc } from "../modules/fastqc/main.nf"
 
@@ -14,18 +14,21 @@ workflow QCwf {
     //Main part of the workflow
     main:
 
-    //runadapterclipping boolean
+    //Looks if any of the adapters or contaminations are present. If it is present, it will set runAdapterClipping to true, else it will set to false.
     boolean runAdapterClipping = params.adapterForward.size() > 0 || params.adapterReverse.size() > 0|| params.contaminations.size() > 0
 
     
-    //run fastQC on read1 and if present read2
+    //Does quality control on raw sequence data.
     read_fastqc(read_list)
 
     
 
-    //if cutadaptclipping is run, cutadapt is given
+    //if runAdapterClipping is true, it will run cutadapt and fastqc of cutadapt.
     if (runAdapterClipping) {
+        //Trims reads based on the adapters or contaminations.
         Cutadapt(read_list)
+
+        //Does quality control on the trimmed sequence data.
         cutadapt_fastqc(reads = Cutadapt.out.reads)
     
     }

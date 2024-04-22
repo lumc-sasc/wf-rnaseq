@@ -20,6 +20,7 @@ workflow Preprocesswf {
 
     //Main part
     main:
+    size = Calculations.scatter_size_calculation(scatters)
     //Checks if the reads are spliced.
     bam.combine(scatters).combine(scatters.size()).map { instance ->
         if (instance[-1] > 1) {
@@ -35,44 +36,46 @@ workflow Preprocesswf {
     if (params.splitSplicedReads) {
         SplitNCigarReads(SplitNCigarReads_input, referenceFasta[1], referenceFastaFai[1], referenceFastaDict[1])
         Samtools_Index(SplitNCigarReads.out.bam)
-        
-        //Input for bam processes created. Can be from SplitNcigar or the bam that is imported from the main workfklow.
-        SplitNCigarReads.out.bam.join(Samtools_Index.out.bai).combine(scatters).join(bam).map{ instance ->
-            if (instance[-2] > 1) {
-            item = [instance[0],instance[1], instance[2], instance.subList(3, instance.size() -1)]
-            }
-            else {
-                item = [[]]
-            }
-        }.set{BaseRecalibrator_input}
-
-        //Base recalibration
-        BaseRecalibrator(BaseRecalibrator_input, referenceFasta[1], referenceFastaFai[1],
-        referenceFastaDict[1], dbsnpVCF, dbsnpVCFIndex)
     }
+        
+    //Input for bam processes created. Can be from SplitNcigar or the bam that is imported from the main workfklow.
+    params.splitSplicedReads ? SplitNCigarReads.out.bam.join(Samtools_Index.out.bai).combine(scatters).join(bam).map{ instance ->
+        if (instance[-2] > 1) {
+        item = [instance[0],instance[1], instance[2], instance.subList(3, instance.size() -1)]
+        }
+        else {
+            item = [[]]
+        }
+    }.set{BaseRecalibrator_input}
+    
+    : bam.combine(scatters).set{BaseRecalibrator_input}
+
+    //Base recalibration
+    BaseRecalibrator(BaseRecalibrator_input, referenceFasta[1], referenceFastaFai[1],
+    referenceFastaDict[1], dbsnpVCF[1], dbsnpVCFIndex[1])
 
     //Gathering of Bqsr if there are 2 or more scatters.
-    if (params.scatter_size > 1) {
-        GatherBqsrreports(BaseRecalibrator.out.table)
+     BaseRecalibrator.out.table.map { instance ->
+        iden = "collect"
+        bam = instance[1]
+    return [[id: iden],bam]}.groupTuple().set{gatherbqsr_input}
+    gatherbqsr_input.view()
+    GatherBqsrreports(gatherbqsr_input)
 
-    }
-    //if scattered, use gatherBqsr reports, otherwise Baserecalibrator
-    Recalibration_report = params.scatter_size > 1 ? GatherBqsrreports.out.table : BaseRecalibrator.out.table
 
-    
     //BQSR input created and given to ApplyBqsr
-    Bqsr_input = params.splitSplicedReads ? SplitNCigarReads.out.bam.join(Samtools_Index.out.bai).join(Recalibration_report
-    ).combine(scatters) : bam.join(Recalibration_report).combine(scatters)
-
+    Bqsr_input = params.splitSplicedReads ? SplitNCigarReads.out.bam.join(Samtools_Index.out.bai).combine(GatherBqsrreports.out.table.map{it[1]}
+    ).combine(scatters) : bam.combine(GatherBqsrreports.out.table.map{it[1]}).combine(scatters)
     //run ApplyBQSR and the samtools index to create the bam index of ApplyBqsr
     ApplyBqsr(Bqsr_input,referenceFasta[1],referenceFastaFai[1],referenceFastaDict[1])
     Samtools_Index_Bqsr(ApplyBqsr.out.bam)
 
     //if there are 2 or more scatters, gather the bam files
-    if (params.scatter_size > 1) {
-        GatherBamFiles(ApplyBqsr.out.bam, Samtools_Index_Bqsr.out.bai)
-
-    }
+    ApplyBqsr.out.bam.map { instance ->
+        id = "collect"
+        bam = instance[1]
+    return [[id: id],bam]}.groupTuple().set{gatherbamfiles_input}
+    GatherBamFiles(gatherbamfiles_input, Samtools_Index_Bqsr.out.bai)
 
     emit:
     bam = params.scatter_size > 1 ? GatherBamFiles.out.bam : ApplyBqsr.out.bam

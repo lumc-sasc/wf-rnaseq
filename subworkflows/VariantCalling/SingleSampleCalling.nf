@@ -41,6 +41,10 @@ workflow SingleSampleCallingwf {
 
     main:
     //Haplotypecaller
+    bam.view()
+    bai.view()
+    autosomalregions.view()
+    Dragstr_model.view()
     Gatk4_Haplotypecaller(bam.join(bai).combine(autosomalregions).combine(Dragstr_model),
     referenceFasta[1], referenceFastaFai[1], referenceFastaDict[1], dbsnpVCF, dbsnpVCFIndex)
 

@@ -1,57 +1,75 @@
-//All subworkflows and processes/modules are loaded in.
+//BEGIN INCLUDE STATEMENTS --------------------------------------------------------------------------------------------------------------
+
+//This part includes the custom code that converts the input samplesheet to a nested list, grouped by samples and readpairs.
 include {FILE_CHECK as File_Check}                  from "../custom_modules/file_read/global/main.nf"
+
+//This part includes all the subworkflows of the mandatory part of the workflow.
 include { Samplewf }                                from "../subworkflows/sample.nf"
+include { MultiBamExpressionQuantificationwf }      from "../subworkflows/expressionquantification/MultiBamExpressionQuantification.nf"
+
+//This part includes all the subworkflows of the variantcalling part of the workflow.
 include {Calculateregionswf}                        from "../subworkflows/Calculateregions.nf"
 include { Preprocesswf }                            from "../subworkflows/preprocess.nf"
-include {SCATTERREGIONS as ScatterRegionsVariant}   from "../custom_modules/chunked_scatter/scatterregions/main.nf"
 include { SingleSampleCallingwf }                   from "../subworkflows/VariantCalling/SingleSampleCalling.nf"
-include { MultiBamExpressionQuantificationwf }      from "../subworkflows/expressionquantification/MultiBamExpressionQuantification.nf"
+
+//This part includes all processes of the mandatory part of the workflow.
+include {MULTIQC as MultiQc}                        from '../modules/multiqc/main.nf'
+
+//This part includes all the processes of the variantcalling part of the workflow.
+include {SCATTERREGIONS as ScatterRegionsVariant}   from "../custom_modules/chunked_scatter/scatterregions/main.nf"
+
+//This part includes all the processes from the lncRNAdetection part of the workflow.
 include {GFFREAD as GffRead}                        from "../modules/gffread/main.nf"
 include {CPAT as Cpat}                              from "../custom_modules/cpat/main.nf"
 include {GFFCOMPARE as Gff_Compare_lnc}             from "../modules/gffcompare/main.nf"
-include {MULTIQC as MultiQc}                        from '../modules/multiqc/main.nf'
 
-//"----------------------------------------------------------------------------------------------------------------------------------"
+//END INCLUDE STATEMENTS---------------------------------------------------------------------------------------------------------------
+
 //Start of Workflow
-
 workflow RNA_seq {
         //BEGIN DEFINITION INPUT FILES ------------------------------------------------------------------------------------------------
 
-        sample_read_list = File_Check()
+        //Definition of Samplesheet. It will run a custom function that converts samplesheet file to a nested list that is grouped by samples and readpairs.
+        fastq_grouped_list = File_Check()
 
-        //defines genomeconfig
+        /*defines genomeconfig. It will look in the igenomes config file and the params config file. Within the params.config file it will look for
+        the genomes parameter. It is the base directory of where all the genomes are located. It will then check the genome parameter to see which genome is used.
+        It will then look in the igenomes config file to see in what subdirectory the files are present and grabs the files if it exists.
+        */
         referenceFasta                      = [[id: "Genome"], file(params.genomes[ params.genome ][ 'fasta' ], checkIfExists: true)]
         referenceFastaFai                   = [[id: "Genome"], file(params.genomes[ params.genome ][ 'fastaFai' ], checkIfExists: true)]
         referenceFastaDict                  = [[id: "Genome"], file(params.genomes[ params.genome ][ 'fastaDict' ], checkIfExists: true)]
         refflatFile                         = [[id: "Genome"], file(params.genomes[ params.genome ][ 'refflat' ])]
         referenceGtfFile                    = file(params.genomes[ params.genome ][ 'referenceGTF' ]).exists() ? [[id: "Genome"], file(params.genomes[ params.genome ][ 'referenceGTF' ])] : [[id: "Genome"], []]
 
-        //defines regions
+
+        //defines regions. Optional files that are only used in the variantcalling part of the workflow.
         variantCallingRegions               = file("$baseDir/$params.variantCallingRegions").exists() ? [[id: "Region"], file(params.variantCallingRegions)] : []
         xNonParRegions                      = file("$baseDir/$params.xNonParRegions").exists()        ? [[id: "Region"], file(params.xNonParRegions)] : []
         yNonParRegions                      = file("$baseDir/$params.yNonParRegions").exists()        ? [[id: "Region"], file(params.yNonParRegions)] : []
 
-        //defines VCF
-        dbsnpVCF                            = file("$baseDir/$params.dbsnpVCF").exists()              ? [[id: "Vcf"], params.dbsnpVCF]          : []
-        dbsnpVCFIndex                       = file("$baseDir/$params.dbsnpVCFIndex").exists()         ? [[id: "Vcf"], params.dbsnpVCFIndex]     : []
+        //defines VCF. Optional files that are only used in the variantcalling part of the workflow.
+        dbsnpVCF                            = file("$baseDir/$params.dbsnpVCF").exists()              ? [[id: "Vcf"], file(params.dbsnpVCF)]          : [[id: "empty"],[]]
+        dbsnpVCFIndex                       = file("$baseDir/$params.dbsnpVCFIndex").exists()         ? [[id: "Vcf"], file(params.dbsnpVCFIndex)]     : [[id: "empty"],[]]
 
-        //defines cpat
+        //defines cpat. Needed in order for lncRNAdetection part of the workflow to work properly.
         cpatLogitModel                      = file("$baseDir/$params.cpatLogitModel").exists()        ? [[id: "cpat"], params.cpatLogitModel]   : []
         cpatHex                             = file("$baseDir/$params.cpatHex").exists()               ? [[id: "cpat"], params.cpatHex]          : []
 
         //END DEFINITION INPUT FILES --------------------------------------------------------------------------------------------------
 
         //runs the sampleworkflow.
-        Samplewf(sample_read_list, referenceFasta, referenceFastaFai, referenceFastaDict, referenceGtfFile , refflatFile)
+        Samplewf(fastq_grouped_list, referenceFasta, referenceFastaFai, referenceFastaDict, referenceGtfFile , refflatFile)
 
 
         //START OF VARIANTCALLING -----------------------------------------------------------------------------------------------------
         if(params.variantCalling) /*true false statement*/ { 
+            //Runs regions subworkflow, which calculates the regions  that will be used on the Single sample variantcalling subworkflow
             Calculateregionswf(xNonParRegions, yNonParRegions, referenceFasta, referenceFastaFai,
-                                referenceFastaDict, variantCallingRegions) //Workflow calculates the regions using bed files or reference
+                                referenceFastaDict, variantCallingRegions) 
 
             //Preprocess regions is defined depending on if variantcallingregions is empty or not.
-            preprocessregions = variantCallingRegions != null ? variantCallingRegions : referenceFastaFai
+            preprocessregions = variantCallingRegions.size() > 0 ? variantCallingRegions : referenceFastaFai
 
             // Scatter regions for preprocesswf is being run.
             ScatterRegionsVariant(preprocessregions)
@@ -69,10 +87,10 @@ workflow RNA_seq {
         //END OF VARIANTCALLING -------------------------------------------------------------------------------------------------------
         
 
-        //expression quantification
+        //Calls the expression quantification subworkflow. It will generate count tables that show the gene expression.
         MultiBamExpressionQuantificationwf(bam = Samplewf.out.bam, referenceGtfFile, referenceFasta, referenceFastaFai)
         
-        //Checks if lncRNAdetection is true, if it is true it will run GffRead, Cpat and Gff_Compare
+        //Checks if lncRNAdetection is true, if it is true it will run GffRead, Cpat and Gff_Compare. Requires cpatHex and cpatLogitModel in order to work properly.
         if (params.lncRNAdetection) {
             GffRead(MultiBamExpressionQuantificationwf.out.gtf.map {it[1]})
             Cpat(GffRead.out.gtf, cpatHex, cpatLogitModel, referenceFasta, referenceFastaFai)
@@ -86,6 +104,8 @@ workflow RNA_seq {
 
         //Report identification label is being removed since it can't be used in MultiQC.
         reports.map{return it.subList(1, it.size()).flatten()}.set{reports}
+
+        //Run multiQC so that every report is shown in a single html page.
         MultiQc(reports,[],[],[])
 
 
