@@ -1,12 +1,17 @@
 process PICARD_GATHERBAMFILES {
     input:
     tuple val(meta), path(bam)
-    path bai
+    tuple val(meta2), path (bai)
 
     output:
-    tuple val(meta), path("${prefix}.bam"), emit: bam
+    tuple val(meta), path("*.bam"), emit: bam
     path "*.bai", emit: bai
     path "*.md5", optional: true
+
+
+    container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
+        'https://depot.galaxyproject.org/singularity/picard:3.1.1--hdfd78af_0' :
+        'biocontainers/picard:3.1.1--hdfd78af_0' }"
 
     when:
         task.ext.when == null || task.ext.when
@@ -23,10 +28,11 @@ process PICARD_GATHERBAMFILES {
     }
 
     """
-    picard -Xmx~{javaXmxMb}M -XX:ParallelGCThreads=1 \\
+    picard -Xmx${avail_mem}M \\
     GatherBamFiles \\
-    ${bam.collect { "--INPUT " + it }.join(" ")}\\
-    --CREATE_INDEX true \\
+    $args \\
+    --OUTPUT ${prefix}.bam \\
+    ${bam.collect { "--INPUT " + it }.join(" ")}
     """
 
 }
