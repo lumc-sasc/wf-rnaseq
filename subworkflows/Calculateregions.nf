@@ -1,9 +1,9 @@
-include { BEDTOOLS_MERGE as Bedtools_Merge} from "../modules/bedtools/merge/main.nf"
-include {BEDTOOLS_COMPLEMENT as Bedtools_Complement} from "../modules/bedtools/complement/main.nf"
-include {BEDTOOLS_INTERSECT as Bedtools_Intersect} from "../modules/bedtools/intersect/main.nf"
-include {BEDTOOLS_INTERSECT as Bedtools_IntersectX} from "../modules/bedtools/intersect/main.nf"
-include {BEDTOOLS_INTERSECT as Bedtools_IntersectY} from "../modules/bedtools/intersect/main.nf"
-include {SCATTERREGIONS as ScatterRegions} from "../custom_modules/chunked_scatter/scatterregions/main.nf"
+include { BEDTOOLS_MERGE as Bedtools_Merge} from "../modules/nf-core/bedtools/merge/main.nf"
+include {BEDTOOLS_COMPLEMENT as Bedtools_Complement} from "../modules/nf-core/bedtools/complement/main.nf"
+include {BEDTOOLS_INTERSECT as Bedtools_Intersect} from "../modules/nf-core/bedtools/intersect/main.nf"
+include {BEDTOOLS_INTERSECT as Bedtools_IntersectX} from "../modules/nf-core/bedtools/intersect/main.nf"
+include {BEDTOOLS_INTERSECT as Bedtools_IntersectY} from "../modules/nf-core/bedtools/intersect/main.nf"
+include {SCATTERREGIONS as ScatterRegions} from "../modules/local/chunked_scatter/scatterregions/main.nf"
 
 
 

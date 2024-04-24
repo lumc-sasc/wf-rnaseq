@@ -1,9 +1,9 @@
 
 //Processes are loaded in.
-include { FASTQC as read_fastqc } from "../modules/fastqc/main.nf"
-include { FASTQC as cutadapt_fastqc } from "../modules/fastqc/main.nf"
+include { FASTQC as read_fastqc } from "../modules/nf-core/fastqc/main.nf"
+include { FASTQC as cutadapt_fastqc } from "../modules/nf-core/fastqc/main.nf"
 
-include { CUTADAPT as Cutadapt} from "../modules/cutadapt/main.nf"
+include { CUTADAPT as Cutadapt} from "../modules/nf-core/cutadapt/main.nf"
 
 //Start of workflow
 workflow QCwf {

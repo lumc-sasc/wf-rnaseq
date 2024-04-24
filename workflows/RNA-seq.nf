@@ -1,7 +1,7 @@
 //BEGIN INCLUDE STATEMENTS --------------------------------------------------------------------------------------------------------------
 
 //This part includes the custom code that converts the input samplesheet to a nested list, grouped by samples and readpairs.
-include {FILE_CHECK as File_Check}                  from "../custom_modules/file_read/global/main.nf"
+include {FILE_CHECK as File_Check}                  from "../modules/local/file_read/global/main.nf"
 
 //This part includes all the subworkflows of the mandatory part of the workflow.
 include { Samplewf }                                from "../subworkflows/sample.nf"
@@ -13,15 +13,15 @@ include { Preprocesswf }                            from "../subworkflows/prepro
 include { SingleSampleCallingwf }                   from "../subworkflows/VariantCalling/SingleSampleCalling.nf"
 
 //This part includes all processes of the mandatory part of the workflow.
-include {MULTIQC as MultiQc}                        from '../modules/multiqc/main.nf'
+include {MULTIQC as MultiQc}                        from '../modules/nf-core/multiqc/main.nf'
 
 //This part includes all the processes of the variantcalling part of the workflow.
-include {SCATTERREGIONS as ScatterRegionsVariant}   from "../custom_modules/chunked_scatter/scatterregions/main.nf"
+include {SCATTERREGIONS as ScatterRegionsVariant}   from "../modules/local/chunked_scatter/scatterregions/main.nf"
 
 //This part includes all the processes from the lncRNAdetection part of the workflow.
-include {GFFREAD as GffRead}                        from "../modules/gffread/main.nf"
-include {CPAT as Cpat}                              from "../custom_modules/cpat/main.nf"
-include {GFFCOMPARE as Gff_Compare_lnc}             from "../modules/gffcompare/main.nf"
+include {GFFREAD as GffRead}                        from "../modules/nf-core/gffread/main.nf"
+include {CPAT as Cpat}                              from "../modules/local/cpat/main.nf"
+include {GFFCOMPARE as Gff_Compare_lnc}             from "../modules/nf-core/gffcompare/main.nf"
 
 //END INCLUDE STATEMENTS---------------------------------------------------------------------------------------------------------------
 
@@ -31,6 +31,7 @@ workflow RNA_seq {
 
         //Definition of Samplesheet. It will run a custom function that converts samplesheet file to a nested list that is grouped by samples and readpairs.
         fastq_grouped_list = File_Check()
+        
 
         /*defines genomeconfig. It will look in the igenomes config file and the params config file. Within the params.config file it will look for
         the genomes parameter. It is the base directory of where all the genomes are located. It will then check the genome parameter to see which genome is used.
@@ -39,7 +40,7 @@ workflow RNA_seq {
         referenceFasta                      = [[id: "Genome"], file(params.genomes[ params.genome ][ 'fasta' ], checkIfExists: true)]
         referenceFastaFai                   = [[id: "Genome"], file(params.genomes[ params.genome ][ 'fastaFai' ], checkIfExists: true)]
         referenceFastaDict                  = [[id: "Genome"], file(params.genomes[ params.genome ][ 'fastaDict' ], checkIfExists: true)]
-        refflatFile                         = [[id: "Genome"], file(params.genomes[ params.genome ][ 'refflat' ])]
+        refflatFile                         = file(params.genomes[ params.genome ] [ 'refflat']).exists() ? [[id: "Genome"], file(params.genomes[ params.genome ][ 'refflat' ])] : [[id: "Genome"],[]]
         referenceGtfFile                    = file(params.genomes[ params.genome ][ 'referenceGTF' ]).exists() ? [[id: "Genome"], file(params.genomes[ params.genome ][ 'referenceGTF' ])] : [[id: "Genome"], []]
 
 

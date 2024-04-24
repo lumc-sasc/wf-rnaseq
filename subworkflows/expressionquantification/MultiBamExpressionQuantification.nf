@@ -1,12 +1,11 @@
 //All processes are loaded in.
-include {STRINGTIE_STRINGTIE as Stringtie} from "../../modules/stringtie/stringtie/main.nf"
-include {GFFCOMPARE as Gff_Compare} from "../../modules/gffcompare/main.nf"
-include {STRINGTIE_STRINGTIE as Stringtie_quan} from "../../modules/stringtie/stringtie/main.nf"
-include {HTSEQ_COUNT as Htseq_Count} from "../../modules/htseq/count/main.nf"
-include {COLLECT_COLUMN as Collect_Column_8} from "../../custom_modules/collect_column/main.nf"
-include {COLLECT_COLUMN as Collect_Column_7} from "../../custom_modules/collect_column/main.nf"
-include {CONVERTTEXTTOCSV as ConvertTextToCsv} from "../../custom_modules/convert_text_to_csv/main.nf"
-include {COLLECT_COLUMN as Collect_Column_count} from "../../custom_modules/collect_column/main.nf"
+include {STRINGTIE_STRINGTIE as Stringtie} from "../../modules/nf-core/stringtie/stringtie/main.nf"
+include {GFFCOMPARE as Gff_Compare} from "../../modules/nf-core/gffcompare/main.nf"
+include {STRINGTIE_STRINGTIE as Stringtie_quan} from "../../modules/nf-core/stringtie/stringtie/main.nf"
+include {HTSEQ_COUNT as Htseq_Count} from "../../modules/nf-core/htseq/count/main.nf"
+include {COLLECT_COLUMN as Collect_Column_8} from "../../modules/local/collect_column/main.nf"
+include {COLLECT_COLUMN as Collect_Column_7} from "../../modules/local/collect_column/main.nf"
+include {COLLECT_COLUMN as Collect_Column_count} from "../../modules/local/collect_column/main.nf"
 
 //Start of workflow
 workflow MultiBamExpressionQuantificationwf {

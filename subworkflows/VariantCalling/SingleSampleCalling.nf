@@ -1,9 +1,9 @@
-include {GATK4_HAPLOTYPECALLER as Gatk4_Haplotypecaller} from "../../modules/gatk4/haplotypecaller/main.nf"
-include {GATK4_HAPLOTYPECALLER as Gatk4_HaplotypecallerX} from "../../modules/gatk4/haplotypecaller/main.nf"
-include {GATK4_HAPLOTYPECALLER as Gatk4_HaplotypecallerY} from "../../modules/gatk4/haplotypecaller/main.nf"
-include {GATK4_COMBINEGVCFS as Gatk4_Combinegvcfs} from "../../modules/gatk4/combinegvcfs/main.nf"
-include {PICARD_MERGEVCFS as Picard_Mergevcfs} from "../../custom_modules/picard/Mergevcfs/main.nf"
-include {BCFTOOLS_STATS as Bcftools_Stats} from "../../modules/bcftools/stats/main.nf"
+include {GATK4_HAPLOTYPECALLER as Gatk4_Haplotypecaller} from "../../modules/nf-core/gatk4/haplotypecaller/main.nf"
+include {GATK4_HAPLOTYPECALLER as Gatk4_HaplotypecallerX} from "../../modules/nf-core/gatk4/haplotypecaller/main.nf"
+include {GATK4_HAPLOTYPECALLER as Gatk4_HaplotypecallerY} from "../../modules/nf-core/gatk4/haplotypecaller/main.nf"
+include {GATK4_COMBINEGVCFS as Gatk4_Combinegvcfs} from "../../modules/nf-core/gatk4/combinegvcfs/main.nf"
+include {PICARD_MERGEVCFS as Picard_Mergevcfs} from "../../modules/local/picard/mergevcfs/main.nf"
+include {BCFTOOLS_STATS as Bcftools_Stats} from "../../modules/nf-core/bcftools/stats/main.nf"
 
 
 

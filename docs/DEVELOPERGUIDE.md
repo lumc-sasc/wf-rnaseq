@@ -1,6 +1,8 @@
 # DEVELOPER GUIDE
 
-This is the developers guide for the pipeline.
+This is the developers guide for the RNA-seq workflow. The workflow is being developed with the purpose of geting information from the reads, including the gene expression.
+The framework used to create this workflow is Nextflow.
+The purpose of the guide is to give a bit of insight regarding working with the worfklow. This includes Architecture and dependencies.
 
 # Table of Contents
 1. [Layout](#layout)
@@ -17,6 +19,10 @@ This is the developers guide for the pipeline.
    - [Understanding of Nextflow](#understanding-of-nextflow)
    - [Workflow dependencies](#workflow-dependencies)
 3. [Testing](#testing)
+   - [nf-test](#nf-test)
+   - [Pytest workflow](#pytest-workflow)
+4. [Development](#development)
+   - [Adding features](#adding-features)
 
 # Layout
 
@@ -114,6 +120,30 @@ For workflow dependencies, see user guide.
 
 
 # Testing
+
+## nf-test
+nf-test is a testing framework developed by some of the developers of Nextflow. It allows for testing the working of the workflows and processes. One of the things it can see for example is whether an output file is present.
+Right now, there is an example of nf-test in the Htseq subdirectory within the test directory. It looks for the corrolation between the output file generated and the reference file. 
+If the percentage is above 99%, it passes. Else, it will fail.
+To be able to work with nf-test, a tutorial can be followed on the following link:
+[Link to tutorial](https://www.nf-test.com/docs/getting-started/)
+
+## pytest workflow
+pytest workflow is a testing framework developed by SASC. It was developed with the sole purpose to be able to test any workflow. Because it runs bash commands, it can work on any framework that works on bash line command.
+To be able to work with pytest workflow, a tutorial can be followed on the following link: [Link to tutorial](https://pytest-workflow.readthedocs.io/en/stable/)
+
+# Development
+
+## Adding features
+When wanting to add a feature to the existing workflow and want to apply it globally, please open an issue to discuss what you would like to change. For own use cases, adding features to local environment poses no issues.
+Please do write code documentation when adding a new feature and update when needed.
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                              
 
 
 

@@ -3,13 +3,13 @@ include { QCwf }                                                from "../subwork
 include {BamMetricswf }                                         from "../subworkflows/BamMetrics.nf"
 
 //Processes are being included.
-include { STAR_GENOMEGENERATE as Star_Genomegenerate}           from "../modules/star/genomegenerate/main.nf"
-include { STAR_ALIGN as Star_Align}                             from "../modules/star/align/main.nf"
-include {HISAT2_ALIGN as Hisat2_Align}                          from "../modules/hisat2/align/main.nf"
-include {SAMTOOLS_SORT as Samtools_Sort}                        from "../modules/samtools/sort/main.nf" 
-include {PICARD_MARKDUPLICATES as Picard_Markduplicates}        from "../custom_modules/picard/markduplicates/main.nf"
-include {UMITOOLS_DEDUP as Dedup}                               from "../modules/umitools/dedup/main.nf"
-include {PICARD_MARKDUPLICATES as Picard_Markduplicates_dedup}  from "../custom_modules/picard/markduplicates/main.nf"
+include { STAR_GENOMEGENERATE as Star_Genomegenerate}           from "../modules/nf-core/star/genomegenerate/main.nf"
+include { STAR_ALIGN as Star_Align}                             from "../modules/nf-core/star/align/main.nf"
+include {HISAT2_ALIGN as Hisat2_Align}                          from "../modules/nf-core/hisat2/align/main.nf"
+include {SAMTOOLS_SORT as Samtools_Sort}                        from "../modules/nf-core/samtools/sort/main.nf" 
+include {PICARD_MARKDUPLICATES as Picard_Markduplicates}        from "../modules/nf-core/picard/markduplicates/main.nf"
+include {UMITOOLS_DEDUP as Dedup}                               from "../modules/nf-core/umitools/dedup/main.nf"
+include {PICARD_MARKDUPLICATES as Picard_Markduplicates_dedup}  from "../modules/nf-core/picard/markduplicates/main.nf"
 
 
 //defines splicesites

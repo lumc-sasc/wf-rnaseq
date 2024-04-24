@@ -1,10 +1,10 @@
-include {GATK4_SPLITNCIGARREADS as SplitNCigarReads} from "../custom_modules/gatk4/SplitNCigarReads/main.nf"
-include {SAMTOOLS_INDEX as Samtools_Index} from "../modules/samtools/index/main.nf"
-include {GATK4_BASERECALIBRATOR as BaseRecalibrator} from "../modules/gatk4/baserecalibrator/main.nf"
-include {GATK4_GATHERBQSRREPORTS as GatherBqsrreports} from "../modules/gatk4/gatherbqsrreports/main.nf"
-include {GATK4_APPLYBQSR as ApplyBqsr} from "../modules/gatk4/applybqsr/main.nf"
-include {SAMTOOLS_INDEX as Samtools_Index_Bqsr} from "../modules/samtools/index/main.nf"
-include {PICARD_GATHERBAMFILES as GatherBamFiles} from "../custom_modules/picard/gatherbamfiles/main.nf"
+include {GATK4_SPLITNCIGARREADS as SplitNCigarReads} from "../modules/nf-core/gatk4/splitncigarreads/main.nf"
+include {SAMTOOLS_INDEX as Samtools_Index} from "../modules/nf-core/samtools/index/main.nf"
+include {GATK4_BASERECALIBRATOR as BaseRecalibrator} from "../modules/nf-core/gatk4/baserecalibrator/main.nf"
+include {GATK4_GATHERBQSRREPORTS as GatherBqsrreports} from "../modules/nf-core/gatk4/gatherbqsrreports/main.nf"
+include {GATK4_APPLYBQSR as ApplyBqsr} from "../modules/nf-core/gatk4/applybqsr/main.nf"
+include {SAMTOOLS_INDEX as Samtools_Index_Bqsr} from "../modules/nf-core/samtools/index/main.nf"
+include {PICARD_GATHERBAMFILES as GatherBamFiles} from "../modules/local/picard/gatherbamfiles/main.nf"
 
 //Start of workflow
 workflow Preprocesswf {
