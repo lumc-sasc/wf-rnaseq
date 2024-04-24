@@ -1,0 +1,20 @@
+samples:
+  - id: rna1
+    libraries:
+      - id: "S1"
+        readgroups:
+          - id: "L1"
+            reads:
+              R1: "https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/genomics/homo_sapiens/illumina/fastq/test_1.fastq.gz"
+              R2: "https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/genomics/homo_sapiens/illumina/fastq/test_2.fastq.gz"
+
+  - id: rna2
+    libraries:
+      - id: "S1"
+        readgroups:
+          - id: "L1"
+            reads:
+              R1: "https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/genomics/homo_sapiens/illumina/fastq/test2_1.fastq.gz"
+              R2: "https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/genomics/homo_sapiens/illumina/fastq/test2_2.fastq.gz"
+
+ 
