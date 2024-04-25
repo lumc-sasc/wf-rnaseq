@@ -58,8 +58,7 @@ git clone https://github.com/lumc-sasc/wf-rnaseq.git
 run the following command in the terminal to install the nf-core modules.
 
 ```bash
-git clone https://github.com/nf-core/modules.git
-cp -r -T modules/modules/nf-core modules
+
 ```
 <br/><br/><br/>
 # Usage
