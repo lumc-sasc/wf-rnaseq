@@ -2,10 +2,10 @@
 This repository contains the Nextflow workflow usable for processing RNA-seq data. This workflow will performs QC (including adapter clipping), mapping, variant-calling and expression quantification. <br/>
 <br/>
 
-## USERGUIDE
+## Userguide
 [USER GUIDE](https://github.com/lumc-sasc/wf-rnaseq/blob/main/USERGUIDE.md)
 <br/>
-## DEVELOPER GUIDE
+## Developer guide
 [DEVELOPER GUIDE](https://github.com/lumc-sasc/wf-rnaseq/blob/main/DEVELOPERGUIDE.md) <br/>
 
 ## About
