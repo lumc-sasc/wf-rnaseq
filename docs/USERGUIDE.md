@@ -15,7 +15,10 @@ RNA-seq is a nextflow pipeline that does analysis on transcriptomic sequencing d
      - [Boolean Variables](#boolean-variables)
      - [Optional Variables](#optional-variables)
      - [Environment Variables](#environment-variables)
+     - [Nextflow.config file](#nextflow.config-file)
    - [Execution](#execution)
+     - [Standard execution](#standard-execution)
+     - [Add additional parameters](#add-additional-parameters)
 5. [Contribution](#contribution)
 6. [License](#license)
 
@@ -220,6 +223,8 @@ In this case singularity is enabled with automount. The cache directory of where
 <hr><br/><br/>
 
 ## Execution
+
+### Standard execution
 if the required files and the dependencies are installed, and if the parameters have been set, you can run the pipeline with the following command.
 ```bash
 nextflow run RNA-seq.nf -entry RNA_seq_pipeline --genome 'Nextflow_test_human'
