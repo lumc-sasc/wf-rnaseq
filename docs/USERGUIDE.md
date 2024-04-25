@@ -181,7 +181,7 @@ basedir                     : Directory where the main script is located. <br/>
 outdir                      : Directory where the outputfiles are located. <br/>
 <hr><br/><br/>
 
-### Nextflow.config file.
+### Nextflow.config file
 All global configurations are in the nextflow.config file. The format of a config file looks like the following structure:
 ```nextflow
 
