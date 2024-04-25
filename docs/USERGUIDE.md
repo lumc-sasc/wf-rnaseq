@@ -63,6 +63,20 @@ conda activate nextflow
 conda install bioconda::nf-core
 nf-core modules list local
 ```
+
+## Setting export paths
+Exports paths have to be set to handle the temporary directory. If no export paths are set, errors can occur due to temporary directory space running out if it is set to the wrong folder <br/>
+The export paths can be set in the following way:
+```
+nano ~/.bashrc
+#go to the bottom of the file and put down the following lines, including what filepath you want to use for the temporary directory
+export NXF_TEMP=(filepath to TEMPDIR)
+export SINGULARITY_TMPDIR=(filepath to TEMPDIR)
+export TEMP=(filepath to TEMPDIR)
+export _JAVA_OPTIONS=-Djava.io.tmpdir=(filepath to TEMPDIR)
+#Exit and save file.
+source ~/.bashrc
+```
 <br/><br/><br/>
 # Usage
 
