@@ -251,8 +251,25 @@ JSON approach params.json:
 <br/>
 
 ```bash
-nextflow run RNA-seq.nf -entry
+nextflow run RNA-seq.nf -entry RNA_seq_pipeline -params-file params.json
 ```
+
+<br/><br/>
+YML approach params.yml:
+
+```yaml
+genome: "'Nextflow_test_human'"
+adapterForward: "AGATCGGAAGAG"
+adapterReverse: "AGATCGGAAGAG"
+runStringTieQuantificaation: true
+```
+<br/>
+
+```bash
+nextflow run RNA-seq.nf -entry RNA_seq_pipeline -params-file params.yml
+```
+
+<hr><br/><br/>
 
 # Contribution
 Pull requests are welcome. For major changes, please open an issue first
