@@ -206,6 +206,16 @@ For more information on how to work with nf-test, follow the following tutorial:
 
 ## pytest workflow
 pytest workflow is a testing framework developed by SASC. It was developed with the sole purpose to be able to test any workflow. Because it runs bash commands, it can work on any framework that works on bash line command.
+
+To be able to work with pytest workflow, pytest workflow dependency have to be installed alongside the ones for Nextflow. Follow the following code to install dependency:
+```bash
+conda activate nextflow
+conda install pytest-workflow
+```
+
+
+
+
 To be able to work with pytest workflow, a tutorial can be followed on the following link: [Link to tutorial](https://pytest-workflow.readthedocs.io/en/stable/)
 
 # Development
