@@ -238,7 +238,8 @@ The secon way is to create an parameter file. A parameter file is a file where o
 The parameter file can be either a yaml file or a json file. Below is an example of a parameter file:
 
 <br/>
-JSON approach params.json
+JSON approach params.json:
+
 ```javascript
 {
     "genome": "'Nextflow_test_human'"
