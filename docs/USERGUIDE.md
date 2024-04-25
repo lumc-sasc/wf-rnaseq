@@ -195,7 +195,7 @@ includeConfig 'config/parameters.config'
 includeConfig 'config/input_config/igenomes.config'
 
 ```
-An Example of a global configuration shown in this configuration file is the cleanup statement. It has three options: true, false, and eager. <br/>
+An Example of a global configuration shown in this configuration file is the cleanup statement. It has three options: true, false, and eager. <br/> <br/>
 If cleanup is set to true, it will remove temporary files as soon the pipeline is finished executing. <br/>
 If cleanup is set to false, it will not remove temporary files. <br/>
 If cleanup is set to eager, it will remove temporary files as soon they are not needed anymore by the workflow.
