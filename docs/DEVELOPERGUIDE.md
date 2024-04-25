@@ -138,6 +138,7 @@ nf-test file step by step walkthrough
 nextflow_workflow {
 }
 //This part describes what type of testcase it is. In this case, it is ia workflow test so the test is wrapped in a nextflow_workflow test wrap.
+//Everything is desribed within these code brackets.
 ```
 <br/>
 
@@ -147,9 +148,53 @@ script "../../main.nf"
 workflow "RNA_seq"
 //This part has the basic information, like what the name of the test will be, which file it should execute and what the name is of the workflow.
 ```
+<br/>
+
+```nextflow
+stage {
+   symlink "/exports/sascstudent/vperinbanathan"
+}
+//Staging of directory. This is needed, because otherwise it won't find the files neccesary, including inputfiles.
+```
+<br/>
+
+```nextflow
+test("Corrolation of Collect column counts has to be higher than 99.9%") {
+}
+//Descrption of the test and the execution of the test. Both everything that happens within the workflow execution as what happens after will happen within these code brackets.
+```
+<br/>
+
+```nextflow
+  when{
+      params{
+          outdir = "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/outputfiles"
+          sampleConfigFile = "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/data/samplesheet.yml"
+          genome = 'Nextflow_test_human'
+      }
+  }
+//The when statement describes what should happen before executing the workflow. This includes setting environment and setting parameters.
+```
+<br/>
+
+```nextflow
+then {
+   def reference_file_path = "/exports/sascstudent/vperinbanathan/WDL_RNA/output/expression_measures/fragments_per_gene/all_samples.fragments_per_gene"
+   def Nextflow_file_path = "${params.outdir}/final_gene_count/report/report_collect_0.csv"
+
+   assert workflow.success
+
+   //CHECK HTSEQ-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   def corrolation = "python3 corrolation.py ${reference_file_path} ${Nextflow_file_path}".execute()
+   assert Float.valueOf(corrolation) > 99.9
+
+   //CHECK HTSEQ_END-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+}
+//In the then statement, everything that should happen after workflow execution will be described in here. This includes running custom scripts in different code languages and asserting output.
+```
 
 
-
+<hr><br/><<br/>
 
 
 
