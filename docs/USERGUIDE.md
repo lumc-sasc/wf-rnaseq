@@ -232,8 +232,25 @@ The first way is to add arguments in the command line. See below for following e
 ```bash
 nextflow run RNA-seq.nf -entry RNA_seq_pipeline --genome 'Nextflow_test_human' --adapterForward AGATCGGAAGAG --adapterReverse AGATCGGAAGAG --runStringtieQuantification true 
 ```
+<br/>
 
-The secon way is to create an parameter file.
+The secon way is to create an parameter file. A parameter file is a file where one describes all parameters one wants to use.
+The parameter file can be either a yaml file or a json file. Below is an example of a parameter file:
+
+<br/>
+JSON approach params.json
+```json
+{
+    "genome": "'Nextflow_test_human'"
+    "adapterForward": "AGATCGGAAGAG"
+    "adapterReverse": "AGATCGGAAGAG"
+    "runStringtieQuantification": "true"
+}
+```
+
+```bash
+nextflow run RNA-seq.nf -entry
+```
 
 # Contribution
 Pull requests are welcome. For major changes, please open an issue first
