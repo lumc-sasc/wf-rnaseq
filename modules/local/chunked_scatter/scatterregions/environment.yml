@@ -1,0 +1,6 @@
+name: scatter_regions
+channels:
+  - singularity
+  - defaults
+dependencies:
+  -singularity: chunked-scatter:1.0.0
