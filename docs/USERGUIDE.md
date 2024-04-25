@@ -224,6 +224,9 @@ if the required files and the dependencies are installed, and if the parameters 
 ```bash
 nextflow run RNA-seq.nf -entry RNA_seq_pipeline --genome 'Nextflow_test_human'
 ```
+<hr/><br/>
+### Add additional parameters
+Adding additional parameters can be done in two ways
 
 # Contribution
 Pull requests are welcome. For major changes, please open an issue first
