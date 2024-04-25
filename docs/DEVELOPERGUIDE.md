@@ -125,8 +125,10 @@ For workflow dependencies, see user guide.
 nf-test is a testing framework developed by some of the developers of Nextflow. It allows for testing the working of the workflows and processes. One of the things it can see for example is whether an output file is present.
 Right now, there is an example of nf-test in the Htseq subdirectory within the test directory. It looks for the corrolation between the output file generated and the reference file. 
 If the percentage is above 99%, it passes. Else, it will fail.
+
 To be able to work with nf-test, a tutorial can be followed on the following link:
 [Link to tutorial](https://www.nf-test.com/docs/getting-started/)
+<hr><br/>
 
 ## pytest workflow
 pytest workflow is a testing framework developed by SASC. It was developed with the sole purpose to be able to test any workflow. Because it runs bash commands, it can work on any framework that works on bash line command.
