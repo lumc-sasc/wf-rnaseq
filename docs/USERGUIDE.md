@@ -225,8 +225,15 @@ if the required files and the dependencies are installed, and if the parameters 
 nextflow run RNA-seq.nf -entry RNA_seq_pipeline --genome 'Nextflow_test_human'
 ```
 <hr/><br/>
+
 ### Add additional parameters
-Adding additional parameters can be done in two ways
+Adding additional parameters can be done in two ways. <br/>
+The first way is to add arguments in the command line. See below for following example with adapters and runStringtieQuantification:
+```bash
+nextflow run RNA-seq.nf -entry RNA_seq_pipeline --genome 'Nextflow_test_human' --adapterForward AGATCGGAAGAG --adapterReverse AGATCGGAAGAG --runStringtieQuantification true 
+```
+
+The secon way is to create an parameter file.
 
 # Contribution
 Pull requests are welcome. For major changes, please open an issue first
