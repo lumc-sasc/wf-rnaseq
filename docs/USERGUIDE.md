@@ -213,6 +213,10 @@ An Example of a global configuration shown in this configuration file is the cle
 If cleanup is set to true, it will remove temporary files as soon the pipeline is finished executing. <br/>
 If cleanup is set to false, it will not remove temporary files. <br/>
 If cleanup is set to eager, it will remove temporary files as soon they are not needed anymore by the workflow.
+
+<br/>
+Another thing that is handled in the global configuration is the container settings. In this case settings for singularity are set. <br/>
+In this case singularity is enabled with automount. The cache directory of where the containers are located are also given.
 <hr><br/><br/>
 ## Execution
 if the required files and the dependencies are installed, and if the parameters have been set, you can run the pipeline with the following command.
