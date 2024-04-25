@@ -164,7 +164,42 @@ basedir                     : Directory where the main script is located. <br/>
 outdir                      : Directory where the outputfiles are located. <br/>
 <hr><br/><br/>
 
+### Nextflow.config file.
+All global configurations are in the nextflow.config file. The format of a config file looks like the following structure:
+```
 
+//Include Temporary directory
+params.tempdir = "/exports/sacstudent/vperinbanathan/nextflow_pipeline_testzone/TEMP_DIR"
+params.cachedir = "/exports/sascstudent/vperinbanathan/programmas/singularity_containers"
+params.basedir = "/exports/sacstudent/vperinbanathan/nextflow_pipeline_testzone"
+
+
+singularity {
+    enabled = true
+    autoMounts = true
+    cacheDir = "${params.cachedir}"
+}
+
+env {
+    TMPDIR = "${params.tempdir}"
+}
+
+process.executor = 'slurm'
+
+cleanup = 'eager'
+baseDir = "${params.basedir}"
+
+//config file tasks
+includeConfig 'config/tasks.config'
+includeConfig 'config/parameters.config'
+includeConfig 'config/input_config/igenomes.config'
+
+```
+An Example of a global configuration shown in this configuration file is the cleanup statement. It has three options: true, false, and eager. <br/>
+If cleanup is set to true, it will remove temporary files as soon the pipeline is finished executing. <br/>
+If cleanup is set to false, it will not remove temporary files. <br/>
+If cleanup is set to eager, it will remove temporary files as soon they are not needed anymore by the workflow.
+<hr><br/><br/>
 ## Execution
 if the required files and the dependencies are installed, and if the parameters have been set, you can run the pipeline with the following command.
 ```bash
