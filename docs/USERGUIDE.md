@@ -69,7 +69,7 @@ Exports paths have to be set to handle the temporary directory. If no export pat
 The export paths can be set in the following way:
 ```bash
 nano ~/.bashrc
-#go to the bottom of the file and put down the following lines, including what filepath you want to use for the temporary directory
+#Go to the bottom of the file and put down the following lines, including what filepath you want to use for the temporary directory
 export NXF_TEMP=(filepath to TEMPDIR)
 export SINGULARITY_TMPDIR=(filepath to TEMPDIR)
 export TEMP=(filepath to TEMPDIR)
