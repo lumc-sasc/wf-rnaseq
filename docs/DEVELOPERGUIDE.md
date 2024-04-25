@@ -118,7 +118,7 @@ It is also recommended to do the advanced training. This is mostly because subje
 ## Workflow dependencies
 For workflow dependencies, see user guide.
 
-
+<hr><br/><br/>
 # Testing
 
 ## nf-test
@@ -126,7 +126,30 @@ nf-test is a testing framework developed by some of the developers of Nextflow. 
 Right now, there is an example of nf-test in the Htseq subdirectory within the test directory. It looks for the corrolation between the output file generated and the reference file. 
 If the percentage is above 99%, it passes. Else, it will fail.
 
-To be able to work with nf-test, a tutorial can be followed on the following link:
+To be able to work with nf-test, nf-test dependency have to be installed alongside the ones for Nextflow. Follow the following code to install dependency:
+```bash
+conda activate nextflow
+conda install -c bioconda nf-test
+```
+<br/>
+nf-test file step by step walkthrough
+
+```nf-test
+nextflow_workflow {
+}
+//This part describes what type of testcase it is. In this case, it is ia workflow test so the test is wrapped in a nextflow_workflow test wrap.
+```
+
+
+
+
+
+
+
+
+
+
+
 [Link to tutorial](https://www.nf-test.com/docs/getting-started/)
 <hr><br/>
 
