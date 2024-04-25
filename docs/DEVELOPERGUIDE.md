@@ -119,6 +119,7 @@ It is also recommended to do the advanced training. This is mostly because subje
 For workflow dependencies, see user guide.
 
 <hr><br/><br/>
+
 # Testing
 
 ## nf-test
