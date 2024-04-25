@@ -142,6 +142,7 @@ nextflow_workflow {
 ```
 <br/>
 
+
 ```nextflow
 name "Test worfklow with Htseqcount"
 script "../../main.nf"
@@ -157,6 +158,7 @@ stage {
 //Staging of directory. This is needed, because otherwise it won't find the files neccesary, including inputfiles.
 ```
 <br/>
+
 
 ```nextflow
 test("Corrolation of Collect column counts has to be higher than 99.9%") {
@@ -177,6 +179,7 @@ test("Corrolation of Collect column counts has to be higher than 99.9%") {
 ```
 <br/>
 
+
 ```nextflow
 then {
    def reference_file_path = "/exports/sascstudent/vperinbanathan/WDL_RNA/output/expression_measures/fragments_per_gene/all_samples.fragments_per_gene"
@@ -194,17 +197,11 @@ then {
 ```
 
 
-<hr><br/><<br/>
-
-
-
-
-
-
-
-
+<br/><br/>
+For more information on how to work with nf-test, follow the following tutorial:
 [Link to tutorial](https://www.nf-test.com/docs/getting-started/)
-<hr><br/>
+<hr><br/><br/>
+
 
 ## pytest workflow
 pytest workflow is a testing framework developed by SASC. It was developed with the sole purpose to be able to test any workflow. Because it runs bash commands, it can work on any framework that works on bash line command.
