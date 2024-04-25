@@ -55,10 +55,13 @@ git clone https://github.com/lumc-sasc/wf-rnaseq.git
 ```
 <br/><br/>
 ## Module Installation
-run the following command in the terminal to install the nf-core modules.
-
+Module installation will be done through nf-core with the modules.json file. <br/>
+Reason being this way only the modules needed will be installed, rather than installing the complete library <br/>
+Follow the following commands to install the modules (only after installing the workflow).
 ```bash
-
+conda activate nextflow
+conda install bioconda::nf-core
+nf-core modules list local
 ```
 <br/><br/><br/>
 # Usage
