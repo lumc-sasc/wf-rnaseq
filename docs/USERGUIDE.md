@@ -31,7 +31,7 @@ Singularity 3.8.6<br>
 
 Creation of conda environment in bash:
 ```bash
-#installation of conda
+<!--- installation of conda -->
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh miniconda.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b -u -p #(filepath)
 source ~/.bashrc
