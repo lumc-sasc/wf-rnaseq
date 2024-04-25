@@ -180,7 +180,7 @@ outdir                      : Directory where the outputfiles are located. <br/>
 
 ### Nextflow.config file.
 All global configurations are in the nextflow.config file. The format of a config file looks like the following structure:
-```
+```nextflow
 
 //Include Temporary directory
 params.tempdir = "/exports/sacstudent/vperinbanathan/nextflow_pipeline_testzone/TEMP_DIR"
