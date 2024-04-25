@@ -134,10 +134,18 @@ conda install -c bioconda nf-test
 <br/>
 nf-test file step by step walkthrough
 
-```nf-test
+```nextflow
 nextflow_workflow {
 }
 //This part describes what type of testcase it is. In this case, it is ia workflow test so the test is wrapped in a nextflow_workflow test wrap.
+```
+<br/>
+
+```nextflow
+name "Test worfklow with Htseqcount"
+script "../../main.nf"
+workflow "RNA_seq"
+//This part has the basic information, like what the name of the test will be, which file it should execute and what the name is of the workflow.
 ```
 
 
