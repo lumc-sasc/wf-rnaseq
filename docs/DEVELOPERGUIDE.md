@@ -213,7 +213,24 @@ conda activate nextflow
 conda install pytest-workflow
 ```
 
+<br/>
 
+(note to self, pytest workflow searches through every file for the name of the test)
+Example of using pytest workflow
+
+```yml
+- name: Htseeq corrolation
+   command: nextflow run main.nf -entry RNA_seq_pipeline --genome 'GRCh38'
+files:
+   -path: (path of outputfile)/Collected_Htseq_counts.csv
+
+```
+
+```python
+import pathlib
+import pytest
+@pytest.mark.workflow('Htseq corrolation')
+```
 
 
 To be able to work with pytest workflow, a tutorial can be followed on the following link: [Link to tutorial](https://pytest-workflow.readthedocs.io/en/stable/)
