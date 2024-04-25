@@ -239,7 +239,7 @@ The parameter file can be either a yaml file or a json file. Below is an example
 
 <br/>
 JSON approach params.json
-```json
+```javascript
 {
     "genome": "'Nextflow_test_human'"
     "adapterForward": "AGATCGGAAGAG"
@@ -247,6 +247,7 @@ JSON approach params.json
     "runStringtieQuantification": "true"
 }
 ```
+<br/>
 
 ```bash
 nextflow run RNA-seq.nf -entry
