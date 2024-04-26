@@ -1,7 +1,7 @@
 //BEGIN INCLUDE STATEMENTS --------------------------------------------------------------------------------------------------------------
 
 //This part includes the custom code that converts the input samplesheet to a nested list, grouped by samples and readpairs.
-include {FILE_CHECK as File_Check}                  from "../modules/local/file_read/global/main.nf"
+include {FILE_CHECK as File_Check}                  from "../lib/main.nf"
 
 //This part includes all the subworkflows of the mandatory part of the workflow.
 include { Samplewf }                                from "../subworkflows/sample.nf"

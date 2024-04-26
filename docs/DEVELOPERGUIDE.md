@@ -118,6 +118,7 @@ It is also recommended to do the advanced training. This is mostly because subje
 ## Workflow dependencies
 For workflow dependencies, see user guide.
 
+<hr><br/><br/>
 
 # Testing
 
@@ -125,11 +126,113 @@ For workflow dependencies, see user guide.
 nf-test is a testing framework developed by some of the developers of Nextflow. It allows for testing the working of the workflows and processes. One of the things it can see for example is whether an output file is present.
 Right now, there is an example of nf-test in the Htseq subdirectory within the test directory. It looks for the corrolation between the output file generated and the reference file. 
 If the percentage is above 99%, it passes. Else, it will fail.
-To be able to work with nf-test, a tutorial can be followed on the following link:
+
+To be able to work with nf-test, nf-test dependency have to be installed alongside the ones for Nextflow. Follow the following code to install dependency:
+```bash
+conda activate nextflow
+conda install -c bioconda nf-test
+```
+<br/>
+nf-test file step by step walkthrough
+
+```nextflow
+nextflow_workflow {
+}
+//This part describes what type of testcase it is. In this case, it is ia workflow test so the test is wrapped in a nextflow_workflow test wrap.
+//Everything is desribed within these code brackets.
+```
+<br/>
+
+
+```nextflow
+name "Test worfklow with Htseqcount"
+script "../../main.nf"
+workflow "RNA_seq"
+//This part has the basic information, like what the name of the test will be, which file it should execute and what the name is of the workflow.
+```
+<br/>
+
+```nextflow
+stage {
+   symlink "/exports/sascstudent/vperinbanathan"
+}
+//Staging of directory. This is needed, because otherwise it won't find the files neccesary, including inputfiles.
+```
+<br/>
+
+
+```nextflow
+test("Corrolation of Collect column counts has to be higher than 99.9%") {
+}
+//Descrption of the test and the execution of the test. Both everything that happens within the workflow execution as what happens after will happen within these code brackets.
+```
+<br/>
+
+```nextflow
+  when{
+      params{
+          outdir = "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/outputfiles"
+          sampleConfigFile = "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/data/samplesheet.yml"
+          genome = 'Nextflow_test_human'
+      }
+  }
+//The when statement describes what should happen before executing the workflow. This includes setting environment and setting parameters.
+```
+<br/>
+
+
+```nextflow
+then {
+   def reference_file_path = "/exports/sascstudent/vperinbanathan/WDL_RNA/output/expression_measures/fragments_per_gene/all_samples.fragments_per_gene"
+   def Nextflow_file_path = "${params.outdir}/final_gene_count/report/report_collect_0.csv"
+
+   assert workflow.success
+
+   //CHECK HTSEQ-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   def corrolation = "python3 corrolation.py ${reference_file_path} ${Nextflow_file_path}".execute()
+   assert Float.valueOf(corrolation) > 99.9
+
+   //CHECK HTSEQ_END-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+}
+//In the then statement, everything that should happen after workflow execution will be described in here. This includes running custom scripts in different code languages and asserting output.
+```
+
+
+<br/><br/>
+For more information on how to work with nf-test, follow the following tutorial:
 [Link to tutorial](https://www.nf-test.com/docs/getting-started/)
+<hr><br/><br/>
+
 
 ## pytest workflow
 pytest workflow is a testing framework developed by SASC. It was developed with the sole purpose to be able to test any workflow. Because it runs bash commands, it can work on any framework that works on bash line command.
+
+To be able to work with pytest workflow, pytest workflow dependency have to be installed alongside the ones for Nextflow. Follow the following code to install dependency:
+```bash
+conda activate nextflow
+conda install pytest-workflow
+```
+
+<br/>
+
+(note to self, pytest workflow searches through every file for the name of the test)
+Example of using pytest workflow
+
+```yml
+- name: Htseeq corrolation
+   command: nextflow run main.nf -entry RNA_seq_pipeline --genome 'GRCh38'
+files:
+   - path: (path of outputfile)/Collected_Htseq_counts.csv
+
+```
+
+```python
+import pathlib
+import pytest
+@pytest.mark.workflow('Htseq corrolation')
+```
+
+
 To be able to work with pytest workflow, a tutorial can be followed on the following link: [Link to tutorial](https://pytest-workflow.readthedocs.io/en/stable/)
 
 # Development
