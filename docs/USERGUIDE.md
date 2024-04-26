@@ -138,7 +138,7 @@ variantCalling               : Boolean statement that will activate the variantc
 <hr>
 dgeFiles                     : Not implemented boolean statement. Yet to implement in creating design matrix if true. Default is false. <br/>
 <hr>
-umiDeduplication             : Boolena statement that will activate the deduplication part of the pipeline if true. Default is true. <br/>
+umiDeduplication             : Boolean statement that will activate the deduplication part of the pipeline if true. Default is true. <br/>
 <hr>
 get_output_stats             : Boolean statement. If true, will generate output stats in deduplication. Default is false. <br/>
 <hr>
