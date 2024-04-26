@@ -222,7 +222,7 @@ Example of using pytest workflow
 - name: Htseeq corrolation
    command: nextflow run main.nf -entry RNA_seq_pipeline --genome 'GRCh38'
 files:
-   -path: (path of outputfile)/Collected_Htseq_counts.csv
+   - path: (path of outputfile)/Collected_Htseq_counts.csv
 
 ```
 
