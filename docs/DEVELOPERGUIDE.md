@@ -220,8 +220,22 @@ process CUTADAPT {
 }
 ```
 
-
 <hr><br/><br/>
+
+## Configuration file
+The configuration file handles all settings for the workflow and processes. This includes environment settings.
+The User guide has an example of the nextflow.config file.
+The following example shows how certain settings are set up within a config file.
+```groovy
+//Describing parameters. These can be used in any workflow and subworkflow as params.(variable)
+params {
+   refflat = "Filepath"
+   strandedness = "RF"
+   model = "neural networks"
+}
+
+
+```
 
 ## Dynamic resource allocation
 Resources such as time, memory, and amount of cpu's, can be dynamically allocated based on things such as filesize and amount of files. <br/>
