@@ -18,6 +18,8 @@ The purpose of the guide is to give a bit of insight regarding working with the 
 2. [Dependencies](#dependencies)
    - [Understanding of Nextflow](#understanding-of-nextflow)
    - [Workflow dependencies](#workflow-dependencies)
+3. [Workflow](#workflow)
+   - [Dynamic resource allocation](#dynamic-resource-allocation)
 3. [Testing](#testing)
    - [nf-test](#nf-test)
    - [Pytest workflow](#pytest-workflow)
@@ -119,6 +121,38 @@ It is also recommended to do the advanced training. This is mostly because subje
 For workflow dependencies, see user guide.
 
 <hr><br/><br/>
+
+# Workflow
+
+## Dynamic resource allocation
+Resources such as time, memory, and amount of cpu's, can be dynamically allocated based on things such as filesize and amount of files. <br/>
+The following example shows how resources are dynamically allocated within the config file. <br/>
+```groovy
+//Describes that it is about settings within a process
+process {
+   //Describes which process has their settings changed.
+   withName: STAR_ALIGN {
+      //Allocation of memory. It grabs the index file its full path using the .target inbuilt function.
+      //After that it gets the size of the file with .size() function.
+      // After that the size of the file is multiplied by 1.3 times the variable based on the task attempt.
+      //Each attempt will increase the multiplication with 0.1
+      memory = {1.B * index.target.size() * 1.3 * (task.attempt * 0.1 + 0.9)}
+
+      //Allocation of time. It first looks if it is a simple file or multiple files.
+      //The reason for this being is that if one attempts to go through a reduce with only a single file, it will produce an error.
+      //If there are multiple files, it will first grab all the full paths of the files using the .target.
+      //It will then go through each instance with the use of stream.
+      //While it goes through each instance, it will grab the fil size and add up the size with the total value with the use of .reduce.
+      //After that it multiplies by the attempt of the process run.
+      time = { reads.toList().size() > 1 ?
+         1.ms * ((reads.target.stream().reduce(0, (x, y) -> x + y.size())) * task.attempt / 1000 + 300000) :
+         1.ms * (reads.target.size() * task.attempt / 1000 + 125000)}
+
+   }
+}
+
+```
+
 
 # Testing
 
