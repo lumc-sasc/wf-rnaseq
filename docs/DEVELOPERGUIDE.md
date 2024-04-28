@@ -124,9 +124,58 @@ For workflow dependencies, see user guide.
 
 # Workflow
 
+## Workflow
+The main workflow runs the workflow itself. It calls all the subworkflows that has to be run, with the exception of nested subworkflows. <br/>
+The following example shows how to write a main workflow: <br/>
+```nextflow
+//This part describes the input files.
+Samplesheet = params.samplesheet
+Fasta = params.fasta
+FastaFai = params.fastafai
+
+//Start of the workflow iself.
+workflow RNA-seq {
+   // A subworkflow gets called up.
+   subworkflow1(Samplesheet, Fasta, FastaFai)
+
+   // A process that uses the output of the subworkflow and a variable from the configuration file.
+   process1(subworkflow1.out.reads, params.strandedness)
+}
+```
+<hr><br/><br/>
+
+## Subworkflow
+The subworkflow runs the processes of a certain part of the workflow. The subworkflows are used to catagorize everything. <br/>
+This is why there is a subworkflow for sampling and a subworkflow for expression quantification. <br/>
+The following example shows how to write a subworkflow: <br/>
+```nextflow
+//Start of the subworkflow.
+workflow Sample {
+   //It first takes the input that is given to it. Because it follows order rather than naming,
+   //the name of the variable in the subworkflow can differ from variable in the main workflow. <br/>
+   take:
+   Samples
+   Fasta
+   Fai
+
+   //It now runs every process and nested subworkflows that needs to run. This includes running process 1 and running process 2 with the output of process 1
+   main:
+   process1(Samples)
+
+   process2(Process1.out.reads)
+
+   //The emit is where output are given back to the main process.
+   //The main workflow does use the variable name that has been described in th emit.
+   emit:
+   out_reads = process2.out.reads
+}
+```
+
+<hr><br/><br/>
+
 ## Dynamic resource allocation
 Resources such as time, memory, and amount of cpu's, can be dynamically allocated based on things such as filesize and amount of files. <br/>
-The following example shows how resources are dynamically allocated within the config file. <br/>
+The following example shows how resources are dynamically allocated within the config file: <br/>
 ```groovy
 //Describes that it is about settings within a process
 process {
