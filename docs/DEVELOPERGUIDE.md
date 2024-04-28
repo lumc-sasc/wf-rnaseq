@@ -173,6 +173,56 @@ workflow Sample {
 
 <hr><br/><br/>
 
+## Process
+Processes run a certain task. A task can be adapter clipping or removing duplicate reads. <br/>
+The following example shows how to write a process: <br/>
+```nextflow
+//Start of the process
+process CUTADAPT {
+   //Inputfiles of the process. It uses either a boolean, value or path. Also, multiple types of input can be given as a single input with the use of tuples.
+   //Names also do not matter from workflow to process. This is because the process sets input based on order of given to the process.
+   input:
+      tuple val(meta), path(reads)
+      path(fasta)
+
+   //output of the process. It also binds a variable name to the output using emit setting and says if it is optional or not using optional setting (default false).
+   output:
+      tuple val(meta), path(cut_reads.fq.gz), emit: cut_raeds
+      path(report.txt), emit: report, optional: true
+
+
+   //Description of what container to use. It can be either put in here or in the config file.
+   container 'https://depot.galaxyproject.org/singularity/cutadapt:4.6--py39hf95cd2a_1'
+
+   //A conditional statement whether the process should execute.
+   //If a process has a requirement on a channel, This statement can be used to put a conditional statement on the channel.
+   //In this case, it looks if it is more than a single file. If it is a single file, it won't execute.
+    when:
+      reads.size() > 1
+
+   //The code the process has to execute. It will first run groovy code till the """ block.
+   script:
+   //The use of the args argument allows for te use of additional command lines if needed.
+   //This can be either an option for a tool or something that should happen after using the tool.
+   def args = task.ext.args ?: ''
+
+
+   def prefix = task.ext.prefix ?: "${meta.id}"
+   def trimmed  = meta.single_end ? "-o ${prefix}.trim.fastq.gz" : "-o ${prefix}_1.trim.fastq.gz -p ${prefix}_2.trim.fastq.gz"
+
+   //From this part on, linux code will be executed.
+   """
+   cutadapt \\
+   $reads \\
+   //In this case args contain the option --adapterForward and --adapterReverse with the adapters sequences.
+   $args
+   """
+}
+```
+
+
+<hr><br/><br/>
+
 ## Dynamic resource allocation
 Resources such as time, memory, and amount of cpu's, can be dynamically allocated based on things such as filesize and amount of files. <br/>
 The following example shows how resources are dynamically allocated within the config file: <br/>
