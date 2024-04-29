@@ -250,6 +250,8 @@ process {
 
 ```
 
+<hr><br/><br/>
+
 ## Dynamic resource allocation
 Resources such as time, memory, and amount of cpu's, can be dynamically allocated based on things such as filesize and amount of files. <br/>
 The following example shows how resources are dynamically allocated within the config file: <br/>
