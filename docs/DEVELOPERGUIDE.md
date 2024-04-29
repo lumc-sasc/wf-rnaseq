@@ -336,7 +336,15 @@ then {
    assert workflow.success
 
    //CHECK HTSEQ-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   def corrolation = "python3 corrolation.py ${reference_file_path} ${Nextflow_file_path}".execute()
+   //runs the corrolation.py python script
+   def execution_comparison = "python3 corrolation.py ${reference_file_path} ${Nextflow_file_path}".execute()
+   //waits till the execution of the python script is done
+   execution_comparison.waitFor()
+
+   /saves the output text of the python script in a variable
+   def corrolation = execution_comparison.in.text
+
+   //asserts the output corrolation whether it is higher than 99.9
    assert Float.valueOf(corrolation) > 99.9
 
    //CHECK HTSEQ_END-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
