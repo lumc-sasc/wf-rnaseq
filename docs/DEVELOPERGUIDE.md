@@ -234,6 +234,19 @@ params {
    model = "neural networks"
 }
 
+//Describing settings within a process. The setting have influence over the processes.
+process {
+   ext.prefix = "RNA"
+
+   //Describing settings for a specific process
+   withName: FASTQC {
+      //extra arguments for the process of FASTQC, this can be settings of fastqc or additional lines of bash code.
+      ext.args = "-S"
+
+      //Changing container.
+      container = 'quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0'
+   }
+
 
 ```
 
