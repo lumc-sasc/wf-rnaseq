@@ -7,6 +7,7 @@ The purpose of the guide is to give a bit of insight regarding working with the 
 # Table of Contents
 1. [Layout](#layout)
    - [Workflow Image](#workflow-image)
+   - [Directory structure](#directory-structure)
 2. [Dependencies](#dependencies)
    - [Workflow dependencies](#workflow-dependencies)
 3. [Workflow](#workflow)
@@ -40,13 +41,17 @@ Bammetrics subworkflow falls under the red/pink part of the workflow image. <br/
 All of variantcalling falls under the purple part of the workflow image. It is currently not finished yet. <br/>
 LncRNAseq falls under the dark green part of the workflow image. <br/>
 Expression quantification subworkflow falls under the dark red and grey part of the workflow image <br/><br/><br/>
+<hr><br/><br/>
+
 
 ## Directory structure.
 A certain structure should be followed when addding processes, workflows and subworkflows. <br/>
 A workflow should be added to the workflows directory, <br/>
 a subworkflow should be added to the subworkflows directory, <br/>
 and a process should be added in the local directory of the modules directory if it is a custom module. <br/>
-The script that should be initiated is the main.nf file, with desired profile. <br/>
+The script that should be initiated is the workflow hub file. <br/>
+configurations should be in the config directory, with the exception of the nextflow.config file, which should be in the same directory as the main.nf script.
+<hr><br/><br/>
 
 
 
