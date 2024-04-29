@@ -83,6 +83,7 @@ How it is called on in the bash environment:
 ```bash
 nextflow run main.nf -entry RNA_seq_pipeline args
 ```
+<hr><br/><br/>
 
 ## Workflow
 The main workflow runs the workflow itself. It calls all the subworkflows that has to be run, with the exception of nested subworkflows. <br/>
