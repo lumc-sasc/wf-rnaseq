@@ -73,6 +73,7 @@ workflow RNA_seq_pipeline_test {
    params.sampleConfigFile = "./test/data/samplesheet.yml"
    params.genome = "'Nextflow_test_human'"
    RNA_seq()
+}
 
 //RNA-seq pipeline GRCh38 genome case. This entry uses the GRCh38 genome.
 workflow RNA_seq_pipeline_GRCh38 {
