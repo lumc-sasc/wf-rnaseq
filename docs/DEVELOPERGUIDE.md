@@ -20,7 +20,7 @@ The purpose of the guide is to give a bit of insight regarding working with the 
 # Layout
 
 ## Workflow Image
-![Workflow Image](https://github.com/lumc-sasc/wf-rnaseq/blob/main/Workflow_Diagram.png)
+![Workflow Image](https://github.com/lumc-sasc/wf-rnaseq/blob/main/docs/images/Workflow_Diagram.png)
 The workflow image shows all the processes that exist in the current model of the pipeline. <br/>
 Each color describes a different part of the pipeline and each shape describes either a file or a process. <br/>
 The rectangle with the wave is the mandatory file block. The mandatory file block is the block that shows the mandatory files. <br/>
