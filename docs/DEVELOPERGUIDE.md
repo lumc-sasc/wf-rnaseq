@@ -10,6 +10,10 @@ The purpose of the guide is to give a bit of insight regarding working with the 
 2. [Dependencies](#dependencies)
    - [Workflow dependencies](#workflow-dependencies)
 3. [Workflow](#workflow)
+   - [Workflow](#workflow)
+   - [Subworkflow](#subworkflow)
+   - [Process](#process)
+   - [Configuration file](#configuration-file)
    - [Dynamic resource allocation](#dynamic-resource-allocation)
 3. [Testing](#testing)
    - [nf-test](#nf-test)
@@ -37,6 +41,15 @@ All of variantcalling falls under the purple part of the workflow image. It is c
 LncRNAseq falls under the dark green part of the workflow image. <br/>
 Expression quantification subworkflow falls under the dark red and grey part of the workflow image <br/><br/><br/>
 
+## Directory structure.
+A certain structure should be followed when addding processes, workflows and subworkflows. <br/>
+A workflow should be added to the workflows directory, <br/>
+a subworkflow should be added to the subworkflows directory, <br/>
+and a process should be added in the local directory of the modules directory if it is a custom module. <br/>
+The script that should be initiated is the main.nf file, with desired profile. <br/>
+
+
+
 # Dependencies
 ## Workflow dependencies
 For workflow dependencies, see user guide.
@@ -44,6 +57,12 @@ For workflow dependencies, see user guide.
 <hr><br/><br/>
 
 # Workflow
+
+## Workflow hub
+The workflow hub is the nextflow file that can activate any pipeline with specific settings.
+For example, one could make an entry case within the RNA-seq pipeline that handles test data,
+and another entry where the genome is a large genome.
+The following example shows how to write an hub: <br/>
 
 ## Workflow
 The main workflow runs the workflow itself. It calls all the subworkflows that has to be run, with the exception of nested subworkflows. <br/>
