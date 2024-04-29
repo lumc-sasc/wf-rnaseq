@@ -64,6 +64,25 @@ For example, one could make an entry case within the RNA-seq pipeline that handl
 and another entry where the genome is a large genome.
 The following example shows how to write an hub: <br/>
 
+```nextflow
+//import workflows and reading modules
+include { RNA_seq } from './workflows/RNA-seq'
+
+//RNA-seq pipeline testcase. This sets the samplesheet to the test sampleshet.
+workflow RNA_seq_pipeline_test {
+   params.sampleConfigFile = "./test/data/samplesheet.yml"
+   params.genome = "'Nextflow_test_human'"
+   RNA_seq()
+
+//RNA-seq pipeline GRCh38 genome case. This entry uses the GRCh38 genome.
+workflow RNA_seq_pipeline_GRCh38 {
+   params.genome = "'GRCh38'"
+   RNA_seq()
+}
+    
+
+```
+
 ## Workflow
 The main workflow runs the workflow itself. It calls all the subworkflows that has to be run, with the exception of nested subworkflows. <br/>
 The following example shows how to write a main workflow: <br/>
