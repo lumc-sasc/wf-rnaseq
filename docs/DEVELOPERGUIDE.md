@@ -68,20 +68,20 @@ The following example shows how to write an hub: <br/>
 //import workflows and reading modules
 include { RNA_seq } from './workflows/RNA-seq'
 
-//RNA-seq pipeline testcase. This sets the samplesheet to the test sampleshet.
-workflow RNA_seq_pipeline_test {
-   params.sampleConfigFile = "./test/data/samplesheet.yml"
-   params.genome = "'Nextflow_test_human'"
+//Runs the local nextfow RNA-seq pipeline developed by SASC
+workflow RNA_seq_pipeline {
    RNA_seq()
 }
 
-//RNA-seq pipeline GRCh38 genome case. This entry uses the GRCh38 genome.
-workflow RNA_seq_pipeline_GRCh38 {
-   params.genome = "'GRCh38'"
-   RNA_seq()
+//Runs the Nanoseq pipeline (example)
+workflow Nanoseq_pipeline {
+   Nanoseq()
 }
-    
+```
 
+How it is called on in the bash environment:
+```bash
+nextflow run main.nf -entry RNA_seq_pipeline args
 ```
 
 ## Workflow
