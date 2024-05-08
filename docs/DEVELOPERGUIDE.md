@@ -355,10 +355,10 @@ conda install pytest-workflow
 Example of using pytest workflow
 
 ```yml
-- name: Htseeq corrolation
-   command: nextflow run main.nf -entry RNA_seq_pipeline --genome 'GRCh38'
-files:
-   - path: (path of outputfile)/Collected_Htseq_counts.csv
+- name: Htseq_corrolation
+  command: nextflow run (full filepath to workflow hub) -entry RNA_seq_pipeline --genome 'Nextflow_test_human' --sampleConfigFile ./test/data/samplesheet.yml --outdir ../test/outputfiles
+  files:
+    - path: "../test/outputfiles/final_gene_count/report/report_collect_0.csv"
 
 ```
 
