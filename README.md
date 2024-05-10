@@ -3,10 +3,10 @@ This repository contains the Nextflow workflow usable for processing RNA-seq dat
 <br/>
 
 ## Userguide
-[USER GUIDE](https://github.com/lumc-sasc/wf-rnaseq/blob/main/USERGUIDE.md)
+[USER GUIDE](https://github.com/lumc-sasc/wf-rnaseq/blob/main/docs/USERGUIDE.md)
 <br/>
 ## Developer guide
-[DEVELOPER GUIDE](https://github.com/lumc-sasc/wf-rnaseq/blob/main/DEVELOPERGUIDE.md) <br/>
+[DEVELOPER GUIDE](https://github.com/lumc-sasc/wf-rnaseq/blob/main/docs/DEVELOPERGUIDE.md) <br/>
 
 ## About
 This workflow is part of the [Sequencing Analysis Support Core](https://github.com/lumc-sasc) workflow repository.

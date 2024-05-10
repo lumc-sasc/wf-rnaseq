@@ -73,7 +73,7 @@ workflow RNA_seq {
             preprocessregions = variantCallingRegions.size() > 0 ? variantCallingRegions : referenceFastaFai
 
             // Scatter regions for preprocesswf is being run.
-            ScatterRegionsVariant(preprocessregions)
+            ScatterRegionsVariant(Channel.fromList([preprocessregions]))
 
             //preprocess workflow is being run.
             Preprocesswf(Samplewf.out.bam, dbsnpVCF, dbsnpVCFIndex, referenceFasta, referenceFastaFai,

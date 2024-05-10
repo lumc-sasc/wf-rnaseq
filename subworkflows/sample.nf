@@ -7,7 +7,7 @@ include { STAR_GENOMEGENERATE as Star_Genomegenerate}           from "../modules
 include { STAR_ALIGN as Star_Align}                             from "../modules/nf-core/star/align/main.nf"
 include {HISAT2_ALIGN as Hisat2_Align}                          from "../modules/nf-core/hisat2/align/main.nf"
 include {SAMTOOLS_SORT as Samtools_Sort}                        from "../modules/nf-core/samtools/sort/main.nf" 
-include {PICARD_MARKDUPLICATES as Picard_Markduplicates}        from "../modules/nf-core/picard/markduplicates/main.nf"
+include {PICARD_MARKDUPLICATES as Picard_Markduplicates}        from "../modules/local/picard/markduplicates/main.nf"
 include {UMITOOLS_DEDUP as Dedup}                               from "../modules/nf-core/umitools/dedup/main.nf"
 include {PICARD_MARKDUPLICATES as Picard_Markduplicates_dedup}  from "../modules/nf-core/picard/markduplicates/main.nf"
 

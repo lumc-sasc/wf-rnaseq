@@ -41,31 +41,29 @@ workflow SingleSampleCallingwf {
 
     main:
     //Haplotypecaller
-    bam.view()
-    bai.view()
     autosomalregions.view()
     Dragstr_model.view()
-    Gatk4_Haplotypecaller(bam.join(bai).combine(autosomalregions).combine(Dragstr_model),
-    referenceFasta[1], referenceFastaFai[1], referenceFastaDict[1], dbsnpVCF, dbsnpVCFIndex)
+    Gatk4_Haplotypecaller(bam.join(bai).combine(autosomalregions.flatten()).combine(Dragstr_model),
+    referenceFasta, referenceFastaFai, referenceFastaDict, dbsnpVCF, dbsnpVCFIndex)
 
     //Haplotypecaller if Xnonparregions and YnonparsRegions are given
-    if (xNonParRegions != null && yNonParRegions != null) {
+    if (xNonParRegions != [] && yNonParRegions != []) {
         //XnonParRegions converted to Channel
         XNonParRegionsChannel = Channel.value(xNonParRegions)
         Gatk4_HaplotypecallerX(bam.join(bai).combine(XNonParRegionsChannel).combine(Dragstr_model),
-        referenceFasta[1], referenceFastaFai[1], referenceFastaDict[1], dbsnpVCF, dbsnpVCFIndex)
+        referenceFasta, referenceFastaFai, referenceFastaDict, dbsnpVCF, dbsnpVCFIndex)
 
         //Haplotypecaller if gender is male or unknown.
         if (params.gender == "male" || params.gender == "unknown" ) {
             //YnonParRegions converted to Channel
-            YNonParRegionsChannel = Channel.value(yNonParRegions)
+            YNonParRegionsChannel = Channel.value(yNonParRegions).toList()
             Gatk4_HaplotypecallerY(bam.join(bai).combine(YNonParRegionsChannel).combine(Dragstr_model),
-            referenceFasta[1], referenceFastaFai[1], referenceFastaDict[1], dbsnpVCF, dbsnpVCFIndex)
+            referenceFasta, referenceFastaFai, referenceFastaDict, dbsnpVCF, dbsnpVCFIndex)
         }
     }
 
     //define VCF and index
-    VCFs = xNonParRegions != null && yNonParRegions != null ? 
+    VCFs = xNonParRegions != [] && yNonParRegions != [] ? 
         params.gender == "male" || params.gender == "unknown" ?
 
             //if there are regions on X and Y and if gender is male or unknown
@@ -80,16 +78,17 @@ workflow SingleSampleCallingwf {
         Gatk4_Haplotypecaller.out.vcf.join(Gatk4_Haplotypecaller.out.tbi)
     
 
-    if (xNonParRegions != null && yNonParRegions != null && params.mergeVcf && params.scatter_size > 1 && params.gvcf) {
+    VCFs.view()
+    if (xNonParRegions != [] && yNonParRegions != [] && params.mergeVcf  && params.gvcf) {
         Gatk4_Combinegvcfs(VCFs, referenceFasta, referenceFastaFai, referenceFastaDict)
     }
-    else if (xNonParRegions != null && yNonParRegions != null && params.mergeVcf && params.scatter_size > 1 && !params.gvcf) {
+    else if (xNonParRegions != [] && yNonParRegions != [] && params.mergeVcf && !params.gvcf) {
         Picard_Mergevcfs(VCFs)
     }
     
     //creating merged vcf or gvcf function that can be used in bfctools stats.
-    mergedVcf = params.mergeVcf && params.scatter_size > 1 && !params.gvcf ? Picard_Mergevcfs.out.vcf :
-        params.mergeVcf && params.scatter_size > 1 && params.gvcf ? Gatk4_Combinegvcfs.out.vcf.join(Gatk4_Combinegvcfs.out.tbi) :
+    mergedVcf = params.mergeVcf && !params.gvcf && xNonParRegions != [] && yNonParRegions != [] ? Picard_Mergevcfs.out.vcf :
+        params.mergeVcf && params.gvcf && xNonParRegions != [] && yNonParRegions != [] ? Gatk4_Combinegvcfs.out.vcf.join(Gatk4_Combinegvcfs.out.tbi) :
         Gatk4_Haplotypecaller.out.vcf.join(Gatk4_Haplotypecaller.out.tbi)
 
     //bcftools stats

@@ -1,11 +1,10 @@
 process PICARD_GATHERBAMFILES {
     input:
-    tuple val(meta), path(bam)
-    tuple val(meta2), path (bai)
+    tuple val(meta), path(bam), path(bai)
 
     output:
     tuple val(meta), path("*.bam"), emit: bam
-    path "*.bai", emit: bai
+    path "*.bai", emit: bai, optional: true
     path "*.md5", optional: true
 
 

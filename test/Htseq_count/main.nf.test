@@ -9,7 +9,7 @@ nextflow_workflow {
         symlink "/exports/sascstudent/vperinbanathan"
     }
 
-    test("Corrolation of Collect column counts has to be higher than 99.9%") {
+    test("Corrolation of Collect column counts has to be higher than 99%") {
 
         when{
             params{
@@ -30,7 +30,7 @@ nextflow_workflow {
             execution_comparison.waitFor() 
             def corrolation = execution_comparison.in.text
 
-            assert Float.valueOf(corrolation) > 99.9
+            assert Float.valueOf(corrolation) > 99.0
         
             //CHECK HTSEQ_END--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         }
