@@ -1,3 +1,4 @@
+//Processes are being included.
 include {GATK4_HAPLOTYPECALLER as Gatk4_Haplotypecaller} from "../../modules/nf-core/gatk4/haplotypecaller/main.nf"
 include {GATK4_HAPLOTYPECALLER as Gatk4_HaplotypecallerX} from "../../modules/nf-core/gatk4/haplotypecaller/main.nf"
 include {GATK4_HAPLOTYPECALLER as Gatk4_HaplotypecallerY} from "../../modules/nf-core/gatk4/haplotypecaller/main.nf"
@@ -26,7 +27,9 @@ include {BCFTOOLS_STATS as Bcftools_Stats} from "../../modules/nf-core/bcftools/
         Channel.value([[id: "exons"],[file("./inputfiles/${params.Bcfstats_exons}")]]) :
         Channel.value([[id: "exons"],[]])
 
+//Start of workflow
 workflow SingleSampleCallingwf {
+    //Input of workflow are given.
     take:
     bam
     bai
@@ -39,6 +42,7 @@ workflow SingleSampleCallingwf {
     yNonParRegions
     autosomalregions
 
+    //Main part of workflow.
     main:
     //Haplotypecaller
     autosomalregions.view()
@@ -62,26 +66,26 @@ workflow SingleSampleCallingwf {
         }
     }
 
-    //define VCF and index
+    //define VCF and index through a conditional statement.
     VCFs = xNonParRegions != [] && yNonParRegions != [] ? 
         params.gender == "male" || params.gender == "unknown" ?
 
-            //if there are regions on X and Y and if gender is male or unknown
+            //This is the input if either the gender is male or unknown and if the regions are given.
             Gatk4_Haplotypecaller.out.vcf.join(Gatk4_HaplotypecallerX.out.vcf).join(Gatk4_HaplotypecallerY.out.vcf).join(
             (Gatk4_Haplotypecaller.out.tbi.join(Gatk4_HaplotypecallerX.out.tbi).join(Gatk4_HaplotypecallerY.out.tbi))) :
 
-            //if there are regions on X and Y but gender is not male or unknown
+            //This is the input if the gender is female and if the regions are given.
             Gatk4_Haplotypecaller.out.vcf.join(Gatk4_HaplotypecallerX.out.vcf).join(
                 (Gatk4_Haplotypecaller.out.tbi.join(Gatk4_HaplotypecallerX.out.tbi))) :
 
-        //if there are no regions on X and Y.
+        //This is the input if the regions are not given.
         Gatk4_Haplotypecaller.out.vcf.join(Gatk4_Haplotypecaller.out.tbi)
     
-
-    VCFs.view()
+    //Checks if regions are given and whether both gvcf and mergeVcf is set to true
     if (xNonParRegions != [] && yNonParRegions != [] && params.mergeVcf  && params.gvcf) {
         Gatk4_Combinegvcfs(VCFs, referenceFasta, referenceFastaFai, referenceFastaDict)
     }
+    //Checks if regions are given and whether mergeVcf is set to true and gvcf is set to false.
     else if (xNonParRegions != [] && yNonParRegions != [] && params.mergeVcf && !params.gvcf) {
         Picard_Mergevcfs(VCFs)
     }
@@ -94,6 +98,7 @@ workflow SingleSampleCallingwf {
     //bcftools stats
     Bcftools_Stats(mergedVcf, Bcfstats_regions, Bcfstats_targets, Bcfstats_samples, Bcfstats_exons, referenceFasta)
 
+    //Emit output.
     emit:
     report = Bcftools_Stats.out.stats
 
