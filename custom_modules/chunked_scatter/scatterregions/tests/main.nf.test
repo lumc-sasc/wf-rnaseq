@@ -1,0 +1,74 @@
+nextflow_process {
+    
+    name "Test Process SCATTER_REGIONS"
+    process "SCATTER_REGIONS"
+    config "./nextflow.config"
+    tag "modules"
+    tag "modules_nfcore"
+    tag "chunked_scatter"
+    tag "scatter_regions"
+
+    test("homo_sapiens [bed]") {
+
+        when {
+            process {
+                """
+                input[0] = Channel.of([
+                    [id: "bed"], / /meta map
+                    file("${params.test_data_base}/data/genomics/homo_sapiens/genome/genome.bed", checkIfExists: true)
+                ])
+                """
+            }
+        }
+
+        then {
+            assertAll(
+                { assert process.success },
+                { assert snapshot(file(process.out.bam[0][1]).name).match("bed_name") }
+            )
+        }
+    }
+
+    test("homo_sapiens [fai]") {
+
+        when {
+            process {
+                """
+                input[0] = Channel.of([
+                    [id: "bed"], / /meta map
+                    file("${params.test_data_base}/data/genomics/homo_sapiens/genome/genome.fasta.fai", checkIfExists: true)
+                ])
+                """
+            }
+        }
+
+        then {
+            assertAll(
+                { assert process.success },
+                { assert snapshot(file(process.out.bam[0][1]).name).match("bed_name") }
+            )
+        }
+    }
+
+    test("homo_sapiens [dict]") {
+
+        when {
+            process {
+                """
+                input[0] = Channel.of([
+                    [id: "bed"], / /meta map
+                    file("${params.test_data_base}/data/genomics/homo_sapiens/genome/genome.dict", checkIfExists: true)
+                ])
+                """
+            }
+        }
+
+        then {
+            assertAll(
+                { assert process.success },
+                { assert snapshot(file(process.out.bam[0][1]).name).match("bed_name") }
+            )
+        }
+    }
+    
+}

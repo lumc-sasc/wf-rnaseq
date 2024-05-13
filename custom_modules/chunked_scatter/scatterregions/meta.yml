@@ -1,0 +1,36 @@
+name: chunked scatter
+description: create files of overlapping chunks of a given size from a bed, fasta fai, fasta dict or vcf file.
+keywords:
+  - scatter_regions
+  - .bed
+  - variantcalling
+tools:
+  - chunked_scatter:
+      description:
+        Chunked_scatter is a tool that takes a bed file, fasta index, sequence dictionary or vcf file as input and divides the contigs/chromosomes into overlapping chunks of a given size.
+        They are then placed in new bed files, one file per chromosome. Small chromosomes will be put together to avoid the creation of thousands of files.
+      homepage: https://github.com/biowdl/chunked-scatter
+      documentation: https://github.com/biowdl/chunked-scatter/blob/develop/README.md
+      license: MIT License. Copyright (c) 2019 Leiden University Medical Center
+input:
+  - meta:
+      type: map
+      description:
+        Groovy map containing information of inputfile.
+  - input_file:
+      type: file
+      description:
+        Input file in bed, fasta fai, fasta dict or vsf format.
+output:
+  - scatters:
+      type: file
+      description: File containing overlapping chunks.
+      pattern: "*.bed"
+authors:
+  - "@RedmarvandenBerg"
+  - "@rhpvorderman"
+  - "@DavyCats"
+maintainers:
+  - "@rhpvorderman"
+  - "@DavyCats"
+  - "@vperinbanathan"      
