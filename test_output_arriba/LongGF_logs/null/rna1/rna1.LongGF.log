@@ -1,0 +1,189 @@
+rna1_sorted_name.bam Homo_sapiens.GRCh38.110.gtf 100 30 100 1
+Open sam file (rna1_sorted_name.bam).
+Read sam file (rna1_sorted_name.bam) for scanning multiple-mapped reads. 
+Handle =0 >> multi_map_reads.size=0 read_len_map.size=0 Time-elapsed=0
+Handle =2000000 >> multi_map_reads.size=1 read_len_map.size=858834 Time-elapsed=2.71
+Handle =4000000 >> multi_map_reads.size=1 read_len_map.size=1733187 Time-elapsed=5.79
+Handle =6000000 >> multi_map_reads.size=1 read_len_map.size=2596464 Time-elapsed=8.34
+Handle =8000000 >> multi_map_reads.size=1 read_len_map.size=3453185 Time-elapsed=12.08
+Handle =10000000 >> multi_map_reads.size=1 read_len_map.size=4312967 Time-elapsed=14.69
+Handle =12000000 >> multi_map_reads.size=1 read_len_map.size=5172506 Time-elapsed=17.36
+Handle =14000000 >> multi_map_reads.size=1 read_len_map.size=6026671 Time-elapsed=22.8
+Handle =16000000 >> multi_map_reads.size=1 read_len_map.size=6883043 Time-elapsed=25.36
+Handle =18000000 >> multi_map_reads.size=1 read_len_map.size=7740474 Time-elapsed=28.04
+Handle =20000000 >> multi_map_reads.size=1 read_len_map.size=8596309 Time-elapsed=30.72
+Handle =22000000 >> multi_map_reads.size=1 read_len_map.size=9452792 Time-elapsed=33.44
+Handle =24000000 >> multi_map_reads.size=1 read_len_map.size=10307428 Time-elapsed=36.19
+Handle =26000000 >> multi_map_reads.size=1 read_len_map.size=11163659 Time-elapsed=39
+Handle =28000000 >> multi_map_reads.size=1 read_len_map.size=12018324 Time-elapsed=44.69
+Handle =30000000 >> multi_map_reads.size=1 read_len_map.size=12872929 Time-elapsed=50.25
+Handle =32000000 >> multi_map_reads.size=1 read_len_map.size=13729017 Time-elapsed=52.81
+Handle =34000000 >> multi_map_reads.size=1 read_len_map.size=14583282 Time-elapsed=55.42
+Handle =36000000 >> multi_map_reads.size=1 read_len_map.size=15439786 Time-elapsed=58.07
+Handle =38000000 >> multi_map_reads.size=1 read_len_map.size=16293187 Time-elapsed=60.8
+Handle =40000000 >> multi_map_reads.size=1 read_len_map.size=17148464 Time-elapsed=63.47
+Handle =42000000 >> multi_map_reads.size=1 read_len_map.size=18005102 Time-elapsed=66.14
+Handle =44000000 >> multi_map_reads.size=1 read_len_map.size=18861081 Time-elapsed=68.82
+Handle =46000000 >> multi_map_reads.size=1 read_len_map.size=19720903 Time-elapsed=71.56
+Handle =48000000 >> multi_map_reads.size=1 read_len_map.size=20576497 Time-elapsed=74.3
+Handle =50000000 >> multi_map_reads.size=1 read_len_map.size=21432289 Time-elapsed=77.11
+Handle =52000000 >> multi_map_reads.size=1 read_len_map.size=22292771 Time-elapsed=79.94
+Handle =54000000 >> multi_map_reads.size=1 read_len_map.size=23147443 Time-elapsed=82.71
+Handle =56000000 >> multi_map_reads.size=1 read_len_map.size=24003911 Time-elapsed=85.49
+Handle =58000000 >> multi_map_reads.size=1 read_len_map.size=24864166 Time-elapsed=100.52
+Handle =60000000 >> multi_map_reads.size=1 read_len_map.size=25720117 Time-elapsed=103.1
+Handle =62000000 >> multi_map_reads.size=1 read_len_map.size=26578135 Time-elapsed=105.71
+Handle =64000000 >> multi_map_reads.size=1 read_len_map.size=27436787 Time-elapsed=108.35
+Handle =66000000 >> multi_map_reads.size=1 read_len_map.size=28293851 Time-elapsed=111.05
+Handle =68000000 >> multi_map_reads.size=1 read_len_map.size=29150925 Time-elapsed=113.77
+Handle =70000000 >> multi_map_reads.size=1 read_len_map.size=30008606 Time-elapsed=116.49
+Handle =72000000 >> multi_map_reads.size=1 read_len_map.size=30869658 Time-elapsed=119.25
+Handle =74000000 >> multi_map_reads.size=1 read_len_map.size=31725488 Time-elapsed=121.99
+Handle =76000000 >> multi_map_reads.size=1 read_len_map.size=32580341 Time-elapsed=124.73
+Handle =78000000 >> multi_map_reads.size=1 read_len_map.size=33439581 Time-elapsed=127.55
+Handle =80000000 >> multi_map_reads.size=1 read_len_map.size=34294776 Time-elapsed=130.3
+Handle =82000000 >> multi_map_reads.size=1 read_len_map.size=35151423 Time-elapsed=133.05
+Handle =84000000 >> multi_map_reads.size=1 read_len_map.size=36009504 Time-elapsed=135.8
+Handle =86000000 >> multi_map_reads.size=1 read_len_map.size=36865738 Time-elapsed=138.54
+Handle =88000000 >> multi_map_reads.size=1 read_len_map.size=37721256 Time-elapsed=141.31
+Handle =90000000 >> multi_map_reads.size=1 read_len_map.size=38576583 Time-elapsed=144.14
+Handle =92000000 >> multi_map_reads.size=1 read_len_map.size=39432297 Time-elapsed=146.95
+Handle =94000000 >> multi_map_reads.size=1 read_len_map.size=40288204 Time-elapsed=149.74
+Handle =96000000 >> multi_map_reads.size=1 read_len_map.size=41144329 Time-elapsed=152.57
+Handle =98000000 >> multi_map_reads.size=1 read_len_map.size=41999866 Time-elapsed=155.38
+Handle =100000000 >> multi_map_reads.size=1 read_len_map.size=42858584 Time-elapsed=158.22
+Handle =102000000 >> multi_map_reads.size=1 read_len_map.size=43715967 Time-elapsed=161.09
+Handle =104000000 >> multi_map_reads.size=1 read_len_map.size=44571112 Time-elapsed=163.98
+Time consumed to read bam: 164.53s
+For all reads: reads=44730975/45151674(99.07) bases=8896526013/4515087696(197.04) ins=915801(0.02) del=1020681(0.02)
+	 N10: 100
+	 N20: 100
+	 N30: 100
+	 N40: 100
+	 N50: 100
+	 N60: 100
+	 N70: 100
+	 N80: 100
+	 N90: 100
+For mapped reads: bases=8896526013/4473018551(198.89) ins=915801(0.02) del=1020681(0.02)
+	 N10: 100
+	 N20: 100
+	 N30: 100
+	 N40: 100
+	 N50: 100
+	 N60: 100
+	 N70: 100
+	 N80: 100
+	 N90: 100
+
+# reads with multipe mapping = 0=1/45151674(0.00)
+Open sam file (rna1_sorted_name.bam).
+Read sam file (rna1_sorted_name.bam) for gene fusion detection.
+Handle =0 _fg_cand.size()=0 Time-elapsed=0
+Handle =1000000 _fg_cand.size()=0 Time-elapsed=0.58
+Handle =2000000 _fg_cand.size()=0 Time-elapsed=1.17
+Handle =3000000 _fg_cand.size()=0 Time-elapsed=1.77
+Handle =4000000 _fg_cand.size()=0 Time-elapsed=2.37
+Handle =5000000 _fg_cand.size()=0 Time-elapsed=2.97
+Handle =6000000 _fg_cand.size()=0 Time-elapsed=3.56
+Handle =7000000 _fg_cand.size()=0 Time-elapsed=4.14
+Handle =8000000 _fg_cand.size()=0 Time-elapsed=4.72
+Handle =9000000 _fg_cand.size()=0 Time-elapsed=5.3
+Handle =10000000 _fg_cand.size()=0 Time-elapsed=5.9
+Handle =11000000 _fg_cand.size()=0 Time-elapsed=6.51
+Handle =12000000 _fg_cand.size()=0 Time-elapsed=7.11
+Handle =13000000 _fg_cand.size()=0 Time-elapsed=7.72
+Handle =14000000 _fg_cand.size()=0 Time-elapsed=8.32
+Handle =15000000 _fg_cand.size()=0 Time-elapsed=8.94
+Handle =16000000 _fg_cand.size()=0 Time-elapsed=9.54
+Handle =17000000 _fg_cand.size()=0 Time-elapsed=10.14
+Handle =18000000 _fg_cand.size()=0 Time-elapsed=10.75
+Handle =19000000 _fg_cand.size()=0 Time-elapsed=11.35
+Handle =20000000 _fg_cand.size()=0 Time-elapsed=11.95
+Handle =21000000 _fg_cand.size()=0 Time-elapsed=12.55
+Handle =22000000 _fg_cand.size()=0 Time-elapsed=13.15
+Handle =23000000 _fg_cand.size()=0 Time-elapsed=13.75
+Handle =24000000 _fg_cand.size()=0 Time-elapsed=14.35
+Handle =25000000 _fg_cand.size()=0 Time-elapsed=14.96
+Handle =26000000 _fg_cand.size()=0 Time-elapsed=15.57
+Handle =27000000 _fg_cand.size()=0 Time-elapsed=16.17
+Handle =28000000 _fg_cand.size()=0 Time-elapsed=16.78
+Handle =29000000 _fg_cand.size()=0 Time-elapsed=17.38
+Handle =30000000 _fg_cand.size()=0 Time-elapsed=17.99
+Handle =31000000 _fg_cand.size()=0 Time-elapsed=18.59
+Handle =32000000 _fg_cand.size()=0 Time-elapsed=19.19
+Handle =33000000 _fg_cand.size()=0 Time-elapsed=19.79
+Handle =34000000 _fg_cand.size()=0 Time-elapsed=20.39
+Handle =35000000 _fg_cand.size()=0 Time-elapsed=21
+Handle =36000000 _fg_cand.size()=0 Time-elapsed=21.6
+Handle =37000000 _fg_cand.size()=0 Time-elapsed=22.2
+Handle =38000000 _fg_cand.size()=0 Time-elapsed=22.81
+Handle =39000000 _fg_cand.size()=0 Time-elapsed=23.43
+Handle =40000000 _fg_cand.size()=0 Time-elapsed=24.03
+Handle =41000000 _fg_cand.size()=0 Time-elapsed=24.64
+Handle =42000000 _fg_cand.size()=0 Time-elapsed=25.24
+Handle =43000000 _fg_cand.size()=0 Time-elapsed=25.85
+Handle =44000000 _fg_cand.size()=0 Time-elapsed=26.45
+Handle =45000000 _fg_cand.size()=0 Time-elapsed=27.07
+Handle =46000000 _fg_cand.size()=0 Time-elapsed=27.68
+Handle =47000000 _fg_cand.size()=0 Time-elapsed=28.28
+Handle =48000000 _fg_cand.size()=0 Time-elapsed=28.88
+Handle =49000000 _fg_cand.size()=0 Time-elapsed=29.49
+Handle =50000000 _fg_cand.size()=0 Time-elapsed=30.1
+Handle =51000000 _fg_cand.size()=0 Time-elapsed=30.72
+Handle =52000000 _fg_cand.size()=0 Time-elapsed=31.35
+Handle =53000000 _fg_cand.size()=0 Time-elapsed=31.95
+Handle =54000000 _fg_cand.size()=0 Time-elapsed=32.55
+Handle =55000000 _fg_cand.size()=0 Time-elapsed=33.15
+Handle =56000000 _fg_cand.size()=0 Time-elapsed=33.76
+Handle =57000000 _fg_cand.size()=0 Time-elapsed=34.37
+Handle =58000000 _fg_cand.size()=0 Time-elapsed=35.01
+Handle =59000000 _fg_cand.size()=0 Time-elapsed=35.62
+Handle =60000000 _fg_cand.size()=0 Time-elapsed=36.22
+Handle =61000000 _fg_cand.size()=0 Time-elapsed=36.83
+Handle =62000000 _fg_cand.size()=0 Time-elapsed=37.44
+Handle =63000000 _fg_cand.size()=0 Time-elapsed=38.05
+Handle =64000000 _fg_cand.size()=0 Time-elapsed=38.68
+Handle =65000000 _fg_cand.size()=0 Time-elapsed=39.31
+Handle =66000000 _fg_cand.size()=0 Time-elapsed=39.91
+Handle =67000000 _fg_cand.size()=0 Time-elapsed=40.52
+Handle =68000000 _fg_cand.size()=0 Time-elapsed=41.12
+Handle =69000000 _fg_cand.size()=0 Time-elapsed=41.72
+Handle =70000000 _fg_cand.size()=0 Time-elapsed=42.33
+Handle =71000000 _fg_cand.size()=0 Time-elapsed=42.96
+Handle =72000000 _fg_cand.size()=0 Time-elapsed=43.58
+Handle =73000000 _fg_cand.size()=0 Time-elapsed=44.18
+Handle =74000000 _fg_cand.size()=0 Time-elapsed=44.79
+Handle =75000000 _fg_cand.size()=0 Time-elapsed=45.4
+Handle =76000000 _fg_cand.size()=0 Time-elapsed=46.01
+Handle =77000000 _fg_cand.size()=0 Time-elapsed=46.63
+Handle =78000000 _fg_cand.size()=0 Time-elapsed=47.24
+Handle =79000000 _fg_cand.size()=0 Time-elapsed=47.84
+Handle =80000000 _fg_cand.size()=0 Time-elapsed=48.45
+Handle =81000000 _fg_cand.size()=0 Time-elapsed=49.05
+Handle =82000000 _fg_cand.size()=0 Time-elapsed=49.66
+Handle =83000000 _fg_cand.size()=0 Time-elapsed=50.26
+Handle =84000000 _fg_cand.size()=0 Time-elapsed=50.87
+Handle =85000000 _fg_cand.size()=0 Time-elapsed=51.48
+Handle =86000000 _fg_cand.size()=0 Time-elapsed=52.08
+Handle =87000000 _fg_cand.size()=0 Time-elapsed=52.69
+Handle =88000000 _fg_cand.size()=0 Time-elapsed=53.3
+Handle =89000000 _fg_cand.size()=0 Time-elapsed=53.92
+Handle =90000000 _fg_cand.size()=0 Time-elapsed=54.53
+Handle =91000000 _fg_cand.size()=0 Time-elapsed=55.14
+Handle =92000000 _fg_cand.size()=0 Time-elapsed=55.75
+Handle =93000000 _fg_cand.size()=0 Time-elapsed=56.35
+Handle =94000000 _fg_cand.size()=0 Time-elapsed=56.96
+Handle =95000000 _fg_cand.size()=0 Time-elapsed=57.57
+Handle =96000000 _fg_cand.size()=0 Time-elapsed=58.18
+Handle =97000000 _fg_cand.size()=0 Time-elapsed=58.78
+Handle =98000000 _fg_cand.size()=0 Time-elapsed=59.39
+Handle =99000000 _fg_cand.size()=0 Time-elapsed=60
+Handle =100000000 _fg_cand.size()=0 Time-elapsed=60.61
+Handle =101000000 _fg_cand.size()=0 Time-elapsed=61.22
+Handle =102000000 _fg_cand.size()=0 Time-elapsed=61.83
+Handle =103000000 _fg_cand.size()=0 Time-elapsed=62.43
+Handle =104000000 _fg_cand.size()=0 Time-elapsed=63.03
+Time consumed to read bam: 63.27s
+Finish _fg_cand[_gene_pair=0
+Potential_fusion: 0 0

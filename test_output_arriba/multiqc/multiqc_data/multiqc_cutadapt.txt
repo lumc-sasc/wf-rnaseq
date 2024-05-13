@@ -1,0 +1,2 @@
+Sample	cutadapt_version	pairs_processed	r1_with_adapters	r2_with_adapters	pairs_too_short	pairs_written	bp_processed	bp_written	percent_trimmed
+L5785	4.6	45151787	1082766	1036565	113	45151674	9030357400	9022325881	0.08893910444784832

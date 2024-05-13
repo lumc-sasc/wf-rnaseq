@@ -1,0 +1,2 @@
+Sample	no_feature	ambiguous	too_low_aQual	not_aligned	alignment_not_unique	assigned	total_count	percent_assigned
+rna1	20504625	1564762	2338822	420699	0	20322766	45151674	45.00999453530782

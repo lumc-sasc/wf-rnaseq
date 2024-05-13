@@ -1,0 +1,14 @@
+Module	Section	Sample Name	Source
+HTSeq Count	all_sections	rna1	/exports/sascstudent/kaelias/scripts/work/36/129758b5374185904856227e9b8b0d/19/rna1.txt
+Picard	AlignmentSummaryMetrics	rna1	/exports/sascstudent/kaelias/scripts/work/36/129758b5374185904856227e9b8b0d/11/rna1.CollectMultipleMetrics.alignment_summary_metrics
+Picard	BaseDistributionByCycle	rna1_R1	/exports/sascstudent/kaelias/scripts/work/36/129758b5374185904856227e9b8b0d/12/rna1.CollectMultipleMetrics.base_distribution_by_cycle_metrics
+Picard	BaseDistributionByCycle	rna1_R2	/exports/sascstudent/kaelias/scripts/work/36/129758b5374185904856227e9b8b0d/12/rna1.CollectMultipleMetrics.base_distribution_by_cycle_metrics
+Picard	InsertSizeMetrics	rna1	/exports/sascstudent/kaelias/scripts/work/36/129758b5374185904856227e9b8b0d/13/rna1.CollectMultipleMetrics.insert_size_metrics
+Picard	DuplicationMetrics	rna1_S1	/exports/sascstudent/kaelias/scripts/work/36/129758b5374185904856227e9b8b0d/18/rna1.MarkDuplicates.metrics.txt
+Picard	Histogram	rna1	/exports/sascstudent/kaelias/scripts/work/36/129758b5374185904856227e9b8b0d/15/rna1.CollectMultipleMetrics.quality_distribution_metrics
+Picard	RnaSeqMetrics	rna1	/exports/sascstudent/kaelias/scripts/work/36/129758b5374185904856227e9b8b0d/16/rna1_CollectRnaSeqMetrics.rna_metrics
+Samtools	flagstat	rna1	/exports/sascstudent/kaelias/scripts/work/36/129758b5374185904856227e9b8b0d/10/rna1.flagstat
+STAR	SummaryLog	rna1_S1	/exports/sascstudent/kaelias/scripts/work/36/129758b5374185904856227e9b8b0d/17/rna1_S1.Log.final.out
+Cutadapt	all_sections	L5785	/exports/sascstudent/kaelias/scripts/work/36/129758b5374185904856227e9b8b0d/9/rna1_S1.cutadapt.log
+FastQC	all_sections	rna1_S1_2	/exports/sascstudent/kaelias/scripts/work/36/129758b5374185904856227e9b8b0d/8/rna1_S1_2_fastqc.zip
+FastQC	all_sections	rna1_S1_1	/exports/sascstudent/kaelias/scripts/work/36/129758b5374185904856227e9b8b0d/3/rna1_S1_1_fastqc.zip
