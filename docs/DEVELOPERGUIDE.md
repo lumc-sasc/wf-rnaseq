@@ -351,23 +351,161 @@ conda install pytest-workflow
 
 <br/>
 
-(note to self, pytest workflow searches through every file for the name of the test)
-Example of using pytest workflow
 
+test_RNA-seq.yml
 ```yml
+#The name of the test. If one wants to run a specific test, it is based on the name that has been given to the test.
 - name: Htseq_corrolation
+
+#The exact linux command that it will execute.
   command: nextflow run (full filepath to workflow hub) -entry RNA_seq_pipeline --genome 'Nextflow_test_human' --sampleConfigFile ./test/data/samplesheet.yml --outdir ../test/outputfiles
+
+  #These two lines will look if the expected outputfile has been generated. If it has not been generated, it will generate an error.
   files:
     - path: "../test/outputfiles/final_gene_count/report/report_collect_0.csv"
 
 ```
 
+<br/>
+
+test_corrolation.py
 ```python
+#This part of the script includes the packages needed and creates the custom test based on the test name. In this case, because the test in the yml file is Htseq_corrolation, it should be in here too.
+#It will run the function that is below the creation of the test. AFter declaration of function, code can be executed to 
 import pathlib
 import pytest
 @pytest.mark.workflow('Htseq corrolation')
+def test_corrolation_check():
 ```
 
+<br/>
+
+Code inside function
+```python
+    #Grabbing paths from nf-test bash command.
+    reference_file_path = "/exports/sascstudent/vperinbanathan/WDL_RNA/output/expression_measures/fragments_per_gene/all_samples.fragments_per_gene"
+    nextflow_file_path = "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/outputfiles/final_gene_count/report/report_collect_0.csv"
+
+
+    #reforming data of reference so it can be used for corrolation
+    with open(reference_file_path, "r") as reference_file:
+        #creating the headers and sort the headers based on the sample name.
+        header = reference_file.readline().strip("\n").split("\t")
+        sorted_header = sorted(header)
+
+        #Create list to add all lines to
+        count_lines_reference = []
+
+        #Create an index list that keeps track of the original positions of the sorted headers.
+        index_list = []
+        #Calling indexes and stores it in the index list
+        for head in sorted_header:
+            index_list.append(header.index(head))
+
+        #Go through lines of file and add them based on the index
+        for lines in reference_file:
+
+            #Create count list for single line
+            count_line = []
+
+            #Splitting the line into a list so it can be sorted according to index list
+            line = lines.strip("\n").split("\t")
+
+            #Looping through index_list to sort everything
+            for index in index_list:
+                count_line.append(line[index])
+            count_lines_reference.append(count_line)
+
+
+
+
+    #Reforming data of Nextflow so it can be used for corrolation
+    with open(nextflow_file_path, "r") as reference_file:
+        #creating the headers and sort the headers based on the sample name.
+        header = reference_file.readline().strip("\n").split("\t")
+        sorted_header = sorted(header)
+
+        #Create list to add all lines to
+        count_lines_nextflow = []
+
+        #Create an index list that keeps track of the original positions of the sorted headers.
+        index_list = []
+        #Calling indexes and stores it in the index list
+        for head in sorted_header:
+            index_list.append(header.index(head))
+
+        #Go through lines of file and add them based on the index
+        for lines in reference_file:
+
+            #Create count list for single line
+            count_line = []
+
+            #Splitting the line into a list so it can be sorted according to index list
+            line = lines.strip("\n").split("\t")
+
+            #Looping through index_list to sort everything
+            for index in index_list:
+                count_line.append(line[index])
+            count_lines_nextflow.append(count_line)
+
+            
+
+    #Start of corrolation calculation
+    Reference_lines = len(count_lines_reference) - 1
+    Nextflow_lines = len(count_lines_nextflow) - 1
+    corrolation = 0
+    line_count = Reference_lines + 1
+
+    #Keeps going till either list have a length of zero.
+    while Reference_lines != 0 and Nextflow_lines !=0:
+        #Grabs the line from the list to do the corrolation with.
+        Reference_instance = count_lines_reference[Reference_lines]
+        Nextflow_instance = count_lines_nextflow[Nextflow_lines]
+
+        #Looks if the gene is identical. If the line is identifical, it will start with checking the corrolation of each sample.
+        if Reference_instance[0] == Nextflow_instance[0]:
+            corrolation_line = 0
+            #Runs through each sample of the line.
+            for reference_count, nextflow_count in zip(Reference_instance[1:], Nextflow_instance[1:]):
+                #Checks if the count is the same on the samples. If it is, it will add a point towards the corrolation.
+                if float(reference_count) == float(nextflow_count):
+                    corrolation_line += 1
+            
+            #It will devide the corrolation points on the line with the amount of samples present.
+            corrolation += corrolation_line / len(Reference_instance[1:])
+            del count_lines_reference[Reference_lines]
+            del count_lines_nextflow[Nextflow_lines]
+            Reference_lines -= 1
+            Nextflow_lines -= 1
+        
+        #If the amount of lines in the reference is greater than in Nextflow, it will remove a line from the reference.
+        elif Reference_lines > Nextflow_lines:
+            del count_lines_reference[Reference_lines]
+            Reference_lines -= 1
+        
+
+        #If the amount of lines in Nextflow is greater than in the reference, it will remove a line from Nextflow.
+        elif Nextflow_lines > Reference_lines:
+            del count_lines_nextflow[Nextflow_lines]
+            Nextflow_lines -= 1
+        """
+        If neither have more lines and both don't corrolate, it will delete both lines. This can cause inaccurate results,
+        expecially if it is just 1 difference in two places, but the issue is, is that the gene is not always expressed with the number.
+        So it is very difficult to check which of the two should be removed if there is a form of discrepancy.
+        """
+        else:
+            del count_lines_reference[Reference_lines]
+            Reference_lines -= 1
+            del count_lines_nextflow[Nextflow_lines]
+            Nextflow_lines -= 1
+
+    #Calculates the total corrolation in percentage
+    output_corrolation = corrolation/line_count * 100
+
+    #Checks whether the corrolation is higher than 99%. If the corrolation is lower than 99%, it will generate an error message.
+    assert output_corrolation > 99.0
+
+```
 
 To be able to work with pytest workflow, a tutorial can be followed on the following link: [Link to tutorial](https://pytest-workflow.readthedocs.io/en/stable/)
 
@@ -383,7 +521,6 @@ Please do write code documentation when adding a new feature and update when nee
 
 
                                                                                                                                                                                                                                                                                                                                                                               
-
 
 
 
