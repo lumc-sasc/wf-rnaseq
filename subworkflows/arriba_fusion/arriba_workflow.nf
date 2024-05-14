@@ -1,8 +1,8 @@
-include { ARRIBA_ARRIBA as ARRIBA }                     from '../../modules/arriba/arriba/main'
-include { SAMTOOLS_INDEX as SAMTOOLS_INDEX_FOR_ARRIBA}  from '../../modules/samtools/index/main'
-include { SAMTOOLS_SORT as SAMTOOLS_SORT_FOR_ARRIBA}    from '../../modules/samtools/sort/main'
-include { SAMTOOLS_VIEW as SAMTOOLS_VIEW_FOR_ARRIBA}    from '../../modules/samtools/view/main'
-include { STAR_ALIGN as STAR_FOR_ARRIBA }               from '../../modules/star/align/main'
+include { ARRIBA_ARRIBA as ARRIBA }                     from '../../modules/nf-core/arriba/arriba/main'
+include { SAMTOOLS_INDEX as SAMTOOLS_INDEX_FOR_ARRIBA}  from '../../modules/nf-core/samtools/index/main'
+include { SAMTOOLS_SORT as SAMTOOLS_SORT_FOR_ARRIBA}    from '../../modules/nf-core/samtools/sort/main'
+include { SAMTOOLS_VIEW as SAMTOOLS_VIEW_FOR_ARRIBA}    from '../../modules/nf-core/samtools/view/main'
+include { STAR_ALIGN as STAR_FOR_ARRIBA }               from '../../modules/nf-core/star/align/main'
 
 workflow ARRIBA_WORKFLOW {
     take:
