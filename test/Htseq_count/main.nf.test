@@ -13,8 +13,8 @@ nextflow_workflow {
 
         when{
             params{
-                outdir = "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/outputfiles"
-                sampleConfigFile = "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/data/samplesheet.yml"
+                outdir = "../../../../test/outputfiles"
+                sampleConfigFile = "../../../../test/data/samplesheet.yml"
                 genome = 'Nextflow_test_human'
             }
         }
