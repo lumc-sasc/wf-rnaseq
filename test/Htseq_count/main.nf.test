@@ -13,16 +13,19 @@ nextflow_workflow {
 
         when{
             params{
-                outdir = "../../../../test/outputfiles"
+                basedir_reference = "../../../WDL_RNA"
+                outdir = "../../../test/outputfiles"
                 sampleConfigFile = "../../../../test/data/samplesheet.yml"
                 genome = 'Nextflow_test_human'
             }
         }
 
         then {
-            def reference_file_path = "/exports/sascstudent/vperinbanathan/WDL_RNA/output/expression_measures/fragments_per_gene/all_samples.fragments_per_gene"
-            def Nextflow_file_path = "${params.outdir}/final_gene_count/report/report_collect_0.csv"
-
+            "mkdir buffer".execute()
+            def reference_file_path = new File("${params.basedir_reference}/output/expression_measures/fragments_per_gene/all_samples.fragments_per_gene").getAbsoluteFile().getPath()
+            def Nextflow_file_path = new File("buffer/${params.outdir}/final_gene_count/report/report_collect_0.csv").getAbsoluteFile().getPath()
+            File file = new File("test.txt")
+            file.write(Nextflow_file_path)
             assert workflow.success
 
             //CHECK HTSEQ--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
