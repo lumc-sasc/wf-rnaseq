@@ -186,9 +186,9 @@ All global configurations are in the nextflow.config file. The format of a confi
 ```nextflow
 
 //Include Temporary directory
-params.tempdir = "/exports/sacstudent/vperinbanathan/nextflow_pipeline_testzone/TEMP_DIR"
-params.cachedir = "/exports/sascstudent/vperinbanathan/programmas/singularity_containers"
-params.basedir = "/exports/sacstudent/vperinbanathan/nextflow_pipeline_testzone"
+params.tempdir = "./TEMP_DIR"
+params.cachedir = "../programmas/singularity_containers"
+params.basedir = "."
 
 
 singularity {

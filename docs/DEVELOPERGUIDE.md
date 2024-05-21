@@ -282,7 +282,7 @@ workflow "RNA_seq"
 
 ```nextflow
 stage {
-   symlink "/exports/sascstudent/vperinbanathan"
+   symlink "(Exact path to 1 directory above the workflow directory)"
 }
 //Staging of directory. This is needed, because otherwise it won't find the files neccesary, including inputfiles.
 ```
@@ -299,8 +299,8 @@ test("Corrolation of Collect column counts has to be higher than 99.9%") {
 ```nextflow
   when{
       params{
-          outdir = "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/outputfiles"
-          sampleConfigFile = "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/data/samplesheet.yml"
+          outdir = "../../../../test/outputfiles"
+          sampleConfigFile = "../../../../test/data/samplesheet.yml"
           genome = 'Nextflow_test_human'
       }
   }
@@ -311,7 +311,7 @@ test("Corrolation of Collect column counts has to be higher than 99.9%") {
 
 ```nextflow
 then {
-   def reference_file_path = "/exports/sascstudent/vperinbanathan/WDL_RNA/output/expression_measures/fragments_per_gene/all_samples.fragments_per_gene"
+   def reference_file_path = "(Path to reference count table.)"
    def Nextflow_file_path = "${params.outdir}/final_gene_count/report/report_collect_0.csv"
 
    assert workflow.success
@@ -383,8 +383,8 @@ def test_corrolation_check():
 Code inside function
 ```python
     #Grabbing paths from nf-test bash command.
-    reference_file_path = "/exports/sascstudent/vperinbanathan/WDL_RNA/output/expression_measures/fragments_per_gene/all_samples.fragments_per_gene"
-    nextflow_file_path = "/exports/sascstudent/vperinbanathan/nextflow_pipeline_testzone/test/outputfiles/final_gene_count/report/report_collect_0.csv"
+    reference_file_path = "(Path to reference count table)"
+    nextflow_file_path = "(filepath to workflow directory)/test/outputfiles/final_gene_count/report/report_collect_0.csv"
 
 
     #reforming data of reference so it can be used for corrolation
