@@ -44,12 +44,8 @@ workflow MultiBamExpressionQuantificationwf {
     on the referenceGtfFile. If neither is true, it will use the referenceGtf as the gtf file.
     */
     if (detectNovelTranscripts || params.lncRNAdetection) {
-        gtf = Gff_Compare.out.combined_gtf.map {it[1]}.collect()
-        gtf_with_meta = Gff_Compare.out.combined_gtf.collect()
-        }
-    else if (params.lncRNAdetection) {
-        gtf = Gff_Compare.out.annotated_gtf.map {it[1]}.collect()
-        gtf_with_meta = Gff_Compare.out.annotated_gtf.collect()
+        gtf = Gff_Compare.out.annotated_gtf.map {it[1]}.collect().concat(Gff_Compare.out.combined_gtf.map {it[1]}.collect())
+        gtf_with_meta = Gff_Compare.out.annotated_gtf.collect().concat(Gff_Compare.out.combined_gtf.collect())
         }
     else {
         gtf = referenceGtfFile[1]
@@ -70,7 +66,6 @@ workflow MultiBamExpressionQuantificationwf {
     }
 
     //Htseq count is executed to get the gene expression.
-    gtf_with_meta.view()
     Htseq_Count(bam, gtf_with_meta)
 
     //If stringtie quantification is enabled, it will run the collect collumn on collumn 8 and 7 from the stringtie report.
