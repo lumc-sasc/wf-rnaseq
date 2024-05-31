@@ -43,7 +43,7 @@ workflow MultiBamExpressionQuantificationwf {
     If detectNoveltranscripts is false but lncRNAdetection is true, it will run Gff_Compare, but in this case the stringite output will be annotated
     on the referenceGtfFile. If neither is true, it will use the referenceGtf as the gtf file.
     */
-    if (detectNovelTranscripts) {
+    if (detectNovelTranscripts || params.lncRNAdetection) {
         gtf = Gff_Compare.out.combined_gtf.map {it[1]}.collect()
         gtf_with_meta = Gff_Compare.out.combined_gtf.collect()
         }
@@ -70,6 +70,7 @@ workflow MultiBamExpressionQuantificationwf {
     }
 
     //Htseq count is executed to get the gene expression.
+    gtf_with_meta.view()
     Htseq_Count(bam, gtf_with_meta)
 
     //If stringtie quantification is enabled, it will run the collect collumn on collumn 8 and 7 from the stringtie report.
@@ -102,7 +103,7 @@ workflow MultiBamExpressionQuantificationwf {
 
     //emitting the output of the workflow
     emit:
-    gtf = gtf
+    gtf = gtf_with_meta
     report = reports
 
 }
