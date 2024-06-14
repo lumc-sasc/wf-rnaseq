@@ -1,0 +1,41 @@
+nextflow_workflow {
+    
+
+    name "Test worfklow with Htseqcount"
+    script "../../main.nf"
+    workflow "RNA_seq"
+
+    stage {
+        symlink "/exports/sascstudent/vperinbanathan"
+    }
+
+    test("Corrolation of Collect column counts has to be higher than 99%") {
+
+        when{
+            params{
+                basedir_reference = "../../../WDL_RNA"
+                outdir = "../../../test/outputfiles"
+                sampleConfigFile = "../../../../test/data/samplesheet.yml"
+                genome = 'Nextflow_test_human'
+            }
+        }
+
+        then {
+            "mkdir buffer".execute()
+            def reference_file_path = new File("${params.basedir_reference}/output/expression_measures/fragments_per_gene/all_samples.fragments_per_gene").getAbsoluteFile().getPath()
+            def Nextflow_file_path = new File("buffer/${params.outdir}/final_gene_count/report/report_collect_0.csv").getAbsoluteFile().getPath()
+            File file = new File("test.txt")
+            file.write(Nextflow_file_path)
+            assert workflow.success
+
+            //CHECK HTSEQ--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            def execution_comparison = "python3 corrolation.py ${reference_file_path} ${Nextflow_file_path}".execute()
+            execution_comparison.waitFor() 
+            def corrolation = execution_comparison.in.text
+
+            assert Float.valueOf(corrolation) > 99.0
+        
+            //CHECK HTSEQ_END--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        }
+    }
+}
